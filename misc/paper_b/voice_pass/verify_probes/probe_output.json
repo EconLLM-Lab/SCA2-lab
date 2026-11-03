@@ -1,0 +1,22 @@
+{
+  "added_raw_prose_numerals": [],
+  "bib_checks": {
+    "kirman1992": true,
+    "robinson1950": true,
+    "zhao2023gpo": true
+  },
+  "macro_multiset_added": [],
+  "macro_multiset_removed": [],
+  "macro_occurrences_baseline": 226,
+  "macro_occurrences_reviewed": 226,
+  "main_review_showauthors_gate": true,
+  "reviewed_head": "c6c16e72a1fdda0f7423000fffc26b3132a2d19d",
+  "section_preprint_hits": [],
+  "stat_errors": [],
+  "supplement_carry": {
+    "C7_by_dimension_TVD": true,
+    "C9_recovery_definitions": true
+  },
+  "table_rows": 562,
+  "table_sha256": "71ee7c8c68eb856bf7215165dd836aef7cc3f67993a6523790cee4b22ce186a4"
+}

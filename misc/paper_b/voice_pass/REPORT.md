@@ -173,3 +173,14 @@ Augusto: "go with your recommendations", plus "also add the authors".
 - Words: 10,107 (target 10,000). Abstract 150.
 - Voice: "we" 10.4–11.7 per 1,000 words in the abstract, introduction, discussion and conclusion. One sentence with
   more than two commas (the list).
+
+## Part D: cross-family verification and its notes (2026-11-03)
+
+Card `t_68631832` (verifier, `gpt-5.6-sol` on `openai-codex`, from its agent log): **PASS-WITH-NOTES**, no blocker
+(`voice_pass/VERIFICATION.md`). Its three readability notes were applied by the PM:
+- the GPS dimensions in `background.tex` are a plain list (Part C had fixed only `instrument.tex`);
+- `discussion.tex` opener now reads "on trust across both scenario banks";
+- two short sentence pairs in the conclusion's second paragraph were joined.
+
+The rebuild gives main and main_review 45 pages each, exit 0, 0 overfull and 0 undefined. The number audit passes, the
+anonymity grep is empty, and the main text is 10,104 words.
