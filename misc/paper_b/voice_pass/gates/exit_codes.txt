@@ -1,0 +1,12 @@
+latexmk main.tex exit=0
+overfull grep exit=1
+undefined/float grep exit=1 (1 = no match)
+audit_numbers main exit=0
+render_supplement exit=1
+audit_numbers supplement exit=0
+fenced files unchanged (git diff --quiet) exit=0
+pdftotext exit=0
+anonymity grep exit=1 (1 = empty, required)
+render_supplement (uv run --with pandas) exit=0
+supplement.tex unchanged after render exit=0
+audit_numbers supplement (after render) exit=0

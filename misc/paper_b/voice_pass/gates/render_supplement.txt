@@ -1,0 +1,2 @@
+Installed 5 packages in 82ms
+wrote misc/paper_b/supplement.tex (76222 chars)

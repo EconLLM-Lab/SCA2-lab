@@ -1,0 +1,8 @@
+introduction    1,434
+background        521
+instrument        768
+design          2,066
+results         3,643
+discussion      1,240
+conclusion        308
+total 9,980

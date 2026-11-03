@@ -1,0 +1,105 @@
+
+
+Results.
+
+1
+
+We report the results along the chain, and each statistic belongs to one surface of Table 1. Sections 1 to 1 concern the link from anchor to instrument. They ask what training installs, which order of countries survives a new scenario bank and what carries it, and whether the declared dimensions stay separate. Sections 1 to 1 concern the link from instrument to respondents. They cover the preregistered screen and its comparators, agreement with the respondents' composites, and distance to their response distributions. Everything computed against the Wave 7 file is retrospective. Four figures carry the evidence beside the text that reads them. Exact values are in the text, Table 1 and the online supplement.
+
+
+
+Anchor to instrument: what training installs.
+
+1
+
+Every training pair of a country carries a label. The chosen completion is the one that goes with the sign of the country's GPS coordinate on the pair's own dimension. The first question is whether that installation carries over to pairs the adapters never saw. This is a construction check on the synthetic labels (descriptive, no human data). We split the training pairs once into a training part and a held-out part that the adapters never saw. For each of the 42 first-cohort adapters, the margin is the difference between the log probability of the chosen and of the rejected completion. We scored it under the adapter and under the base model in a further run on the frozen stack (gates in the online supplement). Recovery is the share of held-out pairs on which the adapter's margin exceeds the base model's. Accuracy is the share on which the adapter prefers its own chosen completion outright, and base accuracy is the same share for the base model. We report country-equal means with a profile-block bootstrap.
+
+Recovery is 0.940 [0.926 ; 0.952] and accuracy is 0.816 [0.771 ; 0.856]. The base model's accuracy is 0.489 [0.471 ; 0.506]. That interval includes one half, so the base model shows no detectable preference for the chosen completions before training. The mean margin shift is 40.3 [28.2 ; 54.1] nats. Training installs each country's synthetic labels on scenarios the adapter never saw, which is construction fidelity. It says nothing about whether the labels order countries like the GPS, and nothing about respondents. Notably, the distance results below show that the same adapters lie farther from the survey's response distributions than the base model does.
+
+
+
+Anchor to instrument: the trust order and what carries it.
+
+1
+
+The first cohort encodes four of the six declared signs on the strict battery (S1). Over the 42 countries, the adapter-GPS Spearman correlation is 0.744 [0.500 ; 0.865] for trust and 0.435 [0.085 ; 0.686] for risk taking. It is 0.488 [0.120 ; 0.695] for positive reciprocity and 0.406 [0.020 ; 0.676] for altruism. These four form the imprint set that the screen later uses.
+
+The second cohort tests whether the order survives a change of scenario text (S2). Trust keeps its agreement with the GPS, at 0.803 [0.615 ; 0.876]. The other three imprint dimensions keep positive point estimates, but their intervals now include zero (Table 1). Therefore, 1 of the 4 imprint dimensions passes the second-bank check and 3 do not. Under the rule fixed before the second cohort was trained, we write no sentence about the other three carrying over. Trust is the dimension on which retention of the anchor's order is replicated across scenario banks. The banks also agree profile by profile. Over the 26 shared profiles, the rank correlation between first-bank and second-bank trust composites is 0.907 [0.774 ; 0.957]. Risk taking is the least stable surface, at 0.544 [0.187 ; 0.772], which fits its loss on the second bank (the online supplement gives every surface). This agreement measures how much the scenario text changes the instrument and says nothing about people.
+
+What carries the trust order? The comparison a survey researcher would reach for first is a prompt that names the population. It does not reproduce the order (P): the persona-GPS correlation over the 42 countries is 0.028 [-0.339 ; 0.381]. The planned contrast with the first cohort is 0.716 [0.191 ; 1.154], and the reading is the same under a country bootstrap. A prompt that states the same six signs in words, with no adapter and no country name, tracks trust as closely as the adapters do. It reaches 0.773 [0.584 ; 0.844] (panel A of Figure 1, which sets all routes side by side). That is, on trust what separates the routes is whether the declared sign is supplied, whichever channel carries it. The contrast sets declared signs against a country name and says nothing about trained weights against prompting. On the other surfaces the persona route's intervals include zero, except for patience, which it orders positively on one item and negatively on the other (online supplement).
+
+
+
+Inside the instrument: the sign-profile factorial.
+
+1
+
+The factorial asks whether the six declared signs behave as separate inputs (F). On the trained route, every sign bit moves its own surface in the intended direction (panel A of Figure 1; the online supplement gives each effect with its  X  statistic). All seven own effects are positive, from 0.364 for trust ( X ) to 0.124 for positive reciprocity ( X ), and 0 of 7 point the wrong way.
+
+The planned separability check fails. Only 2 of the 6 bits move their own surface more than any other surface, where at least 4 were required (binomial  X ). They are the bits for altruism and negative reciprocity. Scale-free views agree (online supplement). Each bit moves its own surface and also moves others, often by more. The risk-taking bit moves the altruism surface by 0.983, against the altruism bit's own effect of 0.242. The trust bit is the largest mover on 3 of the 7 surfaces. One common direction carries 51.3\% of the variance of the seven standardized surfaces, and the mean absolute correlation between surfaces is 0.395. In other words, each sign keeps its intended direction on its own surface, while the size of its effects spreads across the others.
+
+The prompted route fails the check by the same count, 2 of 6 (binomial  X ), so V5 does not separate the routes. What separates them is the common direction and the sign of the own effects. Under prompting the first principal component carries 83.5\% of the variance, the mean absolute correlation between surfaces is 0.807, and the trust bit is the largest mover on all 7 surfaces. Three prompted own effects point against the intended direction. Two are risk taking at -0.457 ( X ) and patience Q43 at -0.069 ( X ). The third, negative reciprocity at -0.023, is not distinguishable from zero at  X . These are behavioral cross effects of the instrument. The contrast concerns entanglement and the direction of own effects and is silent on screening accuracy, where the difference between routes is unresolved.
+
+ 
+
+We next ask why the trust order survives when the other surfaces lose theirs. We split the second-cohort adapters' main effects into two parts: the effect of each surface's own bit and the summed effect of the other five. We evaluate each part at the sign profile of each of the 42 countries and correlate it with the GPS coordinate of the surface's own dimension (D; the online supplement gives every surface). This is a behavioral decomposition that uses model quantities and published GPS values only. It says nothing about what happens inside the network. The own-bit part orders the countries like the GPS on all seven surfaces, with correlations from 0.817 to 0.866. That ordering is mechanical. For a positive own effect, as all seven are, the own part is proportional to the sign of the GPS coordinate. It therefore restates the correlation between signs and GPS and is no separate test of learning. The full prediction adds the cross bits. It keeps the GPS order on trust, at 0.834, and loses most of it elsewhere. On the other surfaces its correlations run from -0.020 for patience Q43 to 0.422 for altruism. The cross part carries little of the full prediction's variation on trust and most of it elsewhere. Var(cross)/Var(full) is 0.147 on trust and runs from 0.830 to 1.049 on the other six. This is a ratio of variances and no percentage of variance explained. It exceeds one on patience Q43 because the own and cross parts covary negatively. The comparison sets trust against six surfaces, so it is no graded relation and we claim no dose-response. No bank label depends on a second dimension. In both banks all 27636 country-pair training rows follow the sign of the pair's own dimension, with 0 mismatches in the first bank and 0 in the second. Therefore, the labels do not carry the cross talk. We claim no cause of the loss, which would need component-level analysis and interventions.
+
+Retraining noise is small beside these effects: an unseeded retrain of one profile moves every strict surface by at most 0.112 of a standard deviation across profiles (R; online supplement). This is a narrow observed comparison of one retrained unit with its original. We did not measure variation across units. The near-zero filter (N) is not promoted under the predeclared rule, and two refits support no claim of a reversal across countries. The online supplement gives the margin in full. 
+
+
+
+Instrument to respondents: the retrospective screen.
+
+1
+
+Retrospectively, the screen rejects its registered null (H). The probe selected 56 of the 223 pool items under the primary rule. Their mean signed agreement with the Wave 7 country differences is  X  (Figure 1, panel A), with a country-bootstrap interval of [-0.007 ; 0.126]. The permutation null reassigns the same dimension and sign pairs to items drawn at random from the pool. Its distribution has mean 0.012 and ninety-fifth percentile 0.046, and the one-sided  X  is 0.010 (panel B).
+
+By the registered reading, the signal is weak. Two WVS waves agree with each other on the selected items fielded in both waves with a mean Spearman correlation of 0.746 (median 0.767, 34 items). The screen's  X  is 8.1\% of that ceiling, well below the registered bar of one third, which would be 0.249. The interval reaches zero while the permutation test rejects the null, because the two answer different questions. The test asks whether the assignments beat random assignments of the same pairs to items from the same pool. The interval asks how much  X  varies across samples of countries. The direction of the finding is clearer than its size. The registered reliability checks point the same way. The secondary rule gives  X  over 185 items with a one-sided permutation  X , and dropping one country at a time moves the primary  X  only between 0.051 and 0.072.
+
+ 
+
+The per-dimension readings show where the signal sits (Table 1). Under the primary rule, only the items assigned to risk taking have an interval above zero. Their  X  [0.015 ; 0.290] on 13 items, of which 92.3\% agree in sign. The intervals for trust and altruism include zero. The items assigned to positive reciprocity point the wrong way: their point estimate is negative, and only 18.2\% of the 11 items agree in sign. Under the exploratory Bonferroni adjustment for four dimensions, the interval for risk taking becomes [-0.026 ; 0.326] and includes zero. The probe's per-dimension permutation  X  values were not registered. For altruism under the primary rule they point the other way from the registered interval, so we report the registered intervals only. 
+
+ 
+
+The two checks disagree by dimension. Trust survives the second bank, and its screen interval includes zero. Risk taking is the one dimension whose screen interval excludes zero before adjustment, and it is one of the three that lose their interval on the second bank. No dimension passes both registered checks, and the per-dimension cells are small.
+
+
+
+Instrument to respondents: questionnaire readers and the prompt route.
+
+1
+
+The registered contrasts do not distinguish the adapters from a careful reader of the questionnaire (Figure 1, panel C; the online supplement tabulates every contrast). Every interval covers zero, which the preregistration reads as "the adapters match a careful reader". That reading rests on few items. The coverage-matched contrasts use the 5 items that the adapters and the face-valid rule both assign and the 9 items they share with the typed decision model. The routes agree on dimension and sign for 1 and 7 of them. An interval that covers zero on so few items is consistent with a match and does not establish one. Both readers concentrate on trust, where their own-item  X  exceeds the 0.062 of the adapters' own trust items, but their per-dimension cells are too small to be informative.
+
+Prompting the base model with the same six signs does not pass the registered null. The same probe applied to the 64 prompted profiles gives  X  [-0.109 ; 0.158] with a one-sided permutation  X  of 0.509, and it assigns its selected items to a single dimension, trust. The adapter route passes the null and the prompt route does not, but the direct difference between them is unresolved. Adapter minus prompt is 0.033 on each route's own items and 0.004 on the 16 items both select, and both intervals cover zero. The two routes agree on dimension and sign for 6 of those shared items. We therefore cannot credit the trained weights over the prompt on the screen.
+
+Item-level assignment is stable under option order and paraphrase, whereas membership in the particular selected set churns. The registered statistic is the number of selected items whose dimension and sign are unchanged. It is 39 of 56 with reversed options, 39 with the first paraphrase and 30 with the second. No variant changes more than half, so the registered condition for wording dependence is not met, although the second paraphrase comes close. Membership is another matter: the primary rule is a top-quartile cut on  X , and only 18, 29 and 16 of the 56 items are selected under both the original readout and each variant. Dimension and direction are more stable than the list of top-ranked items.
+
+
+
+Instrument to respondents: agreement with the human composite.
+
+1
+
+The next two subsections report descriptive follow-up analyses (D), added after the registered results had been read. None is preregistered and none enters a registered family. They set the instrument beside the respondents of the Wave 7 file on the strict battery, and every statement is retrospective. Figure 1 gives three Spearman correlations over the 42 countries for each of seven surfaces. They pair the adapter composite with the GPS, the adapter composite with the human composite of the same items, and the human composite with the GPS. The panels have different statistical targets and bootstrap units, so their widths are not comparable.
+
+ 
+
+On trust, the first-cohort adapters track the GPS at 0.744 [0.500 ; 0.865]. They do not detectably reach the human composite, at 0.295 [-0.044 ; 0.547]. All seven adapter-human intervals include zero, which is not evidence that no association exists. The largest point estimate belongs to negative reciprocity, 0.389 [-0.008 ; 0.694], a surface on which the adapters do not track the GPS. The second-cohort adapters give the same picture on trust, with an adapter-human correlation of 0.340 [-0.025 ; 0.586]. Positive reciprocity is the one second-cohort interval that excludes zero, and only just (online supplement).
+
+The link between the GPS and the human composite is itself loose on these items. Its interval excludes zero on four of the seven surfaces. Among them, it is positive for trust at 0.351 [0.088 ; 0.564] and negative for patience Q43 at -0.533 [-0.741 ; -0.266]. We read this column as a reference for scale. It is no upper bound on what an adapter could reach, because it does not bound a scorer that is nonlinear or constant within sign profiles. Nor is it evidence that the anchor limits the instrument. Together, the three panels say three things. The adapters carry the GPS order on trust, and the GPS order is only loosely related to the human composite. The adapters' order of countries does not detectably agree with the human composite on any surface. The exact values for every cell are in the online supplement.
+
+
+
+Instrument to respondents: order versus distance.
+
+1
+
+The correlations above concern the order of countries. A different question is how far the instrument's response distribution lies from the survey's. We measure it by the country-equal mean total variation distance (TVD; lower is closer; D) in four cells. They are the base model and the first-cohort adapters, each with and without the country-named persona prompt.
+
+The base model's mean distance is 0.470. The adapters sit farther from the survey at 0.515, and the persona prompt sits closer at 0.365 (panel B of Figure 1). A cell mean carries no interval, whereas the paired contrasts of panel C each carry one. Relative to the base model, the adapters are farther by 0.045 [0.006 ; 0.093] under profile blocks, and the persona prompt is closer by -0.105 [-0.122 ; -0.086]. Country resampling gives the same readings. By dimension, the adapters are farther than the base model on four of the six dimensions and slightly closer on the other two (point estimates; online supplement). With both interventions the distance is 0.420. Adding the persona prompt to the adapters moves the distance by -0.096 [-0.115 ; -0.078], and adding the adapters to the persona prompt moves it by 0.055 [0.016 ; 0.097]. The interaction contrast is the adapters' effect with the persona prompt minus their effect without it. Under profile blocks it is 0.009 [-0.003 ; 0.022], an interval that includes zero. Therefore, the data show no detectable departure from additivity.
+
+ 
+
+The ordering of the cells by distance does not follow their ordering by trust agreement with the GPS. The persona prompt has the lowest distance and no trust order (Section 1). The adapters have the highest distance and keep the trust order. Adding the persona prompt to the adapters keeps the trust order at 0.725 [0.505 ; 0.820] while the distance falls. The two measures ask different questions, and neither says why the adapters' distributions lie where they do. The instrument carries no information about magnitudes (Section 1), so a distance to the survey's response distributions is not a quantity it was built to reduce.

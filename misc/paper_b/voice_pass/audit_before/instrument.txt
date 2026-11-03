@@ -1,0 +1,47 @@
+
+
+The Instrument.
+
+1
+
+The instrument is the middle link of the chain. It maps declared aggregate preference signs from the anchor into choice policies and reads them on survey items without naming any country. A language model is treated throughout as a conditional distribution over response sequences given a prompt.
+
+
+
+From declared signs to a shared pair bank.
+
+
+
+Let  X  be the GPS coordinates of country  X  on the  X  dimensions trust, risk taking, patience, altruism, positive reciprocity and negative reciprocity. Only the sign profile  X , with  X , enters the construction. A teacher model and a response generator produce a shared bank of scenarios, each with two responses intended to express a higher and a lower level of one dimension  X . For country  X , the chosen and rejected responses on pair  X  are
+ EQN 
+The scenario and response text is identical for every country; only the label changes. No scenario names a country or reuses WVS question wording, and the intended loading of each pair is a generator judgment, not a verified trait manipulation. Two countries with the same sign profile receive identical labels, so the instrument cannot distinguish them, and nothing in the construction carries the magnitude  X . That is the information budget: six bits per country.
+
+
+
+Preference optimization as regularized pairwise choice.
+
+
+
+Each sign profile is fitted with Direct Preference Optimization. Under the Bradley-Terry model, the probability that  X  is chosen over  X  after prompt  X  is  X , with  X  the logistic function and  X  a latent utility index; this is the binary logit of random-utility theory. DPO writes the index as  X  up to a prompt-specific constant that cancels from pairwise differences, and minimizes the negative log likelihood of the labeled pairs,
+ EQN 
+The parameter  X  penalizes departures from the reference policy, which makes the estimator a regularized Bradley-Terry fit. Because the labels are deterministic, the likelihood is a fitting criterion and says nothing about noise in human choices. Each adapter is a low-rank update to a quantized Llama 3.1 8B Instruct base model, trained jointly on all six dimensions for one epoch on 526 of the 658 pairs, with LoRA rank 16 and  X . A joint adapter does not isolate any single dimension; whether the dimensions separate in practice is the subject of the factorial in Section 1.
+
+
+
+Two cohorts and two prompt routes.
+
+
+
+The first cohort has one adapter for each of the 42 countries in the intersection of the GPS and WVS Wave 7, trained on the original scenario bank. These countries realize 26 distinct sign profiles. The second cohort is trained on a second, independently generated bank of 658 pairs under the same sign rule and text restrictions, and it contains one adapter for each of the 64 possible sign profiles, a full  X  factorial in the six sign bits. Because the labels depend on the country only through its sign profile, each country takes its profile's adapter in country-level comparisons; most of the 64 profiles are design cells that no country realizes.
+
+The sign-profile prompt route gives the base model the same six signs in words, with no country name and no adapter. It carries the same declared information through a different channel and is the natural comparison for the trained route. The country-named persona route replaces the neutral opening of the evaluation prompt with "Answer this questionnaire as a typical adult living in" followed by the country's name, and supplies no signs. It changes the information as well as the channel, because the model can draw on whatever it associates with the country name. Naming the population is the comparison a survey researcher would reach first, so we score it on all 42 countries.
+
+
+
+Readout.
+
+
+
+For an item  X  with candidate response codes  X , the instrument computes the teacher-forced log probability of each code after the rendered item prompt and normalizes over the supplied codes,
+ EQN 
+where  X  is the summed token log probability of code  X  for unit  X  (an adapter or a prompted profile) and  X  is the item's recode. The score  X  is the expected recoded response. Apart from the persona route, no evaluation prompt names a country. The prompt template, option order and recode are frozen in a scoring specification whose hash every run must reproduce before a model is loaded. On the original 23-item WVS battery, item scores are averaged into seven surfaces: trust, risk taking, altruism, positive reciprocity, negative reciprocity, and two separate patience items. We call this the strict battery. The normalized code probabilities are a scoring convention, and their dispersion need not match any human population's response distributions.

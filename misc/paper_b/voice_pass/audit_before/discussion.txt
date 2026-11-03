@@ -1,0 +1,51 @@
+
+
+Discussion.
+
+1
+
+The opening question was what a retained benchmark warrants. The answer is graded. It warrants a statement about the benchmark link: the synthetic labels are installed, and on trust the order of countries survives a change of scenario text. It does not carry to the respondent link, where agreement is weak or undetected and the instrument moves away from the survey's answer distributions.
+
+
+
+The conditioning method: what the signs carry..
+
+ The construction makes its information budget explicit, and that makes the results interpretable. The adapters keep the trust order across scenario banks (Section 1). A country name does not recover that order, whereas a prompt that states the six signs does, with a correlation with the GPS on trust of 0.773 [0.584 ; 0.844] against 0.028 [-0.339 ; 0.381] for the named country, and the contrast between the adapters and the sign prompt in the screen is unresolved. What carries the trust order is therefore the declared sign, whichever channel supplies it, and the evidence cannot credit the trained weights over a prompt. The statement concerns trust only. The decomposition describes where trust differs. Every own effect is positive, so the own part of the main-effects prediction restates the correlation between the signs and the GPS on every surface. What differs is how much the other five signs add, which is little on trust, with Var(cross)/Var(full) at 0.147, and most of the variation on the other six, with ratios from 0.830 to 1.049. The decomposition describes behavior and locates nothing inside the network.
+
+Entanglement is the second part of the method's profile. Each sign moves its own surface in the intended direction and also moves other surfaces, one common direction carries about half of the variance across surfaces, and the planned separability check fails on both routes. Prompting with the same signs is more entangled still, and three of its own effects point the wrong way. Training on sign-labeled pairs keeps the direction of each declared input and does not deliver separate dimensions. Entanglement under intervention has been reported for activation steering; the factorial adds a joint measurement for trained adapters and a prompt that carry the same declared information, and makes no claim about the best training recipe.
+
+
+
+The evaluation protocol: what it separates..
+
+ The second-bank check turned four dimensions with a first-cohort signal into one. The screen's permutation test and its bootstrap interval answer different questions, and reporting both made the size of the signal clearer than either would. Coverage-matched comparators showed that the paired contrasts between the adapters and two readers of the questionnaire are unresolved on the few items they share, and the small overlap is part of the finding. The separation of the three links showed that the GPS's own agreement with the human composite is loose on these items, so weak adapter-human agreement cannot be attributed to the instrument alone: it could arise from the instrument, from the mapping between items and the GPS construct, or from limited coherence between the two surveys, and the design cannot separate these. The registered screen and freeze sequence is fixed before the human criterion is read, and the protocol can be applied to another conditioning method, anchor or criterion; the descriptive analyses added afterwards are labelled as such.
+
+
+
+The failure profile: from instrument to respondents..
+
+ The screen asked whether a probe that reads only the instrument picks items whose human country differences run in the assigned direction, and the registered answer is yes, weakly (Section 1). The signal is a small fraction of the two-wave human ceiling and concentrated in risk taking, which the second bank does not support; trust, which the second bank supports, does not stand apart from zero in the screen. No dimension passes both checks, and the adapters' order of countries does not detectably agree with the respondents' composite on any surface (Section 1).
+
+
+
+Order and distribution..
+
+ The two questions separated in the introduction receive different answers (Section 1). The adapters keep the anchor's order of countries on trust and lie farther from the survey's answer distributions than the base model, by 0.045 [0.006 ; 0.093] in total variation distance. A country-named prompt lies closer, by -0.105 [-0.122 ; -0.086], and carries no trust order. If agreement were one quantity, the routes would fall in one ranking, and they fall in two. We offer one reading without testing it: the training signal states which of two responses is preferred and says nothing about how strongly, or about how widely respondents spread across the options. The order of countries is a quantity that signs speak to, whereas a distance to the survey's answer distributions is one they carry no information about. The contrast describes one anchor, one instrument family and one survey, and does not show that the country-named prompt matches respondents. A country name has been found to recover a country ranking in the European Social Survey while supporting no distributional inference. The separation of group-level order from distributional fidelity is established; the present evidence adds a case in which the two cross.
+
+
+
+What a prospective validation would have to establish..
+
+ Whether consulting the instrument helps a researcher before fielding is not shown here, and the retrospective design cannot show it. A prospective validation would need three elements. The probe's selections would be made, and a human-only rule for choosing items declared, before any new items are fielded. The selected items would then have to separate countries in the assigned direction in new data, and to do so better than the human-only rule on matched countries and items. And the dimension on which the signal appears would have to be one that the second bank also supports. A result at that level would license the use; a result at the level reported here does not.
+
+
+
+Limits..
+
+ Five limits apply to every result above. First, the human criterion is retrospective and the only human source; registration and the freeze guard protect against tuning the probe to it, but cannot make it independent of the survey program from which the item pool was drawn. Second, the instrument is built from signs and cannot represent magnitudes or differences among countries that share a sign profile or among people within a country, and country-level agreement does not establish individual-level validity or measurement invariance. Third, every adapter shares one base model, one training recipe and one readout convention, whose code probabilities have a dispersion that need not match human response distributions. Fourth, the per-dimension cells are small and the selected set churns under readout variants. Fifth, the noise checks are narrow: one unseeded retrain is a narrow observed comparison for one unit, and two near-zero refits support no claim across countries.
+
+
+
+Intended use..
+
+ Within those limits, the instrument has a modest and inspectable use. A survey designer can read the dimension and direction it assigns to candidate items as one input beside expert review and human pretesting, keeping in view that no dimension passed both checks. Its value lies in what it makes explicit: the declared moments, the sign rule and the absence of any group name at evaluation are on the record, so a reader can see what information the instrument was given and check where its readings depart from people. It is a complement to fielding and pretesting, and gives no reason to replace them. In the terms of Author, its readings are potentially informative observations that still require a human criterion.

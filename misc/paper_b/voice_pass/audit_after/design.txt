@@ -1,0 +1,131 @@
+
+
+Evaluation Design.
+
+1
+
+The evaluation follows the chain, and each comparison permits one kind of statement. A construction check asks whether the adapters encode what they were trained on (anchor to instrument). A second-bank check asks whether the anchor's order survives a change of scenario text. A factorial asks whether the declared dimensions behave as separate inputs. A held-out screen asks whether the instrument's readings of new items agree with an existing human survey (instrument to respondents). Descriptive analyses added after the registered results had been read place the instrument beside the respondents and beside its own labels. Every statistic carries the label of the surface it was computed on (Table 1), and we never pool statistics from different surfaces.
+
+ 
+
+
+
+Second-bank check.
+
+1
+
+An order tied to one scenario text would say little about the signs. For each surface of the strict battery we compute the Spearman correlation between the adapters' surface composites and the GPS coordinate of the surface's own dimension over the 42 countries. We do this first for the first cohort (S1) and then for the second cohort, with each country assigned its profile's adapter (S2). Intervals come from a profile-block bootstrap that resamples the 26 realized sign profiles. It uses 2000 draws, seed 20261011 and percentile limits. The imprint set is the 4 dimensions whose first-cohort interval excluded zero: trust, risk taking, positive reciprocity and altruism. Patience and negative reciprocity were flat and are reported without interpretation. The rule was fixed before the second cohort was trained: for an imprint dimension whose second-bank interval includes zero, we write no sentence about carry-over to the second bank. We also report the agreement between the two banks over the 26 shared profiles. It measures how much the scenario text changes the instrument and involves no human data.
+
+
+
+The country-named prompt.
+
+1
+
+This route tests whether a country name alone carries the order. We scored the persona route on the strict battery for each of the 42 countries in one run on the frozen stack. We compute the persona-GPS correlation for each surface (P) and one planned contrast, fixed in a design note committed before any persona was scored. That contrast is the first cohort's trust correlation minus the persona route's, recomputed on every draw of the profile-block bootstrap above. All other differences are descriptive.
+
+
+
+The held-out screen.
+
+1
+
+
+
+Item pool..
+
+ The screen tests new items, so its design was fixed before any human value was read. The pool was built from WVS Wave 7 metadata alone: ordinal questions with two to eleven contiguous response codes outside the battery used to develop the adapters. A text review excluded items with non-monotone codes or factual content and repaired wording that did not extract. That leaves 223 items that no adapter was built for (online supplement).
+
+
+
+Probe..
+
+ All 64 second-cohort adapters scored every pool item under the frozen specification. For each item  X , the probe regresses the 64 adapter scores on an intercept, the six sign bits coded  X  and their 15 two-way interactions. That leaves 42 error degrees of freedom. Let  X  be the main-effect  X  statistic of dimension  X . The item's assigned dimension is  X , or none when the largest  X  is below 2.0, and its sign is  X . The primary rule keeps items whose assigned dimension is in the imprint set and whose  X  is at least 2. It keeps at most the top 25 percent of all pool items by  X , which caps the selection at 56 items. The secondary rule keeps every imprint item above the threshold and is a reliability check only. The probe reads model scores only. The permutation null absorbs the rate at which noise items cross the threshold.
+
+
+
+Statistic and criterion..
+
+ For each selected item, the signed item agreement is
+ EQN 
+where  X  is the Spearman correlation over the 42 countries and  X  is the selected set. The term  X  is the survey-weighted Wave 7 mean of item  X  in country  X , with negative codes set to missing. An item-country cell that was never fielded enters as missing and is not imputed. That is,  X  is the mean signed agreement with human country differences. It is positive when those differences run in the direction the instrument assigned, against the GPS coordinate of the assigned dimension.
+
+
+
+Inference..
+
+ Selecting the strongest items could make  X  positive by chance, so the registered test is a permutation null over items. Each draw takes as many items from the pool as were selected, gives them the selected items' dimension and sign pairs in random order, and recomputes  X . We used 10000 draws and seed 20261015. The one-sided  X  is the share of null draws at or above the observed  X . A 95 percent interval for  X  comes from 2000 bootstrap resamples of the 42 countries. The readings were fixed in advance. If  X  is not above the null at one-sided  X , the adapters do not screen better than random assignment. If  X  is above the null but below one third of the human ceiling, a screening signal exists but is weak.
+
+
+
+Human ceiling..
+
+ For each selected item fielded in both WVS waves 6 and 7 we correlate the two waves' country means over the 28 countries with both waves. Averaging over items gives the agreement two human surveys reach on these items. The ratio of  X  to it is a benchmark only.
+
+
+
+Per-dimension readings..
+
+ The registered analysis also reports  X , the mean of  X  over the selected items assigned to dimension  X , with an interval from the same country resamples. These intervals are unadjusted. Therefore, we add exploratory Bonferroni intervals for the four imprint dimensions from the same draws at the 98.75 percent level.
+
+
+
+Comparators..
+
+ A positive  X  could reflect item wording alone. Two comparators therefore read only the questionnaire and saw no model score or human response. The first is a face-valid rule that assigns an item to the one dimension whose construct words its wording contains. The second is a typed decision model (jev-1.13.0) run 5 times, which assigns an item when at least 3 runs agree on dimension and sign (online supplement). The registered primary contrast is coverage-matched:  X  on the items both assign, with an interval from the paired country bootstrap. An interval above zero would mean the adapters find structure the wording does not reveal. One that covers zero was registered as "the adapters match a careful reader", and one below zero would favor the reader. We report the contrast on each route's own items beside it. The preregistration named in advance that both comparators concentrate on trust.
+
+
+
+Readout variants and the prompt route..
+
+ A selection that moved with option order or phrasing would reflect the prompt. The probe was therefore re-estimated on three re-scorings of the pool (options reversed, two prompt paraphrases). The selection was declared dependent on wording if more than half of the selected items changed dimension or sign. The same probe and test were applied to the 64 prompted profiles.
+
+
+
+Registration, blinding and amendments.
+
+1
+
+The screen was registered in a document committed to the project repository and timestamped by a pushed git tag. That happened before any held-out item was scored by an adapter, when no selection existed and no held-out human value had been read. A freeze guard enforced the order of work (a timeline is in the online supplement). We scored the held-out items, ran the probe and froze the hashes of the selection and the item pool. Only then did we join the human data.
+
+Two amendments were made, both before any human held-out value was read. Amendment 1 repaired 12 items whose standalone wording could not be answered as written, under the pool rule and override mechanism already registered. Every route was then re-scored as one run. We disclose that the first probe pass had been computed and read before the repairs were chosen, and that two repaired items (Q153 and Q157) were in its top quartile. The comparators had assigned the pool on the pre-repair wording. Therefore, Amendment 2 removed the repaired items from both comparator routes before any comparator statistic was computed. It affected one item (Q82), which is outside the adapter selection. That decision preceded any human value. The amendment text, written after the primary statistic was read, records it.
+
+The criterion is retrospective. The Wave 7 file is public and existed before the probe, the pool and the adapters. It is the only human source in this study. Registration guards against tuning the probe to the criterion. It cannot make the criterion prospective, so results on surface H are labelled retrospective throughout. The online supplement discloses the provenance gaps, none of which touches a statistic reported here.
+
+
+
+The sign-profile factorial.
+
+1
+
+The factorial asks whether the six declared signs act as separate inputs. The second cohort covers all 64 sign profiles, so the strict-battery composites form a full factorial in six binary factors. For each of the seven surfaces we fit the probe's regression. That is, a main effect is the difference between the mean composites of profiles with the bit set and without it. Because the bits were assigned by design, this is a causal statement about the instrument. It carries no implication about how preferences operate in people. Each bit has an own surface (patience owns two). The analysis plan set one acceptance check, separate from the held-out registration. At least 4 of the six bits must move their own surface more than any other (V5), against a binomial reference with a one-in-seven chance of a hit. Exploratory views divide effects by each surface's standard deviation over the 64 profiles and count the surfaces whose largest mover is their own bit. They also report the first principal component's variance share and the mean absolute correlation between surfaces. The same analyses on the 64 prompted profiles contrast two instruments that carry the same declared information.
+
+
+
+Retraining noise and the near-zero margin.
+
+1
+
+Effects can only be read against the noise of the pipeline itself. We retrained one profile adapter without a fixed seed, which gives a noise floor. A predeclared sensitivity check also removes the training pairs of every dimension whose GPS coordinate lies within 0.10 of zero. It refits two countries (Great Britain and Colombia), each beside a size-matched control. The rule was to report the margin and never to promote it.
+
+
+
+Descriptive follow-up analyses.
+
+1
+
+Four further analyses were added after the registered results had been read. Two of them are agreement in three columns and distance to the survey's response distributions. The other two are a decomposition of the factorial's cross effects and held-out label recovery, both defined with their results. None is preregistered or tests a rule fixed in advance. We label their numbers D and read them as descriptions. Their human input is the Wave 7 file used for the screen, so every comparison with respondents is retrospective.
+
+
+
+Three columns..
+
+ Agreement with the anchor and with people are different facts, so we compute both. For each of the seven surfaces we compute three Spearman correlations over countries. The first is the adapter composite with the GPS coordinate of the surface's own dimension. The second is the adapter composite with the Wave 7 composite of the same items, and the third is that human composite with the GPS. The adapter columns use the first-cohort adapters with the profile-block bootstrap above (the second cohort is in the supplement). The human-GPS interval resamples countries (seed 20260905). The human columns of risk taking cover one country fewer, which has no valid answer to the risk item.
+
+
+
+Distance to the survey distributions..
+
+ Order says nothing about how close the model's answers are to people's. For country  X  and item  X , the total variation distance between the model's option probabilities and the survey-weighted human answer shares is
+ EQN 
+where  X  runs over the answer codes and  X  is the share of valid human answers equal to  X . The headline statistic is the mean over items within a country and then over countries. We score four cells on the same frozen stack (gates in the supplement): the base model and the first-cohort adapters, each with and without the country-named persona prompt. Contrasts are paired differences of country means, each with a profile-block and a country interval (2000 draws each). The interaction contrast is the adapters' effect with the persona prompt minus their effect without it. In other words, a zero interaction means the two interventions add. The human answer shares enter the distances and are not reported.

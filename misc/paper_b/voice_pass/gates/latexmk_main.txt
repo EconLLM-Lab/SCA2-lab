@@ -1,0 +1,386 @@
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 15 June 2025. Version 4.87.
+Force everything to be remade.
+Latexmk: applying rule 'bibtex main'...
+Rule 'bibtex main':  Reasons for rerun
+Category 'other':
+  Rerun of 'bibtex main' forced or previously required:
+    Reason or flag: 'go_mode'
+
+------------
+Run number 1 of rule 'bibtex main'
+------------
+------------
+Running 'bibtex  "main.aux"'
+------------
+This is BibTeX, Version 0.99e (TeX Live 2026/Homebrew)
+The top-level auxiliary file: main.aux
+The style file: chicago.bst
+Database file #1: references.bib
+Warning--no number and no volume in bratt2025
+Warning--page numbers missing in bratt2025
+Warning--no number and no volume in chen2026
+Warning--page numbers missing in chen2026
+Warning--no number and no volume in pokropek2025
+Warning--page numbers missing in pokropek2025
+(There were 6 warnings)
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Category 'other':
+  Rerun of 'pdflatex' forced or previously required:
+    Reason or flag: 'go_mode'
+
+------------
+Run number 1 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -halt-on-error -interaction=nonstopmode -recorder  "main.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Homebrew) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/base/articl
+e.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/base/size12
+.clo))
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/base/fonten
+c.sty)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/base/inpute
+nc.sty)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/geometry/ge
+ometry.sty
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/graphics/ke
+yval.sty)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/iftex/ifv
+tex.sty
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/iftex/ift
+ex.sty)))
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/lm/lmodern.
+sty)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/microtype/m
+icrotype.sty
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/etoolbox/et
+oolbox.sty)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/microtype/m
+icrotype-pdftex.def)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/microtype/m
+icrotype.cfg))
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/amsmath/ams
+math.sty
+For additional information on amsmath, use the `?' option.
+
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/amsmath/ams
+text.sty
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/amsmath/ams
+gen.sty))
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/amsmath/ams
+bsy.sty)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/amsmath/ams
+opn.sty))
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/amsfonts/am
+ssymb.sty
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/amsfonts/am
+sfonts.sty))
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/booktabs/bo
+oktabs.sty)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/tools/tabul
+arx.sty
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/tools/array
+.sty))
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/graphics/gr
+aphicx.sty
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/graphics/gr
+aphics.sty
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/graphics/tr
+ig.sty)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/graphics-cf
+g/graphics.cfg)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/graphics-de
+f/pdftex.def)))
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/xcolor/xcol
+or.sty
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/graphics-cf
+g/color.cfg)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/graphics/ma
+thcolor.ltx))
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/pgf/fronten
+dlayer/tikz.sty
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/pgf/basicla
+yer/pgf.sty
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/pgf/utiliti
+es/pgfrcs.sty
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/utili
+ties/pgfutil-common.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/utili
+ties/pgfutil-latex.def)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/utili
+ties/pgfrcs.code.tex
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/pgf.r
+evision.tex)))
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/pgf/basicla
+yer/pgfcore.sty
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/pgf/systeml
+ayer/pgfsys.sty
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/syste
+mlayer/pgfsys.code.tex
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/utili
+ties/pgfkeys.code.tex
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/utili
+ties/pgfkeyslibraryfiltered.code.tex))
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/syste
+mlayer/pgf.cfg)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/syste
+mlayer/pgfsys-pdftex.def
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/syste
+mlayer/pgfsys-common-pdf.def)))
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/syste
+mlayer/pgfsyssoftpath.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/syste
+mlayer/pgfsysprotocol.code.tex))
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/basic
+layer/pgfcore.code.tex
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/math/
+pgfmath.code.tex
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/math/
+pgfmathutil.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/math/
+pgfmathparser.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/math/
+pgfmathfunctions.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/math/
+pgfmathfunctions.basic.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/math/
+pgfmathfunctions.trigonometric.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/math/
+pgfmathfunctions.random.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/math/
+pgfmathfunctions.comparison.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/math/
+pgfmathfunctions.base.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/math/
+pgfmathfunctions.round.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/math/
+pgfmathfunctions.misc.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/math/
+pgfmathfunctions.integerarithmetics.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/math/
+pgfmathcalc.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/math/
+pgfmathfloat.code.tex))
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/math/
+pgfint.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/basic
+layer/pgfcorepoints.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/basic
+layer/pgfcorepathconstruct.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/basic
+layer/pgfcorepathusage.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/basic
+layer/pgfcorescopes.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/basic
+layer/pgfcoregraphicstate.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/basic
+layer/pgfcoretransformations.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/basic
+layer/pgfcorequick.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/basic
+layer/pgfcoreobjects.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/basic
+layer/pgfcorepathprocessing.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/basic
+layer/pgfcorearrows.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/basic
+layer/pgfcoreshade.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/basic
+layer/pgfcoreimage.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/basic
+layer/pgfcoreexternal.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/basic
+layer/pgfcorelayers.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/basic
+layer/pgfcoretransparency.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/basic
+layer/pgfcorepatterns.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/basic
+layer/pgfcorerdf.code.tex)))
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/modul
+es/pgfmoduleshapes.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/modul
+es/pgfmoduleplot.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/pgf/compati
+bility/pgfcomp-version-0-65.sty)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/pgf/compati
+bility/pgfcomp-version-1-18.sty))
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/pgf/utiliti
+es/pgffor.sty
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/pgf/utiliti
+es/pgfkeys.sty
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/utili
+ties/pgfkeys.code.tex))
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/pgf/math/pg
+fmath.sty
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/math/
+pgfmath.code.tex))
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/utili
+ties/pgffor.code.tex))
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/front
+endlayer/tikz/tikz.code.tex
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/libra
+ries/pgflibraryplothandlers.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/modul
+es/pgfmodulematrix.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/front
+endlayer/tikz/libraries/tikzlibrarytopaths.code.tex)))
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/front
+endlayer/tikz/libraries/tikzlibrarypositioning.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pgf/libra
+ries/pgflibraryarrows.meta.code.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/setspace/se
+tspace.sty)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/natbib/natb
+ib.sty)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/xurl/xurl.s
+ty
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/url/url.sty
+))
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/hyperref/hy
+perref.sty
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/kvsetkeys/k
+vsetkeys.sty)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/kvdefinek
+eys/kvdefinekeys.sty)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pdfescape
+/pdfescape.sty
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/ltxcmds/l
+txcmds.sty)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/pdftexcmd
+s/pdftexcmds.sty
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/infwarerr
+/infwarerr.sty)))
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/hycolor/hyc
+olor.sty)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/hyperref/na
+meref.sty
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/refcount/re
+fcount.sty)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/gettitles
+tring/gettitlestring.sty
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/kvoptions/k
+voptions.sty)))
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/stringenc
+/stringenc.sty)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/hyperref/pd
+1enc.def)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/intcalc/i
+ntcalc.sty)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/hyperref/pu
+enc.def)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/bitset/bi
+tset.sty
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/bigintcal
+c/bigintcalc.sty)))
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/hyperref/hp
+dftex.def
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/rerunfilech
+eck/rerunfilecheck.sty
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/generic/uniquecou
+nter/uniquecounter.sty)))
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/caption/cap
+tion.sty
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/caption/cap
+tion3.sty)) (./macros.tex)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/lm/t1lmr.fd
+)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/l3backend/l
+3backend-pdftex.def) (./main.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/microtype/m
+t-cmr.cfg)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/context/base/mkii
+/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/epstopdf-pk
+g/epstopdf-base.sty
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/latexconfig
+/epstopdf-sys.cfg)) (./main.out) (./main.out)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/lm/ot1lmr.f
+d)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/lm/omllmm.f
+d)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/lm/omslmsy.
+fd)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/lm/omxlmex.
+fd)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/amsfonts/um
+sa.fd)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/microtype/m
+t-msa.cfg)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/amsfonts/um
+sb.fd)
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/microtype/m
+t-msb.cfg) (./abstract.tex) [1{/opt/homebrew/Cellar/texlive/20260301_2/share/te
+xmf-dist/fonts/map/pdftex/updmap/pdftex.map}{/opt/homebrew/Cellar/texlive/20260
+301_2/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] (./introduction.tex
+[2] [3] [4] [5]) (./background.tex [6] [7] [8]) (./instrument.tex [9{/opt/homeb
+rew/Cellar/texlive/20260301_2/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
+}{/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/fonts/enc/dvips/lm/l
+m-rm.enc}{/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/fonts/enc/dv
+ips/lm/lm-mathsy.enc}] [10{/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-
+dist/fonts/enc/dvips/lm/lm-mathex.enc}] [11]) (./design.tex [12] [13] [14]
+[15] [16] [17] [18] [19]) (./results.tex [20] [21] [22] [23] [24] [25 <./figure
+s/fig_factorial_own.pdf>] [26] (./tables/tab_checks.tex) [27] [28 <./figures/fi
+g_screen.pdf>] [29] [30] [31] [32 <./figures/fig_three_links.pdf>] [33])
+(./discussion.tex [34] [35 <./figures/fig_info_vs_route.pdf>] [36] [37]
+[38]) (./conclusion.tex [39] [40]) (./backmatter.tex
+(/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/tex/latex/lm/t1lmtt.f
+d) [41] [42]) (./main.bbl [43] [44] [45] [46]) [47] (./main.aux) )</opt/homebre
+w/Cellar/texlive/20260301_2/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><
+/opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/fonts/type1/public/lm/
+lmbx12.pfb></opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/fonts/type
+1/public/lm/lmbx8.pfb></opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist
+/fonts/type1/public/lm/lmbx9.pfb></opt/homebrew/Cellar/texlive/20260301_2/share
+/texmf-dist/fonts/type1/public/lm/lmex10.pfb></opt/homebrew/Cellar/texlive/2026
+0301_2/share/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></opt/homebrew/Cellar/
+texlive/20260301_2/share/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></opt/home
+brew/Cellar/texlive/20260301_2/share/texmf-dist/fonts/type1/public/lm/lmmi6.pfb
+></opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/fonts/type1/public/l
+m/lmmi7.pfb></opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/fonts/typ
+e1/public/lm/lmmi8.pfb></opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dis
+t/fonts/type1/public/lm/lmmi9.pfb></opt/homebrew/Cellar/texlive/20260301_2/shar
+e/texmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/homebrew/Cellar/texlive/2026
+0301_2/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></opt/homebrew/Cellar/t
+exlive/20260301_2/share/texmf-dist/fonts/type1/public/lm/lmr17.pfb></opt/homebr
+ew/Cellar/texlive/20260301_2/share/texmf-dist/fonts/type1/public/lm/lmr7.pfb></
+opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/fonts/type1/public/lm/l
+mr8.pfb></opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/fonts/type1/p
+ublic/lm/lmri10.pfb></opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/f
+onts/type1/public/lm/lmri12.pfb></opt/homebrew/Cellar/texlive/20260301_2/share/
+texmf-dist/fonts/type1/public/lm/lmri8.pfb></opt/homebrew/Cellar/texlive/202603
+01_2/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/homebrew/Cellar/te
+xlive/20260301_2/share/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></opt/homebre
+w/Cellar/texlive/20260301_2/share/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></
+opt/homebrew/Cellar/texlive/20260301_2/share/texmf-dist/fonts/type1/public/lm/l
+mtt12.pfb>
+Output written on main.pdf (47 pages, 566865 bytes).
+Transcript written on main.log.
+Latexmk: Getting log file 'main.log'
+Latexmk: Examining 'main.fls'
+Latexmk: Examining 'main.log'
+Latexmk: Found input bbl file 'main.bbl'
+Latexmk: Log file says output to 'main.pdf'
+Latexmk: Using bibtex to make bibliography file(s).
+  ===Source file 'main.bbl' for 'pdflatex'
+Latexmk: Found bibliography file(s):
+  ./references.bib
+Latexmk: All targets (main.pdf) are up-to-date
+

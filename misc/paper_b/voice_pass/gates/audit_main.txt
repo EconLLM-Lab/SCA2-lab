@@ -1,0 +1,5 @@
+Statistics: 246 printed, 246 PASS, 0 FAIL.
+Design constants: 0 FAIL.
+Unexplained numerals: 0.
+Distinct claim_ids used: 118.
+RESULT: PASS

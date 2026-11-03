@@ -1,0 +1,1883 @@
+Synthetic Cultural Agents as Measurement
+Instruments: A Preregistered Evaluation from
+Cross-National Anchor to Survey Respondents
+
+Abstract
+Cross-national surveys commit to items before learning whether they separate
+countries; language models offer a cheap first reading. The usual route simulates
+individuals, then averages. We ask the model only about the group. Six declared
+signs of country-level survey moments label synthetic preference pairs that train
+adapters, which read items without naming the country. On trust, they order
+countries as the survey does on two scenario banks. A prompt stating those
+signs does too, so signs carry the order. Against a retrospective criterion, a
+preregistered screen of held-out items gives a weak signal that registered contrasts
+cannot separate from questionnaire readers. Descriptively, the adapters’ order
+does not detectably agree with respondents’, and their response distributions lie
+farther from the survey than the base model’s. That is, the instrument orders
+countries like the survey while answering unlike the people in them. It can
+complement human pretesting. We have not tested pre-piloting.
+
+Keywords: synthetic respondents; large language models; measurement validity;
+survey item screening; preregistration; cross-national measurement.
+
+1
+
+Introduction
+
+Cross-national survey programs commit to their items long before they learn how
+those items behave. A question about trust must be translated, pretested and fielded
+in many countries before a researcher sees whether its country differences follow the
+construct it was written for. Language models offer a cheap first reading of such items
+(Argyle et al., 2023; Horton et al., 2023; Buskirk et al., 2026). A reading that flagged
+in advance which new items separate countries would be useful at exactly this stage.
+We build one such reading and check, link by link, what it does against a benchmark
+survey and against the respondents of a second survey.
+The usual route to a synthetic reading goes through individuals. Silicon sampling
+describes a person in the prompt, collects the model’s answer, and averages many
+such persons into a country figure (Argyle et al., 2023). That route asks a language
+model for two things it does poorly. First, it needs a model of each simulated person.
+The errors of those simulated people are correlated, because one model with one set of
+assumptions produces all of them. Averaging more of them therefore does not cancel
+the bias. Second, it needs a sampling frame: someone must decide which people to
+simulate and in what proportions. The record so far is cautionary. Synthetic responses
+are sensitive to prompt wording, compress the variance of human answers and depend
+on the order and labelling of answer options (Bisbee et al., 2024; Boelaert et al., 2025;
+Wang et al., 2025; Dominguez-Olmedo et al., 2024). Alignment procedures change
+how faithfully models simulate attitudes (Lyman et al., 2025), and methodological
+work in this journal concludes that validation against human data remains essential
+(Kozlowski and Evans, 2025; Broska et al., 2025). Most empirical work asks whether a
+model reproduces answers that people already gave, whether it is prompted (Santurkar
+et al., 2023; Durmus et al., 2024) or fine-tuned on survey response distributions (Cao
+
+2
+
+et al., 2025; Suh et al., 2025). In the fine-tuned case the human survey sits inside the
+training signal. Language-model pretesting has also been studied as flaw detection in
+question wording (Sturgis et al., 2026). Whether a method can say which new items
+will separate countries in an intended direction is a different test. It needs a decision
+rule fixed before the human criterion is read.
+We take a route that never models individuals. Cross-national research usually
+wants a country-level quantity, such as how countries rank on generalized trust. A
+probability survey such as the Global Preferences Survey (GPS; Falk et al., 2018) has
+already aggregated people into such quantities, with sampling weights. We take its
+country-level moments as declared inputs and ask the model only for a group-level
+reading of new item text. In other words, the survey aggregates people, and the
+language model reads items at the level of the group. An order of countries can survive
+this design without a representative respondent. It requires only that the instrument’s
+score rise with the group’s latent preference. The design has a price. A single choice
+policy per country has no spread within the country built in, so it can carry an order
+and has no reason to match the distribution of respondents’ answers. This is the
+representative-agent problem (Kirman, 1992), and it gives a reason to expect that
+order and distribution can come apart. Because country-level agreement says nothing
+about individuals (Robinson, 1950), we chose the country as the unit and keep our
+claims there.
+Modelling the group directly is not new on its own. SubPOP (Suh et al., 2025)
+and Group Preference Optimization (Zhao et al., 2023) predict group-level responses
+without simulating individuals, but they train on human response distributions and
+name the group. What is specific here is the combination of three features, and each
+is a choice a researcher can inspect. First, the inputs are declared aggregate moments.
+The researcher states which six GPS moments enter, and a sign rule turns them into
+3
+
+labels, so nothing about the conditioning hides in a country name or in human answers.
+Second, the training data are synthetic preference pairs. Each country’s sign profile
+labels one shared bank of generated response pairs. Direct Preference Optimization
+(Rafailov et al., 2023), which we read as a regularized Bradley–Terry pairwise choice
+model, then fits one adapter per profile. No human survey answer enters training.
+Therefore, a human survey is a criterion the method has never seen, which is not true
+of models fitted to response distributions. Third, the group is unnamed at evaluation.
+Items are scored with prompts that never mention a country, so whatever the adapters
+carry comes from the conditioning. A country-token channel is closed by construction.
+We evaluate the construction along a chain of three links, treating each as a
+separate measurement question in the way Wallach et al. (2025) propose for generative
+systems. The anchor is the GPS, the instrument is the set of adapters, and the
+respondents are the people who answered Wave 7 of the World Values Survey (WVS).
+Prompted models have been compared with the GPS across countries and found to
+be weak proxies for it (Chen et al., 2026). We built the construction on a purposive
+development panel of 16 countries. We then evaluate it on all 42 countries covered by
+both the GPS and Wave 7, with a second set of adapters for all 64 sign profiles on a
+newly generated scenario bank. At the first link we ask whether training installs the
+synthetic labels, whether the order of countries survives the new bank, and whether a
+prompt does as well. A factorial over the 64 sign profiles asks whether the six declared
+dimensions behave as separate inputs. At the second link we ran a preregistered
+screen of 223 Wave 7 items that no adapter was built for. A probe that reads only
+the adapters’ scores assigns each item a dimension and a direction, and a fixed rule
+selects the strongest assignments before any human value is read. That criterion
+is retrospective, because the survey existed before the probe. Finally, descriptive
+
+4
+
+analyses added after the registered results had been read set the adapters beside the
+respondents’ composites and response distributions.
+What we found on the first link is an order of countries that the declared signs
+carry. Training installs each country’s synthetic labels on scenarios the adapters never
+saw. On trust, the adapters keep the GPS order of countries when the scenario bank
+is replaced, whereas a prompt that names the country does not. A prompt that states
+the same six signs keeps the trust order as well, and the contrast between the adapters
+and that prompt is unresolved. That is, the signs carry the order, and the evidence
+gives the trained weights no separate credit. The order is specific to trust. Each
+declared sign moves its own surface in the intended direction and also moves the
+others, often by more. Trust is the one surface where its own sign dominates.
+Checked against people, the instrument answers unlike them. The retrospective
+screen gives a weak signal. The registered null is rejected, yet the signal is a small
+fraction of what two human survey waves achieve on the same items, and its countrybootstrap interval reaches zero. Registered contrasts do not distinguish the adapters
+from careful readers of the questionnaire on the few items they share, and no dimension
+passes both the second-bank check and the screen. Descriptively, the adapters’ order
+of countries does not detectably agree with the respondents’ composite on any surface.
+Notably, the GPS’s own agreement with those respondents is loose. On response
+distributions the ranking reverses. The adapters sit farther from the survey’s response
+distributions than the base model does, whereas a country-named prompt sits closer
+and has no trust order. The separation of order from distributional fidelity is known
+(da Silva et al., 2026; Wang, 2026). What this case adds is one method, on one anchor,
+that answers the two questions in opposite directions. Put plainly, a model asked
+only about the group can order countries the way a cross-national survey does while
+answering unlike the people in them.
+5
+
+Our contributions are three.
+1. An inspectable group-level conditioning method. Declared aggregate
+moments, synthetic preference pairs and an unnamed group at evaluation define
+a construction whose information budget is on the record. A reader can see
+what the method was given and check where its readings depart from people.
+2. A reusable evaluation protocol. We separate the three links and state
+what a favorable or unfavorable result at each permits. The protocol includes
+a screen of new items whose probe is fixed before any human value is read,
+and a permutation null that absorbs the probe’s selection rate. It adds a
+human ceiling from two survey waves, item-matched comparators that read only
+the questionnaire, and a factorial that tests whether declared dimensions stay
+separate.
+3. A specific empirical failure profile. The method preserves the labels and the
+trust order, entangles the dimensions and screens new items weakly. It moves
+away from respondents’ response distributions while a country-named prompt
+moves toward them.
+What the paper shows is bounded by its design: one anchor, one instrument family
+and one base model. We do not show that trained weights improve on a prompt that
+states the same signs. Nor do we show that the adapters agree with respondents
+beyond the weak retrospective signal, or that screening would change which items
+a researcher fields. Pre-piloting is a prospective use that remains untested. The
+instrument carries no information about magnitudes or about variation among people
+within a country, and its readings concern differences among countries. Within these
+bounds a survey designer can consult it beside human pretesting as a complement,
+never in its place.
+6
+
+Section 2 places the method among current uses of synthetic respondents and in
+the measurement literature on cross-national comparability. Sections 3 and 4 describe
+the construction and the design with its registration, Section 5 reports the results,
+and Section 6 discusses what they permit.
+
+2
+
+Synthetic Respondents as Measurement Instruments
+
+Synthetic respondents and the criterion they need. A language model conditioned on a description of a population can be asked to answer for a sample of its
+members. In silicon sampling the description enters the prompt, and the model’s
+response distribution is read as an estimate of the population’s (Argyle et al., 2023).
+In the homo silicus program the model plays an economic agent in a stylized decision
+problem (Horton et al., 2023). A systematic review maps how fast these uses have
+spread across survey research (Buskirk et al., 2026). Fine-tuning on survey responses
+is one response to the evidence on prompted models (Suh et al., 2025; Cao et al.,
+2025; Krsteski et al., 2026). Two reviews in this journal draw the conclusion that
+matters here: validation against human data remains essential (Kozlowski and Evans,
+2025), and model predictions are best treated as potentially informative observations
+while human subjects remain the gold standard (Broska et al., 2025). In other words,
+both require a criterion against which the synthetic reading can fail. Our evaluation
+supplies one criterion for each link of the chain.
+
+Construct, measure, and anchor. Three objects have to be kept apart. A
+construct is a theoretical preference attribute, such as generalized trust. A measure
+operationalizes it through observed answers, such as the response distribution to a
+7
+
+WVS question about whether most people can be trusted. An anchor is an aggregate
+score that conditions the instrument, such as a country’s GPS trust coordinate. The
+GPS supplies anchors for six economic preferences: trust and risk taking, patience and
+altruism, and positive and negative reciprocity. It measures them with experimentally
+validated modules in a common design across countries (Falk et al., 2018). We treat
+these coordinates as declared aggregate moments: the researcher chooses them, and
+nothing in the construction certifies them as the right moments for a given survey.
+Mapping a WVS item to a GPS dimension makes the item a candidate indicator,
+and an average of such items a proposed composite. Agreement between instrument
+and anchor, between instrument and people, and between anchor and people are
+three different facts. They are the three comparisons that the chain makes. The
+multitrait–multimethod logic of Campbell and Fiske (1959) applies directly. That is,
+the human survey is the other method, and an instrument that agrees with its own
+anchor has passed a construction check without yet meeting a criterion.
+
+Cross-national comparability. We chose the country as the unit of analysis.
+Agreement across countries says nothing on its own about individuals, the problem
+of ecological inference (Robinson, 1950). Country-level agreement does not establish
+that an item measures the same construct for individuals in different countries,
+because loadings and intercepts can differ across groups in ways that leave country
+means comparable for some purposes and misleading for others (Steenkamp and
+Baumgartner, 1998; Davidov et al., 2014). Work in this journal argues that countrylevel composites can suffice for simple group comparisons despite noninvariance, while
+understating uncertainty (Bratt, 2025). A simulation study in the same journal
+finds that unaddressed measurement error and, less so, noninvariance bias multilevel
+
+8
+
+estimates (Pokropek et al., 2025). Every comparison with respondents below concerns
+country rankings, with no claim about invariance or individual-level validity.
+
+What is left open. Prior evaluations score models on questions whose human
+answers are known, or fine-tune them on human survey responses. What remains
+open is what an instrument built from declared aggregate inputs alone preserves of its
+anchor and of the respondents’ answers. We ask that question link by link, with the
+selection rule for new items registered before the human criterion is read.
+
+3
+
+The Instrument
+
+The instrument is the middle link of the chain. It maps declared aggregate preference
+signs from the anchor into choice policies and reads them on survey items without
+naming any country. A language model is treated throughout as a conditional
+distribution over response sequences given a prompt (Ludwig et al., 2026).
+
+3.1
+
+From declared signs to a shared pair bank
+
+Every input to the instrument should be declared and inspectable.
+
+Let zc =
+
+(zc1 , . . . , zcK ) be the GPS coordinates of country c on the K dimensions trust and
+risk taking, patience and altruism, and positive and negative reciprocity. Only the
+sign profile sc , with sck = 1{zck ≥ 0}, enters the construction. A teacher model and
+a response generator produce a shared bank of scenarios, each with two responses
+intended to express a higher and a lower level of one dimension ki . For country c, the
+
+9
+
+chosen and rejected responses on pair i are
+
+(yw,ci , yℓ,ci ) =
+
+
+
+
+
+(yi+ , yi− ),
+
+sc,ki = 1,
+
+
+
+
+(yi− , yi+ ),
+
+sc,ki = 0.
+
+(1)
+
+The scenario and response text is identical for every country. Only the label changes.
+No scenario names a country or reuses WVS question wording. The intended loading
+of each pair is a generator judgment and has not been verified as a trait manipulation.
+Two countries with the same sign profile receive identical labels, so the instrument
+cannot distinguish them, and nothing in the construction carries the magnitude |zck |.
+That is the information budget: six bits per country.
+
+3.2
+
+Preference optimization as regularized pairwise choice
+
+Labeled pairs are choice data, so we fit each sign profile with a pairwise choice model,
+Direct Preference Optimization. Under the Bradley–Terry model, the probability that
+yw is chosen over yℓ after prompt x is σ{r(x, yw )−r(x, yℓ )}, with σ the logistic function
+and r a latent utility index. This is the binary logit of random-utility theory (Bradley
+and Terry, 1952). DPO writes the index as r(x, y) = β log{πθ (y | x)/πref (y | x)} up to
+a prompt-specific constant that cancels from pairwise differences. It then minimizes
+the negative log likelihood of the labeled pairs,
+(
+
+)
+
+X
+1
+πθ (yw | x)
+πθ (yℓ | x)
+Lc (θ) = −
+log σ β log
+− β log
+.
+|Dc | (x,yw ,yℓ )∈Dc
+πref (yw | x)
+πref (yℓ | x)
+
+(2)
+
+The parameter β penalizes departures from the reference policy, which makes the
+estimator a regularized Bradley–Terry fit (Rafailov et al., 2023). Because the labels
+are deterministic, the likelihood is a fitting criterion and says nothing about noise
+
+10
+
+in human choices. Each adapter is a low-rank update to a quantized Llama 3.1 8B
+Instruct base model (Hu et al., 2022; Dettmers et al., 2023), trained jointly on all six
+dimensions for one epoch on 526 of the 658 pairs, with LoRA rank 16 and β = 0.1. A
+joint adapter does not isolate any single dimension. Whether the dimensions separate
+in practice is the subject of the factorial in Section 4.
+
+3.3
+
+Two cohorts and two prompt routes
+
+Two kinds of question need two sets of adapters: how countries compare and how
+each sign acts. The first cohort has one adapter for each of the 42 countries in the
+intersection of the GPS and WVS Wave 7, trained on the original scenario bank.
+These countries realize 26 distinct sign profiles. The second cohort is trained on a
+second, independently generated bank of 658 pairs under the same sign rule and text
+restrictions. It contains one adapter for each of the 64 possible sign profiles, a full 26
+factorial in the six sign bits. The labels depend on the country only through its sign
+profile. Therefore, each country takes its profile’s adapter in country-level comparisons.
+Most of the 64 profiles are design cells that no country realizes.
+Adapters are one channel for the signs, so we also score two prompt routes. The
+sign-profile prompt route gives the base model the same six signs in words, with no
+country name and no adapter. It carries the same declared information through a
+different channel and is the natural comparison for the trained route. The countrynamed persona route replaces the neutral opening of the evaluation prompt with
+“Answer this questionnaire as a typical adult living in” followed by the country’s name,
+and supplies no signs. It changes the information as well as the channel, because
+the model can draw on whatever it associates with the country name. Naming the
+
+11
+
+population is the comparison a survey researcher would reach first, so we score it on
+all 42 countries.
+
+3.4
+
+Readout
+
+Each item needs one number, so we turn the model’s code probabilities into a score.
+For an item q with candidate response codes j, the instrument computes the teacherforced log probability of each code after the rendered item prompt and normalizes
+over the supplied codes,
+exp ℓuqj
+,
+Pbu (j | q) = P
+h exp ℓuqh
+
+yuq =
+
+X
+
+gq (j) Pbu (j | q),
+
+(3)
+
+j
+
+where ℓuqj is the summed token log probability of code j for unit u (an adapter
+or a prompted profile) and gq is the item’s recode. That is, the score yuq is the
+expected recoded response. Apart from the persona route, no evaluation prompt
+names a country. The prompt template, option order and recode are frozen in a
+scoring specification whose hash every run must reproduce before a model is loaded.
+On the original 23-item WVS battery, we average item scores into seven surfaces. Five
+follow trust, risk taking, altruism and the two reciprocities. Patience contributes two
+surfaces, one for each of its two items. We call this the strict battery. The normalized
+code probabilities are a scoring convention, and their dispersion need not match any
+human population’s response distributions.
+
+4
+
+Evaluation Design
+
+The evaluation follows the chain, and each comparison permits one kind of statement.
+A construction check asks whether the adapters encode what they were trained on
+12
+
+(anchor to instrument). A second-bank check asks whether the anchor’s order survives
+a change of scenario text. A factorial asks whether the declared dimensions behave
+as separate inputs. A held-out screen asks whether the instrument’s readings of new
+items agree with an existing human survey (instrument to respondents). Descriptive
+analyses added after the registered results had been read place the instrument beside
+the respondents and beside its own labels. Every statistic carries the label of the
+surface it was computed on (Table 1), and we never pool statistics from different
+surfaces.
+Table 1: Evaluation surfaces. Every statistic belongs to one, and the status column says
+how its analysis was fixed.
+Label
+
+Units, items and comparison
+
+Status
+
+S1
+
+First-cohort country adapters, strict battery:
+adapter–GPS rank correlation (model side only)
+Second-cohort profile adapters: same statistic as S1
+
+Basis of the second-bank
+rule
+Rule fixed before
+training
+Preregistered;
+retrospective criterion
+
+S2
+H
+
+F
+
+R, N
+P
+D
+
+Second-cohort adapters on held-out Wave 7 items:
+signed agreement of selected items with human country
+means
+Second-cohort adapters and prompted profiles: main
+effects of six sign bits on seven surfaces (model side
+only)
+One unseeded retrain; two near-zero refits (model side
+only)
+Country-named prompt on the base model:
+persona–GPS rank correlation (model side only)
+Adapters, factorial and prompt routes: agreement with
+the GPS and the Wave 7 composite, distance to survey
+distributions, decomposition of main effects, label
+recovery
+
+13
+
+V5 planned; rest
+exploratory
+Predeclared checks
+One contrast planned;
+rest descriptive
+Descriptive, not
+preregistered
+
+4.1
+
+Second-bank check
+
+An order tied to one scenario text would say little about the signs. For each surface
+of the strict battery we compute the Spearman correlation between the adapters’
+surface composites and the GPS coordinate of the surface’s own dimension over
+the 42 countries. We do this first for the first cohort (S1) and then for the second
+cohort, with each country assigned its profile’s adapter (S2). Intervals come from
+a profile-block bootstrap that resamples the 26 realized sign profiles. It uses 2,000
+draws, seed 20261011 and percentile limits. The imprint set is the 4 dimensions whose
+first-cohort interval excluded zero: trust, risk taking, positive reciprocity and altruism.
+Patience and negative reciprocity were flat and are reported without interpretation.
+The rule was fixed before the second cohort was trained: for an imprint dimension
+whose second-bank interval includes zero, we write no sentence about carry-over to
+the second bank. We also report the agreement between the two banks over the 26
+shared profiles. It measures how much the scenario text changes the instrument and
+involves no human data.
+
+4.2
+
+The country-named prompt
+
+This route tests whether a country name alone carries the order. We scored the
+persona route on the strict battery for each of the 42 countries in one run on the frozen
+stack. We compute the persona–GPS correlation for each surface (P) and one planned
+contrast, fixed in a design note committed before any persona was scored. That
+contrast is the first cohort’s trust correlation minus the persona route’s, recomputed
+on every draw of the profile-block bootstrap above. All other differences are descriptive.
+
+14
+
+4.3
+
+The held-out screen
+
+Item pool. The screen tests new items, so its design was fixed before any human
+value was read. The pool was built from WVS Wave 7 metadata alone: ordinal
+questions with two to eleven contiguous response codes outside the battery used to
+develop the adapters. A text review excluded items with non-monotone codes or
+factual content and repaired wording that did not extract. That leaves 223 items that
+no adapter was built for (online supplement).
+
+Probe. All 64 second-cohort adapters scored every pool item under the frozen
+specification. For each item i, the probe regresses the 64 adapter scores on an
+intercept, the six sign bits coded ±0.5 and their 15 two-way interactions. That leaves
+42 error degrees of freedom. Let td be the main-effect t statistic of dimension d.
+The item’s assigned dimension is di = arg maxd |td |, or none when the largest |td | is
+below 2.0, and its sign is si = sign(bdi ). The primary rule keeps items whose assigned
+dimension is in the imprint set and whose |t| is at least 2. It keeps at most the top 25
+percent of all pool items by |t|, which caps the selection at 56 items. The secondary
+rule keeps every imprint item above the threshold and is a reliability check only. The
+probe reads model scores only. The permutation null absorbs the rate at which noise
+items cross the threshold.
+
+Statistic and criterion. For each selected item, the signed item agreement is
+
+
+
+
+ai = si · ρ h̄ci , zc,di ,
+
+A=
+
+1 X
+ai ,
+|S| i∈S
+
+(4)
+
+where ρ is the Spearman correlation over the 42 countries and S is the selected set.
+The term h̄ci is the survey-weighted Wave 7 mean of item i in country c, with negative
+
+15
+
+codes set to missing. An item–country cell that was never fielded enters as missing
+and is not imputed. That is, A is the mean signed agreement with human country
+differences. It is positive when those differences run in the direction the instrument
+assigned, against the GPS coordinate of the assigned dimension.
+
+Inference. Selecting the strongest items could make A positive by chance, so the
+registered test is a permutation null over items. Each draw takes as many items from
+the pool as were selected, gives them the selected items’ dimension and sign pairs in
+random order, and recomputes A. We used 10,000 draws and seed 20261015. The
+one-sided p is the share of null draws at or above the observed A. A 95 percent interval
+for A comes from 2,000 bootstrap resamples of the 42 countries. The readings were
+fixed in advance. If A is not above the null at one-sided α = 0.05, the adapters do not
+screen better than random assignment. If A is above the null but below one third of
+the human ceiling, a screening signal exists but is weak.
+
+Human ceiling. For each selected item fielded in both WVS waves 6 and 7 we
+correlate the two waves’ country means over the 28 countries with both waves (World
+Values Survey Association, 2022). Averaging over items gives the agreement two
+human surveys reach on these items. The ratio of A to it is a benchmark only.
+
+Per-dimension readings. The registered analysis also reports Ad , the mean of
+ai over the selected items assigned to dimension d, with an interval from the same
+country resamples. These intervals are unadjusted. Therefore, we add exploratory
+Bonferroni intervals for the four imprint dimensions from the same draws at the 98.75
+percent level.
+
+16
+
+Comparators. A positive A could reflect item wording alone. Two comparators
+therefore read only the questionnaire and saw no model score or human response. The
+first is a face-valid rule that assigns an item to the one dimension whose construct
+words its wording contains. The second is a typed decision model (jev-1.13.0) run
+5 times, which assigns an item when at least 3 runs agree on dimension and sign
+(online supplement). The registered primary contrast is coverage-matched: Dcommon =
+Aadapter − Acomparator on the items both assign, with an interval from the paired country
+bootstrap. An interval above zero would mean the adapters find structure the wording
+does not reveal. One that covers zero was registered as “the adapters match a careful
+reader”, and one below zero would favor the reader. We report the contrast on
+each route’s own items beside it. The preregistration named in advance that both
+comparators concentrate on trust.
+
+Readout variants and the prompt route. A selection that moved with option
+order or phrasing would reflect the prompt. The probe was therefore re-estimated
+on three re-scorings of the pool (options reversed, two prompt paraphrases). The
+selection was declared dependent on wording if more than half of the selected items
+changed dimension or sign. The same probe and test were applied to the 64 prompted
+profiles.
+
+4.4
+
+Registration, blinding and amendments
+
+The screen was registered in a document committed to the project repository and
+timestamped by a pushed git tag. That happened before any held-out item was scored
+by an adapter, when no selection existed and no held-out human value had been read.
+A freeze guard enforced the order of work (a timeline is in the online supplement).
+
+17
+
+We scored the held-out items, ran the probe and froze the hashes of the selection and
+the item pool. Only then did we join the human data.
+Two amendments were made, both before any human held-out value was read.
+Amendment 1 repaired 12 items whose standalone wording could not be answered
+as written, under the pool rule and override mechanism already registered. Every
+route was then re-scored as one run. We disclose that the first probe pass had been
+computed and read before the repairs were chosen, and that two repaired items (Q153
+and Q157) were in its top quartile. The comparators had assigned the pool on the
+pre-repair wording. Therefore, Amendment 2 removed the repaired items from both
+comparator routes before any comparator statistic was computed. It affected one item
+(Q82), which is outside the adapter selection. That decision preceded any human
+value. The amendment text, written after the primary statistic was read, records it.
+The criterion is retrospective. The Wave 7 file is public and existed before
+the probe, the pool and the adapters. It is the only human source in this study.
+Registration guards against tuning the probe to the criterion. It cannot make the
+criterion prospective, so results on surface H are labelled retrospective throughout.
+The online supplement discloses the provenance gaps, none of which touches a statistic
+reported here.
+
+4.5
+
+The sign-profile factorial
+
+The factorial asks whether the six declared signs act as separate inputs. The second
+cohort covers all 64 sign profiles, so the strict-battery composites form a full factorial
+in six binary factors. For each of the seven surfaces we fit the probe’s regression. That
+is, a main effect is the difference between the mean composites of profiles with the bit
+set and without it. Because the bits were assigned by design, this is a causal statement
+
+18
+
+about the instrument. It carries no implication about how preferences operate in
+people. Each bit has an own surface (patience owns two). The analysis plan set one
+acceptance check, separate from the held-out registration. At least 4 of the six bits
+must move their own surface more than any other (V5), against a binomial reference
+with a one-in-seven chance of a hit. Exploratory views divide effects by each surface’s
+standard deviation over the 64 profiles and count the surfaces whose largest mover is
+their own bit. They also report the first principal component’s variance share and the
+mean absolute correlation between surfaces. The same analyses on the 64 prompted
+profiles contrast two instruments that carry the same declared information.
+
+4.6
+
+Retraining noise and the near-zero margin
+
+Effects can only be read against the noise of the pipeline itself. We retrained one
+profile adapter without a fixed seed, which gives a noise floor. A predeclared sensitivity
+check also removes the training pairs of every dimension whose GPS coordinate lies
+within 0.10 of zero. It refits two countries (Great Britain and Colombia), each beside
+a size-matched control. The rule was to report the margin and never to promote it.
+
+4.7
+
+Descriptive follow-up analyses
+
+Four further analyses were added after the registered results had been read. Two of
+them are agreement in three columns and distance to the survey’s response distributions.
+The other two are a decomposition of the factorial’s cross effects and held-out label
+recovery, both defined with their results. None is preregistered or tests a rule fixed
+in advance. We label their numbers D and read them as descriptions. Their human
+input is the Wave 7 file used for the screen, so every comparison with respondents is
+retrospective.
+
+19
+
+Three columns. Agreement with the anchor and with people are different facts,
+so we compute both. For each of the seven surfaces we compute three Spearman
+correlations over countries. The first is the adapter composite with the GPS coordinate
+of the surface’s own dimension. The second is the adapter composite with the Wave 7
+composite of the same items, and the third is that human composite with the GPS.
+The adapter columns use the first-cohort adapters with the profile-block bootstrap
+above (the second cohort is in the supplement). The human–GPS interval resamples
+countries (seed 20260905). The human columns of risk taking cover one country fewer,
+which has no valid answer to the risk item.
+
+Distance to the survey distributions. Order says nothing about how close the
+model’s answers are to people’s. For country c and item q, the total variation distance
+between the model’s option probabilities and the survey-weighted human answer
+shares is
+TVDcq = 21
+
+X
+
+Pbc (j | xq ) − PcH (j | q) ,
+
+j
+
+where j runs over the answer codes and PcH is the share of valid human answers equal
+to j. The headline statistic is the mean over items within a country and then over
+countries. We score four cells on the same frozen stack (gates in the supplement): the
+base model and the first-cohort adapters, each with and without the country-named
+persona prompt. Contrasts are paired differences of country means, each with a
+profile-block and a country interval (2,000 draws each). The interaction contrast is
+the adapters’ effect with the persona prompt minus their effect without it. In other
+words, a zero interaction means the two interventions add. The human answer shares
+enter the distances and are not reported.
+
+20
+
+5
+
+Results
+
+We report the results along the chain, and each statistic belongs to one surface of
+Table 1. Sections 5.1 to 5.3 concern the link from anchor to instrument. They ask
+what training installs, which order of countries survives a new scenario bank and what
+carries it, and whether the declared dimensions stay separate. Sections 5.4 to 5.7
+concern the link from instrument to respondents. They cover the preregistered screen
+and its comparators, agreement with the respondents’ composites, and distance to their
+response distributions. Everything computed against the Wave 7 file is retrospective.
+Four figures carry the evidence beside the text that reads them. Exact values are in
+the text, Table 2 and the online supplement.
+
+5.1
+
+Anchor to instrument: what training installs
+
+Every training pair of a country carries a label. The chosen completion is the one
+that goes with the sign of the country’s GPS coordinate on the pair’s own dimension.
+The first question is whether that installation carries over to pairs the adapters never
+saw. This is a construction check on the synthetic labels (descriptive, no human
+data). We split the training pairs once into a training part and a held-out part that
+the adapters never saw. For each of the 42 first-cohort adapters, the margin is the
+difference between the log probability of the chosen and of the rejected completion.
+We scored it under the adapter and under the base model in a further run on the
+frozen stack (gates in the online supplement). Recovery is the share of held-out pairs
+on which the adapter’s margin exceeds the base model’s. Accuracy is the share on
+which the adapter prefers its own chosen completion outright, and base accuracy is the
+same share for the base model. We report country-equal means with a profile-block
+bootstrap.
+21
+
+Recovery is 0.940 [0.926, 0.952] and accuracy is 0.816 [0.771, 0.856]. The base
+model’s accuracy is 0.489 [0.471, 0.506]. That interval includes one half, so the base
+model shows no detectable preference for the chosen completions before training. The
+mean margin shift is 40.3 [28.2, 54.1] nats. Training installs each country’s synthetic
+labels on scenarios the adapter never saw, which is construction fidelity. It says
+nothing about whether the labels order countries like the GPS, and nothing about
+respondents. Notably, the distance results below show that the same adapters lie
+farther from the survey’s response distributions than the base model does.
+
+5.2
+
+Anchor to instrument: the trust order and what carries
+it
+
+The first cohort encodes four of the six declared signs on the strict battery (S1). Over
+the 42 countries, the adapter–GPS Spearman correlation is 0.744 [0.500, 0.865] for
+trust and 0.435 [0.085, 0.686] for risk taking. It is 0.488 [0.120, 0.695] for positive
+reciprocity and 0.406 [0.020, 0.676] for altruism. These four form the imprint set that
+the screen later uses.
+The second cohort tests whether the order survives a change of scenario text (S2).
+Trust keeps its agreement with the GPS, at 0.803 [0.615, 0.876]. The other three
+imprint dimensions keep positive point estimates, but their intervals now include zero
+(Table 2). Therefore, 1 of the 4 imprint dimensions passes the second-bank check
+and 3 do not. Under the rule fixed before the second cohort was trained, we write
+no sentence about the other three carrying over. Trust is the dimension on which
+retention of the anchor’s order is replicated across scenario banks. The banks also
+agree profile by profile. Over the 26 shared profiles, the rank correlation between
+first-bank and second-bank trust composites is 0.907 [0.774, 0.957]. Risk taking is
+
+22
+
+the least stable surface, at 0.544 [0.187, 0.772], which fits its loss on the second bank
+(the online supplement gives every surface). This agreement measures how much the
+scenario text changes the instrument and says nothing about people.
+What carries the trust order? The comparison a survey researcher would reach
+for first is a prompt that names the population. It does not reproduce the order
+(P): the persona–GPS correlation over the 42 countries is 0.028 [−0.339, 0.381]. The
+planned contrast with the first cohort is 0.716 [0.191, 1.154], and the reading is the
+same under a country bootstrap. A prompt that states the same six signs in words,
+with no adapter and no country name, tracks trust as closely as the adapters do. It
+reaches 0.773 [0.584, 0.844] (panel A of Figure 4, which sets all routes side by side).
+That is, on trust what separates the routes is whether the declared sign is supplied,
+whichever channel carries it. The contrast sets declared signs against a country name
+and says nothing about trained weights against prompting. On the other surfaces the
+persona route’s intervals include zero, except for patience, which it orders positively
+on one item and negatively on the other (online supplement).
+
+5.3
+
+Inside the instrument: the sign-profile factorial
+
+The factorial asks whether the six declared signs behave as separate inputs (F). On the
+trained route, every sign bit moves its own surface in the intended direction (panel A
+of Figure 1; the online supplement gives each effect with its t statistic). All seven own
+effects are positive, from 0.364 for trust (t = 16.74) to 0.124 for positive reciprocity
+(t = 3.02), and 0 of 7 point the wrong way.
+The planned separability check fails. Only 2 of the 6 bits move their own surface
+more than any other surface, where at least 4 were required (binomial p = 0.207).
+They are the bits for altruism and negative reciprocity. Scale-free views agree (online
+
+23
+
+supplement). Each bit moves its own surface and also moves others, often by more.
+The risk-taking bit moves the altruism surface by 0.983, against the altruism bit’s own
+effect of 0.242. The trust bit is the largest mover on 3 of the 7 surfaces. One common
+direction carries 51.3% of the variance of the seven standardized surfaces, and the
+mean absolute correlation between surfaces is 0.395. In other words, each sign keeps
+its intended direction on its own surface, while the size of its effects spreads across
+the others.
+The prompted route fails the check by the same count, 2 of 6 (binomial p = 0.207),
+so V5 does not separate the routes. What separates them is the common direction
+and the sign of the own effects. Under prompting the first principal component carries
+83.5% of the variance, the mean absolute correlation between surfaces is 0.807, and
+the trust bit is the largest mover on all 7 surfaces. Three prompted own effects point
+against the intended direction. Two are risk taking at −0.457 (t = −22.31) and
+patience Q43 at −0.069 (t = −19.75). The third, negative reciprocity at −0.023, is
+not distinguishable from zero at t = −1.80. These are behavioral cross effects of the
+instrument. The contrast concerns entanglement and the direction of own effects and
+is silent on screening accuracy, where the difference between routes is unresolved.
+We next ask why the trust order survives when the other surfaces lose theirs.
+We split the second-cohort adapters’ main effects into two parts: the effect of each
+surface’s own bit and the summed effect of the other five. We evaluate each part at
+the sign profile of each of the 42 countries and correlate it with the GPS coordinate of
+the surface’s own dimension (D; the online supplement gives every surface). This is a
+behavioral decomposition that uses model quantities and published GPS values only.
+It says nothing about what happens inside the network. The own-bit part orders the
+countries like the GPS on all seven surfaces, with correlations from 0.817 to 0.866.
+That ordering is mechanical. For a positive own effect, as all seven are, the own part
+24
+
+A. Own (diagonal) effect of each sign bit on its own response surface
+only the 7 own effects are banked, not the full 7×6 cross-effect matrix; no uncertainty interval is banked
+raw composite units; each row has its own scale, so compare trained with prompt within a row, not across rows
+
+Trust
+−2.0
+
+0.0
+
+2.0
+
+0.0
+
+1.0
+
+0.00
+
+0.50
+
+Negative reciprocity
+−1.0
+
+Altruism
+−0.50
+
+Patience (Q50)
+−0.50
+
+0.00
+
+0.50
+
+0.00
+
+0.50
+
+0.00
+
+0.10
+
+Risk taking
+−0.50
+
+Patience (Q43)
+−0.10
+
+Positive reciprocity
+−0.20
+
+0.00
+
+trained
+
+prompt
+
+0.364
+
+1.780
+
+0.625
+
+−0.023
+
+0.242
+
+0.364
+
+0.133
+
+0.421
+
+0.140
+
+−0.457
+
+0.049
+
+−0.069
+
+0.124
+
+0.103
+
+0.20
+
+shaded half: against the intended direction of the bit
+
+B. Entanglement summary
+counts and shares as banked; each row has its own scale; no interval banked
+
+Bits dominant on their own surface (V5, of 6)
+0
+
+2
+
+4
+
+trained
+
+prompt
+
+2
+
+2
+
+0
+
+3
+
+3
+
+7
+
+0.513
+
+0.835
+
+0.395
+
+0.807
+
+6
+
+Own effects against intended direction (of 7)
+0
+
+3
+
+7
+
+0
+
+3
+
+7
+
+Surfaces whose largest mover is the trust bit (of 7)
+
+Variance on first principal component
+0
+
+0.5
+
+1
+
+0
+
+0.5
+
+1
+
+Mean absolute correlation between surfaces
+Trained: second-bank adapters; prompt: sign-profile prompt on the base model; 64
+sign profiles, strict battery, model side only. Descriptive. Bit-surface effects are
+changes in model response distributions, not statements about internal mechanism.
+
+Figure 1: Own effects of the sign bits in the sixty-four-profile factorial (surface F; model
+side only). (A) For each of seven strict-battery surfaces, the main effect of the surface’s
+own sign bit, for the trained second-cohort adapters (circles) and the sign-profile prompt
+(squares). All 7 trained own point estimates have the intended sign, and 3 prompted ones
+do not. (B) Counts and shares that summarize entanglement. V5 was a planned check; the
+other rows are exploratory.
+
+25
+
+is proportional to the sign of the GPS coordinate. It therefore restates the correlation
+between signs and GPS and is no separate test of learning. The full prediction adds
+the cross bits. It keeps the GPS order on trust, at 0.834, and loses most of it elsewhere.
+On the other surfaces its correlations run from −0.020 for patience Q43 to 0.422 for
+altruism. The cross part carries little of the full prediction’s variation on trust and
+most of it elsewhere. Var(cross)/Var(full) is 0.147 on trust and runs from 0.830 to
+1.049 on the other six. This is a ratio of variances and no percentage of variance
+explained. It exceeds one on patience Q43 because the own and cross parts covary
+negatively. The comparison sets trust against six surfaces, so it is no graded relation
+and we claim no dose–response. No bank label depends on a second dimension. In
+both banks all 27,636 country-pair training rows follow the sign of the pair’s own
+dimension, with 0 mismatches in the first bank and 0 in the second. Therefore, the
+labels do not carry the cross talk. We claim no cause of the loss, which would need
+component-level analysis and interventions.
+Retraining noise is small beside these effects: an unseeded retrain of one profile
+moves every strict surface by at most 0.112 of a standard deviation across profiles (R;
+online supplement). This is a narrow observed comparison of one retrained unit with
+its original. We did not measure variation across units.1
+
+5.4
+
+Instrument to respondents: the retrospective screen
+
+Retrospectively, the screen rejects its registered null (H). The probe selected 56 of
+the 223 pool items under the primary rule. Their mean signed agreement with the
+Wave 7 country differences is A = 0.061 (Figure 2, panel A), with a country-bootstrap
+interval of [−0.007, 0.126]. The permutation null reassigns the same dimension and
+1
+
+The near-zero filter (N) is not promoted under the predeclared rule, and two refits support no
+claim of a reversal across countries. The online supplement gives the margin in full.
+
+26
+
+sign pairs to items drawn at random from the pool. Its distribution has mean 0.012
+and ninety-fifth percentile 0.046, and the one-sided p is 0.010 (panel B).
+By the registered reading, the signal is weak. Two WVS waves agree with each
+other on the selected items fielded in both waves with a mean Spearman correlation
+of 0.746 (median 0.767, 34 items). The screen’s A is 8.1% of that ceiling, well below
+the registered bar of one third, which would be 0.249. The interval reaches zero while
+the permutation test rejects the null, because the two answer different questions. The
+test asks whether the assignments beat random assignments of the same pairs to
+items from the same pool. The interval asks how much A varies across samples of
+countries. The direction of the finding is clearer than its size. The registered reliability
+checks point the same way. The secondary rule gives A = 0.070 over 185 items with
+a one-sided permutation p < 0.001, and dropping one country at a time moves the
+primary A only between 0.051 and 0.072.
+The per-dimension readings show where the signal sits (Table 2). Under the
+primary rule, only the items assigned to risk taking have an interval above zero. Their
+Ad = 0.158 [0.015, 0.290] on 13 items, of which 92.3% agree in sign. The intervals for
+trust and altruism include zero. The items assigned to positive reciprocity point the
+wrong way: their point estimate is negative, and only 18.2% of the 11 items agree in
+sign. Under the exploratory Bonferroni adjustment for four dimensions, the interval
+for risk taking becomes [−0.026, 0.326] and includes zero.2
+The two checks disagree by dimension. Trust survives the second bank, and its
+screen interval includes zero. Risk taking is the one dimension whose screen interval
+excludes zero before adjustment, and it is one of the three that lose their interval on
+2
+
+The probe’s per-dimension permutation p values were not registered. For altruism under the
+primary rule they point the other way from the registered interval, so we report the registered
+intervals only.
+
+27
+
+A. Size of A
+
+B. A against its null
+
+95% country-bootstrap interval
+
+one-sided permutation p; no interval
+
+Trained adapters
+p =0.0097
+
+56 items
+0.061 [−0.007, 0.126]
+Sign-profile prompt
+
+p =0.5085
+
+56 items
+0.028 [−0.109, 0.158]
+−0.1
+
+0.0
+
+0.1
+
+0.2
+
+0.3
+
+−0.1
+
+registered bar: one third of the wave 6–7 ceiling
+(a reference value; no interval banked)
+bar =0.249
+
+0.0
+
+0.1
+
+0.2
+
+0.3
+
+null 95th percentile
+null mean (adapters only)
+
+C. Direct contrasts on the A scale
+95% paired country bootstrap interval
+Adapters minus sign-profile prompt
+own selected items
+
+n =56
+
+0.033 [−0.083, 0.143]
+
+items both select
+
+n =16
+
+0.004 [−0.065, 0.075]
+
+Adapters minus face-valid reader
+own selected items
+
+n =25
+
+−0.034 [−0.242, 0.169]
+
+items both select
+
+n =5
+
+0.020 [−0.181, 0.215]
+
+Adapters minus typed decision model
+own selected items
+
+n =40
+
+−0.067 [−0.237, 0.103]
+
+items both select
+
+n =9
+
+−0.002 [−0.064, 0.061]
+−0.2
+
+−0.1
+
+0.0
+
+0.1
+
+0.2
+
+Retrospective screen (WVS Wave 7); pre-piloting untested. An interval that covers
+zero is not evidence of equivalence; the coverage-matched readers have only 5 and 9
+common items.
+The interval (A, C) and the permutation p (B) answer different questions: sampling
+variation across countries versus rank among random item–sign assignments.
+
+Figure 2: The retrospective held-out screen (surface H; preregistered, retrospective criterion).
+A is the mean signed agreement, over the selected items, between the direction the probe
+assigned to an item and the WVS Wave 7 country differences on that item. (A) A for the
+56 items the adapters selected and for the sign-profile prompt’s own selection, with 95%
+country-bootstrap intervals over 42 countries; the dashed line is the registered bar of one
+third of the two-wave human ceiling, a reference value with no interval. (B) The same
+A against its permutation null: the bar is the null’s ninety-fifth percentile, the cross its
+mean (adapters only; none is banked for the prompt), and the one-sided p is printed. (C)
+Paired contrasts, adapters minus each comparator, on each route’s own items and on items
+both select (n printed), with 95% paired country-bootstrap intervals; the registered primary
+contrasts are those with questionnaire readers on shared items. Interval and permutation p
+answer different questions, and an interval covering zero is not evidence of equivalence.
+
+28
+
+Table 2: The second-bank check and the retrospective screen, by imprint dimension. The
+two checks are reported side by side and never averaged.
+S2: second bank
+
+H: primary rule
+
+Dimension
+
+ρ [95% interval]
+
+Ad [95%
+interval], items
+
+Trust
+
+0.803
+[0.615, 0.876]
+
+Risk taking
+
+0.210
+[−0.199, 0.584]
+
+Positive
+reciprocity
+
+0.366
+[−0.068, 0.652]
+
+Altruism
+
+0.364
+[−0.057, 0.653]
+
+0.062
+[−0.047, 0.173],
+12
+0.158
+[0.015, 0.290],
+13
+−0.071
+[−0.281, 0.154],
+11
+0.069
+[−0.036, 0.177],
+20
+
+H: primary rule,
+Bonferroni
+Ad [adjusted
+interval]
+
+H: secondary
+rule
+Ad [95%
+interval], items
+
+[−0.088, 0.199]
+
+0.092
+[−0.019, 0.199],
+44
+0.143
+[0.045, 0.229],
+50
+−0.049
+[−0.198, 0.117],
+22
+0.040
+[−0.038, 0.117],
+69
+
+[−0.026, 0.326]
+
+[−0.332, 0.205]
+
+[−0.058, 0.198]
+
+Note: S2 is the Spearman correlation between second-bank adapter composites and the GPS
+coordinate over 42 countries, with a profile-block bootstrap (2,000 draws, seed 20261011); model side
+only. H is the retrospective screen against WVS Wave 7 country means: Ad is the mean signed item
+agreement over the selected items assigned to the dimension, with the registered country bootstrap
+(2,000 resamples, seed 20261015). The registered intervals are unadjusted; the Bonferroni intervals
+over the 4 imprint dimensions are exploratory and read off the same draws. The secondary rule is a
+registered reliability check. No dimension has an interval above zero on both S2 and H.
+
+29
+
+the second bank. No dimension passes both registered checks, and the per-dimension
+cells are small.
+
+5.5
+
+Instrument to respondents: questionnaire readers and
+the prompt route
+
+The registered contrasts do not distinguish the adapters from a careful reader of the
+questionnaire (Figure 2, panel C; the online supplement tabulates every contrast).
+Every interval covers zero, which the preregistration reads as “the adapters match a
+careful reader”. That reading rests on few items. The coverage-matched contrasts use
+the 5 items that the adapters and the face-valid rule both assign and the 9 items they
+share with the typed decision model. The routes agree on dimension and sign for 1
+and 7 of them. An interval that covers zero on so few items is consistent with a match
+and does not establish one. Both readers concentrate on trust, where their own-item
+A exceeds the 0.062 of the adapters’ own trust items, but their per-dimension cells
+are too small to be informative.
+Prompting the base model with the same six signs does not pass the registered
+null. The same probe applied to the 64 prompted profiles gives A = 0.028 [−0.109,
+0.158] with a one-sided permutation p of 0.509, and it assigns its selected items to a
+single dimension, trust. The adapter route passes the null and the prompt route does
+not, but the direct difference between them is unresolved. Adapter minus prompt
+is 0.033 on each route’s own items and 0.004 on the 16 items both select, and both
+intervals cover zero. The two routes agree on dimension and sign for 6 of those shared
+items. We therefore cannot credit the trained weights over the prompt on the screen.
+Item-level assignment is stable under option order and paraphrase, whereas membership in the particular selected set churns. The registered statistic is the number of
+
+30
+
+selected items whose dimension and sign are unchanged. It is 39 of 56 with reversed
+options, 39 with the first paraphrase and 30 with the second. No variant changes more
+than half, so the registered condition for wording dependence is not met, although the
+second paraphrase comes close. Membership is another matter: the primary rule is a
+top-quartile cut on |t|, and only 18, 29 and 16 of the 56 items are selected under both
+the original readout and each variant. Dimension and direction are more stable than
+the list of top-ranked items.
+
+5.6
+
+Instrument to respondents: agreement with the human
+composite
+
+The next two subsections report descriptive follow-up analyses (D), added after the
+registered results had been read. None is preregistered and none enters a registered
+family. They set the instrument beside the respondents of the Wave 7 file on the
+strict battery, and every statement is retrospective. Figure 3 gives three Spearman
+correlations over the 42 countries for each of seven surfaces. They pair the adapter
+composite with the GPS, the adapter composite with the human composite of the same
+items, and the human composite with the GPS. The panels have different statistical
+targets and bootstrap units, so their widths are not comparable.
+On trust, the first-cohort adapters track the GPS at 0.744 [0.500, 0.865]. They
+do not detectably reach the human composite, at 0.295 [−0.044, 0.547]. All seven
+adapter–human intervals include zero, which is not evidence that no association exists.
+The largest point estimate belongs to negative reciprocity, 0.389 [−0.008, 0.694], a
+surface on which the adapters do not track the GPS. The second-cohort adapters give
+the same picture on trust, with an adapter–human correlation of 0.340 [−0.025, 0.586].
+
+31
+
+Adapter–GPS
+
+Adapter–human
+
+profile-block bootstrap
+(26 blocks)
+
+Human–GPS
+
+profile-block bootstrap
+(26 blocks)
+
+country bootstrap
+(42 countries)
+
+Trust
+Risk taking
+Positive reciprocity
+Altruism
+Negative reciprocity
+Patience (Q43)
+Patience (Q50)
+−0.5
+
+0.0
+
+0.5
+
+Spearman correlation ρ
+first cohort (primary, solid)
+
+1.0
+
+−0.5
+
+0.0
+
+0.5
+
+1.0
+
+Spearman correlation ρ
+
+second cohort (robustness, dashed)
+
+−0.5
+
+0.0
+
+0.5
+
+1.0
+
+Spearman correlation ρ
+no adapter involved
+
+Higher = stronger rank agreement; the heavy line is zero (no rank association). 95%
+intervals. Descriptive (surface D), not preregistered; retrospective against the WVS
+Wave 7 composite.
+Risk taking is scored on fewer than 42 countries:
+adapter–human:
+primary (n =41)
+robustness (n =41)
+human–GPS (n =41)
+
+Figure 3: The three links on seven strict-battery surfaces (surface D; descriptive, not
+preregistered; retrospective). Each mark is a Spearman correlation across countries with
+a 95% interval; the heavy line is zero. Left: first-cohort adapter composite with the GPS
+coordinate of the surface’s own dimension. Middle: adapter composite with the Wave 7
+composite of the same items. Right: that human composite with the GPS. Circles are
+first-cohort adapters (primary), diamonds second-cohort adapters (robustness), squares
+involve no adapter. Intervals in the adapter panels come from a bootstrap over the 26
+realized sign profiles, those in the right panel from a bootstrap over the 42 countries. Risk
+taking covers 41 countries in the two human columns.
+
+32
+
+Positive reciprocity is the one second-cohort interval that excludes zero, and only just
+(online supplement).
+The link between the GPS and the human composite is itself loose on these items.
+Its interval excludes zero on four of the seven surfaces. Among them, it is positive for
+trust at 0.351 [0.088, 0.564] and negative for patience Q43 at −0.533 [−0.741, −0.266].
+We read this column as a reference for scale. It is no upper bound on what an adapter
+could reach, because it does not bound a scorer that is nonlinear or constant within
+sign profiles. Nor is it evidence that the anchor limits the instrument. Together, the
+three panels say three things. The adapters carry the GPS order on trust, and the
+GPS order is only loosely related to the human composite. The adapters’ order of
+countries does not detectably agree with the human composite on any surface. The
+exact values for every cell are in the online supplement.
+
+5.7
+
+Instrument to respondents: order versus distance
+
+The correlations above concern the order of countries. A different question is how far
+the instrument’s response distribution lies from the survey’s. We measure it by the
+country-equal mean total variation distance (TVD; lower is closer; D) in four cells.
+They are the base model and the first-cohort adapters, each with and without the
+country-named persona prompt.
+The base model’s mean distance is 0.470. The adapters sit farther from the survey
+at 0.515, and the persona prompt sits closer at 0.365 (panel B of Figure 4). A cell
+mean carries no interval, whereas the paired contrasts of panel C each carry one.
+Relative to the base model, the adapters are farther by 0.045 [0.006, 0.093] under
+profile blocks, and the persona prompt is closer by −0.105 [−0.122, −0.086]. Country
+resampling gives the same readings. By dimension, the adapters are farther than the
+
+33
+
+base model on four of the six dimensions and slightly closer on the other two (point
+estimates; online supplement). With both interventions the distance is 0.420. Adding
+the persona prompt to the adapters moves the distance by −0.096 [−0.115, −0.078],
+and adding the adapters to the persona prompt moves it by 0.055 [0.016, 0.097]. The
+interaction contrast is the adapters’ effect with the persona prompt minus their effect
+without it. Under profile blocks it is 0.009 [−0.003, 0.022], an interval that includes
+zero. Therefore, the data show no detectable departure from additivity.
+The ordering of the cells by distance does not follow their ordering by trust
+agreement with the GPS. The persona prompt has the lowest distance and no trust
+order (Section 5.2). The adapters have the highest distance and keep the trust order.
+Adding the persona prompt to the adapters keeps the trust order at 0.725 [0.505,
+0.820] while the distance falls. The two measures ask different questions, and neither
+says why the adapters’ distributions lie where they do. The instrument carries no
+information about magnitudes (Section 6), so a distance to the survey’s response
+distributions is not a quantity it was built to reduce.
+
+6
+
+Discussion
+
+We asked a language model only about the group, and the answer comes in two parts
+that point in opposite directions. Conditioned on declared group signs, the instrument
+keeps the GPS order of countries on trust, also on a second scenario bank. Checked
+against the Wave 7 respondents, its order of countries does not detectably agree with
+theirs, and its response distributions sit farther from theirs than the base model’s
+do. In other words, it can order countries the way a cross-national survey does while
+answering unlike the people in them.
+
+34
+
+A. TRUST only: rank agreement
+
+B. FULL strict battery: distance
+
+Spearman correlation with GPS trust
+higher = stronger rank agreement
+95% profile-block bootstrap
+
+mean total variation distance (TVD)
+country-equal; lower = closer
+no interval banked
+0.470
+
+undefined:
+constant composite
+
+Base model
+
+0.744
+
+First-cohort adapters
+
+0.725
+
+Adapters + country-named prompt
+Country-named prompt (base model)
+
+0.420
+0.365
+
+0.028
+0.773
+
+Sign-profile prompt (base model)
+
+not scored
+
+0.803
+
+Second-cohort adapters
+−0.5
+
+0.515
+
+0.0
+
+0.5
+
+not scored
+1.0
+
+0.3
+
+0.4
+
+0.5
+
+C. Paired differences in distance
+
+difference in mean TVD; paired profile-block bootstrap
+Adapters minus base
+
+0.045 [0.006, 0.093]
+
+Named prompt minus base
+
+−0.105 [−0.122, −0.086]
+
+Adapters + prompt minus base
+
+−0.051 [−0.095, 0.005]
+
+Adapters + prompt minus adapters
+
+−0.096 [−0.115, −0.078]
+
+Adapters + prompt minus prompt alone
+
+0.055 [0.016, 0.097]
+
+Interaction (with minus without prompt)
+
+0.009 [−0.003, 0.022]
+−0.1
+
+← closer to survey
+
+0.0
+
+0.1
+farther →
+
+Descriptive (surface D), not preregistered. The base model’s trust–GPS correlation
+is undefined (constant composite), not zero. Trust is one dimension; TVD scores the
+full strict battery. The crossing of the two readouts is descriptive: not a causal
+effect of fine-tuning, nor a general law about weights versus prompts.
+
+Figure 4: Order and distance for the same routes (a descriptive display, not preregistered;
+the distances are retrospective). (A) Trust only: Spearman correlation of each route’s trust
+composite with the GPS trust coordinate over 42 countries, with 95% profile-block intervals.
+The first-cohort, second-bank and country-named values are those of Section 5.2, where their
+own status is stated. (B) Mean total variation distance (TVD) to the survey answer shares
+over the full strict battery, country-equal; routes not scored on this battery are marked.
+(C) Paired differences in mean TVD with 95% profile-block intervals; negative means the
+first-named cell is closer. Panel A scores trust only and panels B and C all dimensions, so
+they are different metrics.
+
+35
+
+The conditioning method: what the signs carry. The declared sign carries the
+trust order, whichever channel supplies it. The adapters keep the trust order across
+scenario banks (Section 5.2). A country name does not recover that order, whereas
+a prompt that states the six signs does. On trust the sign prompt correlates with
+the GPS at 0.773 [0.584, 0.844], against 0.028 [−0.339, 0.381] for the named country.
+In the screen, we could not resolve the contrast between the adapters and the sign
+prompt. Therefore, the evidence cannot credit the trained weights over a prompt, and
+the statement concerns trust only. The decomposition of the factorial shows where
+trust differs from the other surfaces. Every own effect is positive, so the own part of
+the main-effects prediction restates the correlation between the signs and the GPS on
+every surface. What differs is how much the other five signs add. On trust they add
+little, with Var(cross)/Var(full) at 0.147. On the other six surfaces they carry most of
+the variation, with ratios from 0.830 to 1.049. The decomposition describes behavior
+and leaves open why the other dimensions lose their order.
+Training on sign-labeled pairs keeps the direction of each declared input and does
+not deliver separate dimensions. Each sign moves its own surface in the intended
+direction and also moves other surfaces. One common direction carries about half of
+the variance across surfaces, and the planned separability check fails on both routes.
+Prompting with the same signs is more entangled still, and three of its own effects
+point the wrong way. Entanglement under intervention has also been reported when
+cultural values are edited through a model’s internal activations (Dang and Masud,
+2026). Our factorial adds a joint measurement for trained adapters and for a prompt
+that carry the same declared information. We make no claim about the best training
+recipe.
+
+36
+
+The evaluation protocol: what it separates. Each part of the protocol separated
+something that a single agreement figure would have merged. Our second-bank check
+turned four dimensions with a first-cohort signal into one. The screen’s permutation test
+and its bootstrap interval answer different questions, and reporting both made the size
+of the signal clearer than either would alone. Coverage-matched comparators showed
+that the paired contrasts between the adapters and two readers of the questionnaire
+are unresolved on the few items they share. The small overlap is part of that finding.
+Notably, separating the three links showed that the GPS’s own agreement with the
+human composite is loose on these items. Weak adapter–human agreement therefore
+cannot be attributed to the instrument alone. It could arise from the instrument,
+from the mapping between items and the GPS construct, or from limited coherence
+between the two surveys. The design cannot tell these apart. The registered screen
+and its freeze sequence are fixed before the human criterion is read, and we label the
+descriptive analyses added afterwards as such. Another team can therefore apply the
+protocol to a different conditioning method, anchor or criterion.
+
+The failure profile: from instrument to respondents. Against respondents,
+the retrospective screen returns a weak yes, and its signal sits on a dimension that
+the second bank does not support (Section 5.4). The signal is a small fraction of the
+two-wave human ceiling and is concentrated in risk taking. Trust, which the second
+bank supports, does not stand apart from zero in the screen. We find no dimension
+that passes both checks. Descriptively, the adapters’ order of countries does not
+detectably agree with the respondents’ composite on any surface (Section 5.6).
+
+Order and distribution. The split between order and distribution is what a grouplevel design gives us reason to expect. We chose to model the group directly and left
+
+37
+
+the aggregation over people to the GPS. An order of countries needs only a score
+that rises with the group’s latent preference, and no representative respondent whose
+answers equal the population’s (Kirman, 1992). A single choice policy per country,
+however, has no spread within the country built in. That is, it can carry an order and
+has no reason to match the distribution of respondents’ answers. We offer one reading
+without testing it: the training signal states which of two responses is preferred and
+says nothing about how strongly, or about how widely respondents spread across
+the options. The order of countries is a quantity that signs speak to, whereas a
+distance to the survey’s response distributions is one they carry no information about.
+This argument explains why the adapters have no reason to approach the survey’s
+response distributions. It does not explain why they move away from them, or why a
+country-named prompt moves toward them.
+The evidence shows the two targets crossing (Section 5.7). The adapters keep
+the anchor’s order of countries on trust and lie farther from the survey’s response
+distributions than the base model, by 0.045 [0.006, 0.093] in total variation distance.
+A country-named prompt lies closer, by −0.105 [−0.122, −0.086], and carries no trust
+order. If agreement were one quantity, the routes would fall in one ranking. They fall
+in two. The contrast describes one anchor, one instrument family and one survey, and
+it does not show that the country-named prompt matches respondents. A country
+name has been found to recover a country ranking in the European Social Survey while
+supporting no distributional inference (Wang, 2026). The separation of group-level
+order from distributional fidelity is established (da Silva et al., 2026). Our case adds
+one method whose two answers point in opposite directions, so order and distribution
+have to be validated separately.
+
+38
+
+What a prospective validation would have to establish. A prospective validation would have to establish three things that the retrospective design cannot.
+First, the probe’s selections and a human-only rule for choosing items would both be
+declared before any new items are fielded. Second, the selected items would have to
+separate countries in the assigned direction in new data. They would also have to
+do so better than the human-only rule on matched countries and items. Third, the
+dimension on which the signal appears would have to be one that the second bank
+also supports. We would read a result of that kind as licensing the use before fielding.
+Whether such a test would find the signal on trust, the one dimension the second
+bank supports, is the open question this paper leaves.
+
+Limits. Five limits apply to every result above. First, the human criterion is
+retrospective and is the only human source. Registration and the freeze guard protect
+against tuning the probe to it. They cannot make it independent of the survey program
+from which the item pool was drawn. Second, we chose the country as the unit, and
+our claims stay at that unit. The instrument is built from signs and cannot represent
+magnitudes, differences among countries that share a sign profile, or variation among
+people within a country. Country-level agreement does not establish individual-level
+validity or measurement invariance (Robinson, 1950; Davidov et al., 2014; Bratt, 2025).
+Third, all our adapters share one base model, one training recipe and one readout
+convention. Their code probabilities have a dispersion that need not match human
+response distributions. Fourth, the per-dimension cells are small and the selected set
+churns under readout variants. Fifth, the noise checks are narrow. One unseeded
+retrain is a narrow observed comparison for one unit, and two near-zero refits support
+no claim across countries.
+
+39
+
+Intended use. Within those limits, the instrument has a modest and inspectable
+use. A survey designer can read the dimension and direction it assigns to candidate
+items as one input beside expert review and human pretesting, keeping in view that no
+dimension passed both checks. The instrument’s value lies in what it makes explicit.
+The declared moments, the sign rule and the absence of any group name at evaluation
+are on the record, so a reader can see what information the instrument was given and
+check where its readings depart from people. We see it as a complement to fielding
+and pretesting, and the evidence gives no reason to replace them. In the terms of
+Broska et al. (2025), its readings are potentially informative observations that still
+require a human criterion.
+
+7
+
+Conclusion
+
+Asked only about the group, a language model can order countries the way a crossnational survey does while answering unlike the people in them. We built synthetic
+cultural agents that compile declared aggregate preference moments into choice policies
+and read survey items without naming a group. We then tested each link of the chain
+from anchor to instrument to respondents separately.
+Between anchor and instrument, the method holds in a limited sense. Training
+installs the synthetic labels on pairs the adapters never saw. On trust, the adapters
+keep the anchor’s order of countries across a change of scenario bank. A country
+name does not keep that order, and a prompt stating the same signs does. That is,
+the declared signs carry the trust order, and the evidence cannot credit the trained
+weights over a prompt. The adapters do not keep the declared dimensions separate.
+Between instrument and respondents, the evidence is weak. A preregistered screen
+of held-out items, read against a retrospective criterion, gives a small signal. The
+40
+
+registered comparisons do not separate it from careful readers of the questionnaire,
+and no dimension passes both the second-bank check and the screen. Descriptively, the
+adapters’ order of countries does not detectably agree with the respondents’ composite.
+Their response distributions lie farther from the survey than the base model’s, whereas
+a country-named prompt lies closer with no trust order. Keeping an order of countries
+and matching respondents’ response distributions are different targets, and a design
+built at the level of the group gives a reason to expect that they come apart.
+We offer the method as an inspectable, group-level reading of candidate items that
+a researcher may use beside human pretesting, as a complement and never in its place.
+Our evaluation protocol applies to other conditioning methods and other anchors.
+The test that would license more is prospective: probe-selected items fielded to people
+after the selection and a human-only comparison rule have both been declared. Until
+that test is run, pre-piloting remains untested.
+
+Preregistration Statement
+The held-out screen (Sections 4.3 and 5.4) was preregistered. The registration document was committed to the project repository and timestamped by the git tag
+prereg-heldout-2026-10-14, pushed before any held-out item was scored by an
+adapter. Amendment 1 (repair of 12 items whose standalone wording could not be
+answered) was made after the first model-side probe pass had been computed and
+read, and before any human value was read. The freeze file was committed, and
+Amendment 2 (removal of those items from both comparator routes) was decided,
+before the single read of held-out human data; the text of Amendment 2 was written
+afterwards and records that earlier decision. The criterion data, WVS Wave 7, are
+public and existed before the study, so the registration fixes the analysis before the
+41
+
+authors read the human values and the criterion remains retrospective. All registered
+analyses of the screen are reported in Section 5.4, Table 2 and Figure 2, except
+two descriptives (item-level agreement after dropping items with small |ai |, and the
+face-valid reader’s statistic on all of its items including negative reciprocity), which
+are reported in the online supplement. The Bonferroni intervals, the wave-specific
+screen statistics, the scale-free factorial views and the factorial route contrast are
+exploratory. The factorial’s separability check (V5) was fixed in the project’s analysis
+plan, separately from the registration. The second-bank decision rule was fixed before
+the second cohort was trained and was not part of the registration. An anonymized
+copy of the registration is provided with the submission.
+
+Code, Materials, and Data Availability
+Analysis code, the item pool and its overrides, the frozen selection, the comparator
+files, all model scores, and the scripts that build every number in this article from
+those scores are available for review at an anonymized link. Model adapters and score
+archives are released at acceptance. The frozen inputs are identified by SHA-256
+hashes: the amended item pool 19241f6f103c51d6. . . as written to disk, whose
+line-ending-normalized form in the repository is a1dbceea1a33da05. . . ; the overrides
+file 0f5cd2bbd88ef6ea. . . ; and the frozen selection 782b7d2123f9758e. . . . The pool
+is regenerated byte for byte from the overrides file by the pool-building script; full
+hashes and the line-ending convention are in the online supplement. WVS and GPS
+data are available from their providers (Haerpfer et al., 2022; World Values Survey
+Association, 2022; Falk et al., 2018) and are not redistributed; no respondent-level
+data or country-level human means are included in the replication materials.
+
+42
+
+Institutional Review
+This study analyzes publicly available, de-identified secondary survey data and involves
+no interaction with human participants.
+
+Declaration of Conflicting Interests
+The authors declared no potential conflicts of interest with respect to the research,
+authorship, and/or publication of this article.
+
+Funding
+The authors received no financial support for the research, authorship, and/or publication of this article.
+
+Declaration of Generative AI Use
+Large language models are the object of study in this article. In addition, an AI
+coding and writing assistant was used under the authors’ direction to write analysis
+code and to draft and edit manuscript text; the authors reviewed all code, numbers
+and text and take responsibility for them.
+
+References
+Argyle, L. P., E. C. Busby, N. Fulda, J. R. Gubler, C. Rytting, and D. Wingate (2023).
+Out of one, many: Using language models to simulate human samples. Political
+Analysis 31 (3), 337–351.
+Bisbee, J., J. D. Clinton, C. Dorff, B. Kenkel, and J. M. Larson (2024). Synthetic
+replacements for human survey data? the perils of large language models. Political
+Analysis 32 (4), 401–416.
+
+43
+
+Boelaert, J., S. Coavoux, É. Ollion, I. Petev, and P. Präg (2025). Machine bias.
+how do generative language models answer opinion polls? Sociological Methods &
+Research 54 (3), 1156–1196.
+Bradley, R. A. and M. E. Terry (1952). Rank analysis of incomplete block designs: I.
+the method of paired comparisons. Biometrika 39 (3/4), 324–345.
+Bratt, C. (2025). Benefits of a pragmatic approach: Rethinking measurement invariance
+and composite scores in cross-cultural research. Sociological Methods & Research.
+Online first.
+Broska, D., M. Howes, and A. van Loon (2025). The mixed subjects design: Treating
+large language models as potentially informative observations. Sociological Methods
+& Research 54 (3), 1074–1109.
+Buskirk, T. D., F. Keusch, L. von der Heyde, and A. Eck (2026). More parameters
+than populations: A systematic literature review of large language models within
+survey research.
+Campbell, D. T. and D. W. Fiske (1959). Convergent and discriminant validation by
+the multitrait-multimethod matrix. Psychological Bulletin 56 (2), 81–105.
+Cao, Y., H. Liu, A. Arora, I. Augenstein, P. Röttger, and D. Hershcovich (2025). Specializing large language models to simulate survey response distributions for global
+populations. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language
+Technologies (Volume 1: Long Papers), Albuquerque, New Mexico, pp. 3141–3154.
+Association for Computational Linguistics.
+Chen, F., Q. Wang, L. Wang, and S. Bhatia (2026). Simulated responses from
+large language models are weak proxies for human economic preferences across 74
+countries. Nature Human Behaviour.
+da Silva, N. B., M. Lukk, A. Sutani, A. Moturu, H. Yang, D. Silver, M. Ratto, and
+T. H. Silva (2026). Population fidelity: Evaluating population representativeness in
+LLMs. Preprint.
+Dang, T. D. A. and S. Masud (2026). Cultural value alignment via latent activation
+steering in large language models. ACL 2026 Student Research Workshop (nonarchival track).
+Davidov, E., B. Meuleman, J. Cieciuch, P. Schmidt, and J. Billiet (2014). Measurement
+equivalence in cross-national research. Annual Review of Sociology 40, 55–75.
+Dettmers, T., A. Pagnoni, A. Holtzman, and L. Zettlemoyer (2023). QLoRA: Efficient
+finetuning of quantized LLMs. In Advances in Neural Information Processing
+Systems, Volume 36.
+44
+
+Dominguez-Olmedo, R., M. Hardt, and C. Mendler-Dünner (2024). Questioning the
+survey responses of large language models. In Advances in Neural Information
+Processing Systems, Volume 37.
+Durmus, E., K. Nguyen, T. I. Liao, N. Schiefer, A. Askell, A. Bakhtin, C. Chen,
+Z. Hatfield-Dodds, D. Hernandez, N. Joseph, L. Lovitt, S. McCandlish, O. Sikder,
+A. Tamkin, J. Thamkul, J. Kaplan, J. Clark, and D. Ganguli (2024). Towards
+measuring the representation of subjective global opinions in language models. In
+First Conference on Language Modeling (COLM).
+Falk, A., A. Becker, T. Dohmen, B. Enke, D. Huffman, and U. Sunde (2018). Global
+evidence on economic preferences. The Quarterly Journal of Economics 133 (4),
+1645–1692.
+Haerpfer, C., R. Inglehart, A. Moreno, C. Welzel, K. Kizilova, J. Diez-Medrano,
+M. Lagos, P. Norris, E. Ponarin, B. Puranen, et al. (2022). World values survey
+wave 7 (2017–2022) cross-national data-set. Madrid, Spain and Vienna, Austria:
+JD Systems Institute and WVSA Secretariat. Version 4.0.0.
+Horton, J. J., A. Filippas, and B. S. Manning (2023, April). Large language models as
+simulated economic agents: What can we learn from homo silicus? Working Paper
+31122, National Bureau of Economic Research. Revised February 2026.
+Hu, E. J., Y. Shen, P. Wallis, Z. Allen-Zhu, Y. Li, S. Wang, L. Wang, and W. Chen
+(2022). LoRA: Low-rank adaptation of large language models. In International
+Conference on Learning Representations.
+Kirman, A. P. (1992). Whom or what does the representative individual represent?
+Journal of Economic Perspectives 6 (2), 117–136.
+Kozlowski, A. C. and J. Evans (2025). Simulating subjects: The promise and peril
+of artificial intelligence stand-ins for social agents and interactions. Sociological
+Methods & Research 54 (3), 1017–1073.
+Krsteski, S., G. Russo, S. Chang, R. West, and K. Gligorić (2026). Valid survey simulations with limited human data: The roles of prompting, fine-tuning, and rectification.
+In Proceedings of the 64th Annual Meeting of the Association for Computational
+Linguistics, pp. 10887–10906. Association for Computational Linguistics.
+Ludwig, J., S. Mullainathan, and A. Rambachan (2026). Large language models: An
+applied econometric framework. Annual Review of Economics 18, 283–316.
+Lyman, A., B. Hepner, L. P. Argyle, E. C. Busby, J. R. Gubler, and D. Wingate
+(2025). Balancing large language model alignment and algorithmic fidelity in social
+science research. Sociological Methods & Research 54 (3), 1110–1155.
+45
+
+Pokropek, A., T. Żółtak, E. Davidov, B. Meuleman, and P. Schmidt (2025). Challenges
+in multilevel modelling: Cross-group measurement noninvariance and measurement
+errors. a monte carlo simulation study. Sociological Methods & Research. Online
+first.
+Rafailov, R., A. Sharma, E. Mitchell, S. Ermon, C. D. Manning, and C. Finn (2023).
+Direct preference optimization: Your language model is secretly a reward model. In
+Advances in Neural Information Processing Systems, Volume 36.
+Robinson, W. S. (1950). Ecological correlations and the behavior of individuals.
+American Sociological Review 15 (3), 351–357.
+Santurkar, S., E. Durmus, F. Ladhak, C. Lee, P. Liang, and T. Hashimoto (2023).
+Whose opinions do language models reflect? In Proceedings of the 40th International
+Conference on Machine Learning, Volume 202 of Proceedings of Machine Learning
+Research, pp. 29971–30004.
+Steenkamp, J.-B. E. M. and H. Baumgartner (1998). Assessing measurement invariance
+in cross-national consumer research. Journal of Consumer Research 25 (1), 78–107.
+Sturgis, P., C. Roberts, and T. Robinson (2026). LLMs for survey pretesting: How well
+can large language models identify flaws in survey questions? Working Paper 15,
+Survey Futures.
+Suh, J., E. Jahanparast, S. Moon, M. Kang, and S. Chang (2025). Language model
+fine-tuning on scaled survey data for predicting distributions of public opinions. In
+Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 21147–21170. Association for Computational
+Linguistics.
+Wallach, H., M. Desai, A. F. Cooper, A. Wang, C. Atalla, S. Barocas, S. L. Blodgett,
+A. Chouldechova, E. Corvi, P. A. Dow, J. Garcia-Gathright, A. Olteanu, N. Pangakis,
+S. Reed, E. Sheng, D. Vann, J. W. Vaughan, M. Vogel, H. Washington, and A. Z.
+Jacobs (2025). Position: Evaluating generative AI systems is a social science
+measurement challenge. In International Conference on Machine Learning, Position
+Paper Track.
+Wang, A., J. Morgenstern, and J. P. Dickerson (2025). Large language models that
+replace human participants can harmfully misportray and flatten identity groups.
+Nature Machine Intelligence 7, 400–411.
+Wang, C. (2026). Silicon sampling answers with country-level assumptions, not
+individual attitudes: Cross-national evidence from the European Social Survey.
+Preprint.
+
+46
+
+World Values Survey Association (2022). World values survey time-series (1981–2022)
+data file. Data file version 5.0.
+Zhao, S., J. Dang, and A. Grover (2023). Group preference optimization: Few-shot
+alignment of large language models.
+
+47
+
+

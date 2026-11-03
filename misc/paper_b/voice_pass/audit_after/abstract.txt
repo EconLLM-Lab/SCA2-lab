@@ -1,0 +1,5 @@
+ 
+  Cross-national surveys commit to items before learning whether they separate countries; language models offer a cheap first reading. The usual route simulates individuals, then averages. We ask the model only about the group. Six declared signs of country-level survey moments label synthetic preference pairs that train adapters, which read items without naming the country. On trust, they order countries as the survey does on two scenario banks. A prompt stating those signs does too, so signs carry the order. Against a retrospective criterion, a preregistered screen of held-out items gives a weak signal that registered contrasts cannot separate from questionnaire readers. Descriptively, the adapters' order does not detectably agree with respondents', and their response distributions lie farther from the survey than the base model's. That is, the instrument orders countries like the survey while answering unlike the people in them. It can complement human pretesting. We have not tested pre-piloting.
+ 
+
+   Keywords:  synthetic respondents; large language models; measurement validity; survey item screening; preregistration; cross-national measurement.

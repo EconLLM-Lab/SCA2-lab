@@ -1,0 +1,29 @@
+
+
+Synthetic Respondents as Measurement Instruments.
+
+1
+
+
+
+Synthetic respondents and the criterion they need..
+
+ A language model conditioned on a description of a population can be asked to stand in for a sample of its members. In silicon sampling the description enters the prompt and the model's answer distribution is read as an estimate of the population's; in the homo silicus program the model plays an economic agent in a stylized decision problem; a systematic review maps how fast these uses have spread across survey research. Fine-tuning on survey responses is one response to the evidence on prompted models. Two reviews in this journal draw the conclusion that matters here: validation against human data remains essential, and model predictions are best treated as potentially informative observations while human subjects remain the gold standard. Both require a criterion against which the synthetic reading can fail. Our evaluation supplies one criterion for each link of the chain.
+
+
+
+Construct, measure, and anchor..
+
+ Three objects have to be kept apart. A construct is a theoretical preference attribute, such as generalized trust. A measure operationalizes it through observed answers, such as the response distribution to a WVS question about whether most people can be trusted. An anchor is an aggregate score that conditions the instrument, such as a country's GPS trust coordinate. The GPS supplies anchors for six economic preferences (trust, risk taking, patience, altruism, positive reciprocity and negative reciprocity), measured with experimentally validated modules in a common design across countries. We treat these coordinates as declared aggregate moments: the researcher chooses them, and nothing in the construction certifies them as the right moments for a given survey. Mapping a WVS item to a GPS dimension makes the item a candidate indicator, and an average of such items a proposed composite. Agreement between instrument and anchor, between instrument and people, and between anchor and people are three different facts, and they are the three comparisons that the chain makes. The multitrait-multimethod logic of Author applies directly: the human survey is the other method, and an instrument that agrees with its own anchor has passed a construction check without yet meeting a criterion.
+
+
+
+Cross-national comparability..
+
+ The unit of analysis is the country. Country-level agreement does not establish that an item measures the same construct for individuals in different countries, because loadings and intercepts can differ across groups in ways that leave country means comparable for some purposes and misleading for others. Work in this journal argues that country-level composites can suffice for simple group comparisons despite noninvariance while understating uncertainty, and that unaddressed measurement error and, less so, noninvariance bias multilevel estimates. Every comparison with respondents below concerns country rankings, with no claim about invariance or individual-level validity.
+
+
+
+What is left open..
+
+ Prior evaluations score models on questions whose human answers are known, or fine-tune them on human survey responses. What remains open is, link by link, what an instrument built from declared aggregate inputs alone preserves of its anchor and of the respondents' answers, with the selection rule for new items registered before the human criterion is read.
