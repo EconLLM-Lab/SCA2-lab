@@ -1,0 +1,3010 @@
+{
+ "generator": "misc/paper_b/tools/build_figures.py",
+ "inputs": [
+  {
+   "file": "planning/sprint_2026-10-11/paper-b-tier1/NUMBERS_TABLE.csv",
+   "sha256": "71ee7c8c68eb856bf7215165dd836aef7cc3f67993a6523790cee4b22ce186a4",
+   "rows": 562
+  }
+ ],
+ "note": "Every datum is the exact CSV string of the named claim_id and field. role=printed_label entries are numbers printed in the figure, rounded half-up from the same cell. x_cm positions are x0_cm + (value - data_min) * cm_per_unit.",
+ "figures": [
+  {
+   "name": "fig_three_links",
+   "title": "Three-link validity forest (surface D; descriptive, not preregistered)",
+   "tex": "fig_three_links.tex",
+   "pdf": "fig_three_links.pdf",
+   "png": "fig_three_links.png",
+   "panels": [
+    {
+     "id": "p1",
+     "x0_cm": "3.04999999999999982236431605997495353221893310546875",
+     "data_min": "-0.8",
+     "data_max": "1",
+     "cm_per_unit": "2.055556",
+     "quantity": "Spearman correlation across countries",
+     "interval": "profile-block bootstrap\\\\(26 blocks)"
+    },
+    {
+     "id": "p2",
+     "x0_cm": "7.04999999999999982236431605997495353221893310546875",
+     "data_min": "-0.8",
+     "data_max": "1",
+     "cm_per_unit": "2.055556",
+     "quantity": "Spearman correlation across countries",
+     "interval": "profile-block bootstrap\\\\(26 blocks)"
+    },
+    {
+     "id": "p3",
+     "x0_cm": "11.050000000000000710542735760100185871124267578125",
+     "data_min": "-0.8",
+     "data_max": "1",
+     "cm_per_unit": "2.055556",
+     "quantity": "Spearman correlation across countries",
+     "interval": "country bootstrap\\\\(42 countries)"
+    }
+   ],
+   "data": [
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_a_adapter_gps_trust_spearman_rho",
+     "field": "ci_low",
+     "value": "0.5002088786337604",
+     "role": "interval_low",
+     "x_cm": 5.7227,
+     "y_cm": -0.38
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_a_adapter_gps_trust_spearman_rho",
+     "field": "value",
+     "value": "0.7441050158009886",
+     "role": "point",
+     "x_cm": 6.224,
+     "y_cm": -0.38
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_a_adapter_gps_trust_spearman_rho",
+     "field": "ci_high",
+     "value": "0.8647856310906544",
+     "role": "interval_high",
+     "x_cm": 6.4721,
+     "y_cm": -0.38
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_b_adapter_gps_trust_spearman_rho",
+     "field": "ci_low",
+     "value": "0.6145971882846217",
+     "role": "interval_low",
+     "x_cm": 5.9578,
+     "y_cm": -0.72
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_b_adapter_gps_trust_spearman_rho",
+     "field": "value",
+     "value": "0.8032452595902299",
+     "role": "point",
+     "x_cm": 6.3456,
+     "y_cm": -0.72
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_b_adapter_gps_trust_spearman_rho",
+     "field": "ci_high",
+     "value": "0.8764662126321977",
+     "role": "interval_high",
+     "x_cm": 6.4961,
+     "y_cm": -0.72
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_a_adapter_gps_risktaking_spearman_rho",
+     "field": "ci_low",
+     "value": "0.08459211972226777",
+     "role": "interval_low",
+     "x_cm": 4.8683,
+     "y_cm": -1.36
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_a_adapter_gps_risktaking_spearman_rho",
+     "field": "value",
+     "value": "0.4345677011587392",
+     "role": "point",
+     "x_cm": 5.5877,
+     "y_cm": -1.36
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_a_adapter_gps_risktaking_spearman_rho",
+     "field": "ci_high",
+     "value": "0.6855238217593994",
+     "role": "interval_high",
+     "x_cm": 6.1036,
+     "y_cm": -1.36
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_b_adapter_gps_risktaking_spearman_rho",
+     "field": "ci_low",
+     "value": "-0.19894637503666981",
+     "role": "interval_low",
+     "x_cm": 4.2855,
+     "y_cm": -1.7
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_b_adapter_gps_risktaking_spearman_rho",
+     "field": "value",
+     "value": "0.21009949730748287",
+     "role": "point",
+     "x_cm": 5.1263,
+     "y_cm": -1.7
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_b_adapter_gps_risktaking_spearman_rho",
+     "field": "ci_high",
+     "value": "0.5841897694068418",
+     "role": "interval_high",
+     "x_cm": 5.8953,
+     "y_cm": -1.7
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_a_adapter_gps_posrecip_spearman_rho",
+     "field": "ci_low",
+     "value": "0.12011003554792006",
+     "role": "interval_low",
+     "x_cm": 4.9413,
+     "y_cm": -2.34
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_a_adapter_gps_posrecip_spearman_rho",
+     "field": "value",
+     "value": "0.4875617859168625",
+     "role": "point",
+     "x_cm": 5.6967,
+     "y_cm": -2.34
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_a_adapter_gps_posrecip_spearman_rho",
+     "field": "ci_high",
+     "value": "0.694575712077336",
+     "role": "interval_high",
+     "x_cm": 6.1222,
+     "y_cm": -2.34
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_b_adapter_gps_posrecip_spearman_rho",
+     "field": "ci_low",
+     "value": "-0.06790870044573029",
+     "role": "interval_low",
+     "x_cm": 4.5549,
+     "y_cm": -2.68
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_b_adapter_gps_posrecip_spearman_rho",
+     "field": "value",
+     "value": "0.3656055731138321",
+     "role": "point",
+     "x_cm": 5.446,
+     "y_cm": -2.68
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_b_adapter_gps_posrecip_spearman_rho",
+     "field": "ci_high",
+     "value": "0.6519695648305968",
+     "role": "interval_high",
+     "x_cm": 6.0346,
+     "y_cm": -2.68
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_a_adapter_gps_altruism_spearman_rho",
+     "field": "ci_low",
+     "value": "0.019705177182032498",
+     "role": "interval_low",
+     "x_cm": 4.7349,
+     "y_cm": -3.32
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_a_adapter_gps_altruism_spearman_rho",
+     "field": "value",
+     "value": "0.40620695243497285",
+     "role": "point",
+     "x_cm": 5.5294,
+     "y_cm": -3.32
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_a_adapter_gps_altruism_spearman_rho",
+     "field": "ci_high",
+     "value": "0.6763677356156965",
+     "role": "interval_high",
+     "x_cm": 6.0848,
+     "y_cm": -3.32
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_b_adapter_gps_altruism_spearman_rho",
+     "field": "ci_low",
+     "value": "-0.057258124000831793",
+     "role": "interval_low",
+     "x_cm": 4.5767,
+     "y_cm": -3.66
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_b_adapter_gps_altruism_spearman_rho",
+     "field": "value",
+     "value": "0.3636587051851141",
+     "role": "point",
+     "x_cm": 5.442,
+     "y_cm": -3.66
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_b_adapter_gps_altruism_spearman_rho",
+     "field": "ci_high",
+     "value": "0.6526523339615622",
+     "role": "interval_high",
+     "x_cm": 6.036,
+     "y_cm": -3.66
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_a_adapter_gps_negrecip_spearman_rho",
+     "field": "ci_low",
+     "value": "-0.41794182001214747",
+     "role": "interval_low",
+     "x_cm": 3.8353,
+     "y_cm": -4.3
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_a_adapter_gps_negrecip_spearman_rho",
+     "field": "value",
+     "value": "-0.02811765659184831",
+     "role": "point",
+     "x_cm": 4.6366,
+     "y_cm": -4.3
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_a_adapter_gps_negrecip_spearman_rho",
+     "field": "ci_high",
+     "value": "0.4062285961335365",
+     "role": "interval_high",
+     "x_cm": 5.5295,
+     "y_cm": -4.3
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_b_adapter_gps_negrecip_spearman_rho",
+     "field": "ci_low",
+     "value": "-0.23661759522156556",
+     "role": "interval_low",
+     "x_cm": 4.2081,
+     "y_cm": -4.64
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_b_adapter_gps_negrecip_spearman_rho",
+     "field": "value",
+     "value": "0.238978038250133",
+     "role": "point",
+     "x_cm": 5.1857,
+     "y_cm": -4.64
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_b_adapter_gps_negrecip_spearman_rho",
+     "field": "ci_high",
+     "value": "0.6035792348206974",
+     "role": "interval_high",
+     "x_cm": 5.9351,
+     "y_cm": -4.64
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_a_adapter_gps_patience_q43_spearman_rho",
+     "field": "ci_low",
+     "value": "-0.4137061784151323",
+     "role": "interval_low",
+     "x_cm": 3.844,
+     "y_cm": -5.28
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_a_adapter_gps_patience_q43_spearman_rho",
+     "field": "value",
+     "value": "-0.01912557249027031",
+     "role": "point",
+     "x_cm": 4.6551,
+     "y_cm": -5.28
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_a_adapter_gps_patience_q43_spearman_rho",
+     "field": "ci_high",
+     "value": "0.45208283122682635",
+     "role": "interval_high",
+     "x_cm": 5.6237,
+     "y_cm": -5.28
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_b_adapter_gps_patience_q43_spearman_rho",
+     "field": "ci_low",
+     "value": "-0.40296284758533274",
+     "role": "interval_low",
+     "x_cm": 3.8661,
+     "y_cm": -5.62
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_b_adapter_gps_patience_q43_spearman_rho",
+     "field": "value",
+     "value": "0.005353886803974467",
+     "role": "point",
+     "x_cm": 4.7055,
+     "y_cm": -5.62
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_b_adapter_gps_patience_q43_spearman_rho",
+     "field": "ci_high",
+     "value": "0.4703697004725019",
+     "role": "interval_high",
+     "x_cm": 5.6613,
+     "y_cm": -5.62
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_a_adapter_gps_patience_q50_spearman_rho",
+     "field": "ci_low",
+     "value": "-0.3130980978178783",
+     "role": "interval_low",
+     "x_cm": 4.0509,
+     "y_cm": -6.26
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_a_adapter_gps_patience_q50_spearman_rho",
+     "field": "value",
+     "value": "0.1768900413256624",
+     "role": "point",
+     "x_cm": 5.0581,
+     "y_cm": -6.26
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_a_adapter_gps_patience_q50_spearman_rho",
+     "field": "ci_high",
+     "value": "0.5799151500605274",
+     "role": "interval_high",
+     "x_cm": 5.8865,
+     "y_cm": -6.26
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_b_adapter_gps_patience_q50_spearman_rho",
+     "field": "ci_low",
+     "value": "-0.3431572421382079",
+     "role": "interval_low",
+     "x_cm": 3.9891,
+     "y_cm": -6.6
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_b_adapter_gps_patience_q50_spearman_rho",
+     "field": "value",
+     "value": "0.160616604119234",
+     "role": "point",
+     "x_cm": 5.0246,
+     "y_cm": -6.6
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p1",
+     "claim_id": "C9_b_adapter_gps_patience_q50_spearman_rho",
+     "field": "ci_high",
+     "value": "0.5568731230966979",
+     "role": "interval_high",
+     "x_cm": 5.8391,
+     "y_cm": -6.6
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_a_adapter_human_trust_spearman_rho",
+     "field": "ci_low",
+     "value": "-0.043646061623232126",
+     "role": "interval_low",
+     "x_cm": 8.6047,
+     "y_cm": -0.38
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_a_adapter_human_trust_spearman_rho",
+     "field": "value",
+     "value": "0.29519487885908763",
+     "role": "point",
+     "x_cm": 9.3012,
+     "y_cm": -0.38
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_a_adapter_human_trust_spearman_rho",
+     "field": "ci_high",
+     "value": "0.5473661876066869",
+     "role": "interval_high",
+     "x_cm": 9.8196,
+     "y_cm": -0.38
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_b_adapter_human_trust_spearman_rho",
+     "field": "ci_low",
+     "value": "-0.025465688840866033",
+     "role": "interval_low",
+     "x_cm": 8.6421,
+     "y_cm": -0.72
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_b_adapter_human_trust_spearman_rho",
+     "field": "value",
+     "value": "0.3403774095375282",
+     "role": "point",
+     "x_cm": 9.3941,
+     "y_cm": -0.72
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_b_adapter_human_trust_spearman_rho",
+     "field": "ci_high",
+     "value": "0.5857149498175027",
+     "role": "interval_high",
+     "x_cm": 9.8984,
+     "y_cm": -0.72
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_a_adapter_human_risktaking_spearman_rho",
+     "field": "ci_low",
+     "value": "-0.2596834912760721",
+     "role": "interval_low",
+     "x_cm": 8.1607,
+     "y_cm": -1.36
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_a_adapter_human_risktaking_spearman_rho",
+     "field": "value",
+     "value": "0.11951219512195126",
+     "role": "point",
+     "x_cm": 8.9401,
+     "y_cm": -1.36
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_a_adapter_human_risktaking_spearman_rho",
+     "field": "ci_high",
+     "value": "0.4255204413440882",
+     "role": "interval_high",
+     "x_cm": 9.5691,
+     "y_cm": -1.36
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_b_adapter_human_risktaking_spearman_rho",
+     "field": "ci_low",
+     "value": "-0.17204519936802254",
+     "role": "interval_low",
+     "x_cm": 8.3408,
+     "y_cm": -1.7
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_b_adapter_human_risktaking_spearman_rho",
+     "field": "value",
+     "value": "0.21287185564203473",
+     "role": "point",
+     "x_cm": 9.132,
+     "y_cm": -1.7
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_b_adapter_human_risktaking_spearman_rho",
+     "field": "ci_high",
+     "value": "0.5334092042717321",
+     "role": "interval_high",
+     "x_cm": 9.7909,
+     "y_cm": -1.7
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_a_adapter_human_posrecip_spearman_rho",
+     "field": "ci_low",
+     "value": "-0.0742147912769197",
+     "role": "interval_low",
+     "x_cm": 8.5419,
+     "y_cm": -2.34
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_a_adapter_human_posrecip_spearman_rho",
+     "field": "value",
+     "value": "0.3235556275828539",
+     "role": "point",
+     "x_cm": 9.3595,
+     "y_cm": -2.34
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_a_adapter_human_posrecip_spearman_rho",
+     "field": "ci_high",
+     "value": "0.618591587344145",
+     "role": "interval_high",
+     "x_cm": 9.966,
+     "y_cm": -2.34
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_b_adapter_human_posrecip_spearman_rho",
+     "field": "ci_low",
+     "value": "0.006948662611197107",
+     "role": "interval_low",
+     "x_cm": 8.7087,
+     "y_cm": -2.68
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_b_adapter_human_posrecip_spearman_rho",
+     "field": "value",
+     "value": "0.36609229009601163",
+     "role": "point",
+     "x_cm": 9.447,
+     "y_cm": -2.68
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_b_adapter_human_posrecip_spearman_rho",
+     "field": "ci_high",
+     "value": "0.6362387900981672",
+     "role": "interval_high",
+     "x_cm": 10.0023,
+     "y_cm": -2.68
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_a_adapter_human_altruism_spearman_rho",
+     "field": "ci_low",
+     "value": "-0.16981229172218448",
+     "role": "interval_low",
+     "x_cm": 8.3454,
+     "y_cm": -3.32
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_a_adapter_human_altruism_spearman_rho",
+     "field": "value",
+     "value": "0.12827161494206304",
+     "role": "point",
+     "x_cm": 8.9581,
+     "y_cm": -3.32
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_a_adapter_human_altruism_spearman_rho",
+     "field": "ci_high",
+     "value": "0.36947124335752934",
+     "role": "interval_high",
+     "x_cm": 9.4539,
+     "y_cm": -3.32
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_b_adapter_human_altruism_spearman_rho",
+     "field": "ci_low",
+     "value": "-0.18098634603060687",
+     "role": "interval_low",
+     "x_cm": 8.3224,
+     "y_cm": -3.66
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_b_adapter_human_altruism_spearman_rho",
+     "field": "value",
+     "value": "0.09353078007549333",
+     "role": "point",
+     "x_cm": 8.8867,
+     "y_cm": -3.66
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_b_adapter_human_altruism_spearman_rho",
+     "field": "ci_high",
+     "value": "0.33133022645061305",
+     "role": "interval_high",
+     "x_cm": 9.3755,
+     "y_cm": -3.66
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_a_adapter_human_negrecip_spearman_rho",
+     "field": "ci_low",
+     "value": "-0.008097193356253873",
+     "role": "interval_low",
+     "x_cm": 8.6778,
+     "y_cm": -4.3
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_a_adapter_human_negrecip_spearman_rho",
+     "field": "value",
+     "value": "0.3888663803581558",
+     "role": "point",
+     "x_cm": 9.4938,
+     "y_cm": -4.3
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_a_adapter_human_negrecip_spearman_rho",
+     "field": "ci_high",
+     "value": "0.6936287226895609",
+     "role": "interval_high",
+     "x_cm": 10.1202,
+     "y_cm": -4.3
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_b_adapter_human_negrecip_spearman_rho",
+     "field": "ci_low",
+     "value": "-0.2186056673695135",
+     "role": "interval_low",
+     "x_cm": 8.2451,
+     "y_cm": -4.64
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_b_adapter_human_negrecip_spearman_rho",
+     "field": "value",
+     "value": "0.16726840287568712",
+     "role": "point",
+     "x_cm": 9.0383,
+     "y_cm": -4.64
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_b_adapter_human_negrecip_spearman_rho",
+     "field": "ci_high",
+     "value": "0.5223706645565197",
+     "role": "interval_high",
+     "x_cm": 9.7682,
+     "y_cm": -4.64
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_a_adapter_human_patience_q43_spearman_rho",
+     "field": "ci_low",
+     "value": "-0.16947625864437202",
+     "role": "interval_low",
+     "x_cm": 8.3461,
+     "y_cm": -5.28
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_a_adapter_human_patience_q43_spearman_rho",
+     "field": "value",
+     "value": "0.1920661305166976",
+     "role": "point",
+     "x_cm": 9.0892,
+     "y_cm": -5.28
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_a_adapter_human_patience_q43_spearman_rho",
+     "field": "ci_high",
+     "value": "0.46430184056483337",
+     "role": "interval_high",
+     "x_cm": 9.6488,
+     "y_cm": -5.28
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_b_adapter_human_patience_q43_spearman_rho",
+     "field": "ci_low",
+     "value": "-0.12107940705853049",
+     "role": "interval_low",
+     "x_cm": 8.4456,
+     "y_cm": -5.62
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_b_adapter_human_patience_q43_spearman_rho",
+     "field": "value",
+     "value": "0.21804920801641461",
+     "role": "point",
+     "x_cm": 9.1427,
+     "y_cm": -5.62
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_b_adapter_human_patience_q43_spearman_rho",
+     "field": "ci_high",
+     "value": "0.489701554962875",
+     "role": "interval_high",
+     "x_cm": 9.7011,
+     "y_cm": -5.62
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_a_adapter_human_patience_q50_spearman_rho",
+     "field": "ci_low",
+     "value": "-0.29063224515074515",
+     "role": "interval_low",
+     "x_cm": 8.097,
+     "y_cm": -6.26
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_a_adapter_human_patience_q50_spearman_rho",
+     "field": "value",
+     "value": "0.0033222591362126247",
+     "role": "point",
+     "x_cm": 8.7013,
+     "y_cm": -6.26
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_a_adapter_human_patience_q50_spearman_rho",
+     "field": "ci_high",
+     "value": "0.31565749510397995",
+     "role": "interval_high",
+     "x_cm": 9.3433,
+     "y_cm": -6.26
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_b_adapter_human_patience_q50_spearman_rho",
+     "field": "ci_low",
+     "value": "-0.24683867340767593",
+     "role": "interval_low",
+     "x_cm": 8.1871,
+     "y_cm": -6.6
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_b_adapter_human_patience_q50_spearman_rho",
+     "field": "value",
+     "value": "0.037477207627821266",
+     "role": "point",
+     "x_cm": 8.7715,
+     "y_cm": -6.6
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p2",
+     "claim_id": "C9_b_adapter_human_patience_q50_spearman_rho",
+     "field": "ci_high",
+     "value": "0.33160839109050344",
+     "role": "interval_high",
+     "x_cm": 9.3761,
+     "y_cm": -6.6
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p3",
+     "claim_id": "C9_a_human_gps_trust_spearman_rho",
+     "field": "ci_low",
+     "value": "0.08794003988068244",
+     "role": "interval_low",
+     "x_cm": 12.8752,
+     "y_cm": -0.55
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p3",
+     "claim_id": "C9_a_human_gps_trust_spearman_rho",
+     "field": "value",
+     "value": "0.3507819463576696",
+     "role": "point",
+     "x_cm": 13.4155,
+     "y_cm": -0.55
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p3",
+     "claim_id": "C9_a_human_gps_trust_spearman_rho",
+     "field": "ci_high",
+     "value": "0.5639915769409524",
+     "role": "interval_high",
+     "x_cm": 13.8538,
+     "y_cm": -0.55
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p3",
+     "claim_id": "C9_a_human_gps_risktaking_spearman_rho",
+     "field": "ci_low",
+     "value": "-0.42911459718819184",
+     "role": "interval_low",
+     "x_cm": 11.8124,
+     "y_cm": -1.53
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p3",
+     "claim_id": "C9_a_human_gps_risktaking_spearman_rho",
+     "field": "value",
+     "value": "-0.05871080139372824",
+     "role": "point",
+     "x_cm": 12.5738,
+     "y_cm": -1.53
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p3",
+     "claim_id": "C9_a_human_gps_risktaking_spearman_rho",
+     "field": "ci_high",
+     "value": "0.3123890498881549",
+     "role": "interval_high",
+     "x_cm": 13.3366,
+     "y_cm": -1.53
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p3",
+     "claim_id": "C9_a_human_gps_posrecip_spearman_rho",
+     "field": "ci_low",
+     "value": "-0.26946742081732",
+     "role": "interval_low",
+     "x_cm": 12.1405,
+     "y_cm": -2.51
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p3",
+     "claim_id": "C9_a_human_gps_posrecip_spearman_rho",
+     "field": "value",
+     "value": "0.05437160683899198",
+     "role": "point",
+     "x_cm": 12.8062,
+     "y_cm": -2.51
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p3",
+     "claim_id": "C9_a_human_gps_posrecip_spearman_rho",
+     "field": "ci_high",
+     "value": "0.386170162315793",
+     "role": "interval_high",
+     "x_cm": 13.4882,
+     "y_cm": -2.51
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p3",
+     "claim_id": "C9_a_human_gps_altruism_spearman_rho",
+     "field": "ci_low",
+     "value": "-0.30571517659170094",
+     "role": "interval_low",
+     "x_cm": 12.066,
+     "y_cm": -3.49
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p3",
+     "claim_id": "C9_a_human_gps_altruism_spearman_rho",
+     "field": "value",
+     "value": "0.03135888501742161",
+     "role": "point",
+     "x_cm": 12.7589,
+     "y_cm": -3.49
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p3",
+     "claim_id": "C9_a_human_gps_altruism_spearman_rho",
+     "field": "ci_high",
+     "value": "0.35001860638180454",
+     "role": "interval_high",
+     "x_cm": 13.4139,
+     "y_cm": -3.49
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p3",
+     "claim_id": "C9_a_human_gps_negrecip_spearman_rho",
+     "field": "ci_low",
+     "value": "0.1728453273811127",
+     "role": "interval_low",
+     "x_cm": 13.0497,
+     "y_cm": -4.47
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p3",
+     "claim_id": "C9_a_human_gps_negrecip_spearman_rho",
+     "field": "value",
+     "value": "0.4160926991329714",
+     "role": "point",
+     "x_cm": 13.5497,
+     "y_cm": -4.47
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p3",
+     "claim_id": "C9_a_human_gps_negrecip_spearman_rho",
+     "field": "ci_high",
+     "value": "0.5858880979252813",
+     "role": "interval_high",
+     "x_cm": 13.8988,
+     "y_cm": -4.47
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p3",
+     "claim_id": "C9_a_human_gps_patience_q43_spearman_rho",
+     "field": "ci_low",
+     "value": "-0.7409459380593372",
+     "role": "interval_low",
+     "x_cm": 11.1714,
+     "y_cm": -5.45
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p3",
+     "claim_id": "C9_a_human_gps_patience_q43_spearman_rho",
+     "field": "value",
+     "value": "-0.5326148610323312",
+     "role": "point",
+     "x_cm": 11.5996,
+     "y_cm": -5.45
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p3",
+     "claim_id": "C9_a_human_gps_patience_q43_spearman_rho",
+     "field": "ci_high",
+     "value": "-0.26579331782353854",
+     "role": "interval_high",
+     "x_cm": 12.1481,
+     "y_cm": -5.45
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p3",
+     "claim_id": "C9_a_human_gps_patience_q50_spearman_rho",
+     "field": "ci_low",
+     "value": "0.0946413644242657",
+     "role": "interval_low",
+     "x_cm": 12.889,
+     "y_cm": -6.43
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p3",
+     "claim_id": "C9_a_human_gps_patience_q50_spearman_rho",
+     "field": "value",
+     "value": "0.38805607325176245",
+     "role": "point",
+     "x_cm": 13.4921,
+     "y_cm": -6.43
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "p3",
+     "claim_id": "C9_a_human_gps_patience_q50_spearman_rho",
+     "field": "ci_high",
+     "value": "0.6279758422642947",
+     "role": "interval_high",
+     "x_cm": 13.9853,
+     "y_cm": -6.43
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "label",
+     "claim_id": "C9_a_adapter_human_risktaking_spearman_rho",
+     "field": "n",
+     "value": "41",
+     "role": "printed_label",
+     "printed": "41"
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "label",
+     "claim_id": "C9_b_adapter_human_risktaking_spearman_rho",
+     "field": "n",
+     "value": "41",
+     "role": "printed_label",
+     "printed": "41"
+    },
+    {
+     "figure": "fig_three_links",
+     "panel": "label",
+     "claim_id": "C9_a_human_gps_risktaking_spearman_rho",
+     "field": "n",
+     "value": "41",
+     "role": "printed_label",
+     "printed": "41"
+    }
+   ]
+  },
+  {
+   "name": "fig_info_vs_route",
+   "title": "Trust rank agreement and distance to survey distributions by route (descriptive)",
+   "tex": "fig_info_vs_route.tex",
+   "pdf": "fig_info_vs_route.pdf",
+   "png": "fig_info_vs_route.png",
+   "panels": [
+    {
+     "id": "A",
+     "x0_cm": "4.45000000000000017763568394002504646778106689453125",
+     "data_min": "-0.5",
+     "data_max": "1",
+     "cm_per_unit": "3.000000",
+     "quantity": "Spearman rho (trust composite vs GPS trust coordinate), 42 countries",
+     "interval": "profile-block bootstrap (26 blocks)"
+    },
+    {
+     "id": "B",
+     "x0_cm": "10.800000000000000710542735760100185871124267578125",
+     "data_min": "0.3",
+     "data_max": "0.55",
+     "cm_per_unit": "18.000000",
+     "quantity": "mean total variation distance to survey answer shares, country-equal",
+     "interval": "no interval banked for the four cell means"
+    },
+    {
+     "id": "C",
+     "x0_cm": "6.4000000000000003552713678800500929355621337890625",
+     "data_min": "-0.14",
+     "data_max": "0.12",
+     "cm_per_unit": "20.769231",
+     "quantity": "paired difference in mean TVD",
+     "interval": "paired profile-block bootstrap (26 blocks)"
+    }
+   ],
+   "data": [
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "B",
+     "claim_id": "C9_TVD_base_mean_tvd_country_equal",
+     "field": "value",
+     "value": "0.470046650620059",
+     "role": "point",
+     "x_cm": 13.8608,
+     "y_cm": -0.6
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "label",
+     "claim_id": "C9_TVD_base_mean_tvd_country_equal",
+     "field": "value",
+     "value": "0.470046650620059",
+     "role": "printed_label",
+     "printed": "0.470"
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "A",
+     "claim_id": "B2_cohort1_trust_rho",
+     "field": "ci_low",
+     "value": "0.5002088786337604",
+     "role": "interval_low",
+     "x_cm": 7.4506,
+     "y_cm": -1.58
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "A",
+     "claim_id": "B2_cohort1_trust_rho",
+     "field": "value",
+     "value": "0.7441050158009886",
+     "role": "point",
+     "x_cm": 8.1823,
+     "y_cm": -1.58
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "A",
+     "claim_id": "B2_cohort1_trust_rho",
+     "field": "ci_high",
+     "value": "0.8647856310906544",
+     "role": "interval_high",
+     "x_cm": 8.5444,
+     "y_cm": -1.58
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "label",
+     "claim_id": "B2_cohort1_trust_rho",
+     "field": "value",
+     "value": "0.7441050158009886",
+     "role": "printed_label",
+     "printed": "0.744"
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "B",
+     "claim_id": "C9_TVD_adapter_mean_tvd_country_equal",
+     "field": "value",
+     "value": "0.5154766417741424",
+     "role": "point",
+     "x_cm": 14.6786,
+     "y_cm": -1.58
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "label",
+     "claim_id": "C9_TVD_adapter_mean_tvd_country_equal",
+     "field": "value",
+     "value": "0.5154766417741424",
+     "role": "printed_label",
+     "printed": "0.515"
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "A",
+     "claim_id": "C9_TVD_adapter_persona_trust_gps_profile_block",
+     "field": "ci_low",
+     "value": "0.5045527062375771",
+     "role": "interval_low",
+     "x_cm": 7.4637,
+     "y_cm": -2.56
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "A",
+     "claim_id": "C9_TVD_adapter_persona_trust_gps_profile_block",
+     "field": "value",
+     "value": "0.7254679523539421",
+     "role": "point",
+     "x_cm": 8.1264,
+     "y_cm": -2.56
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "A",
+     "claim_id": "C9_TVD_adapter_persona_trust_gps_profile_block",
+     "field": "ci_high",
+     "value": "0.819536884318551",
+     "role": "interval_high",
+     "x_cm": 8.4086,
+     "y_cm": -2.56
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "label",
+     "claim_id": "C9_TVD_adapter_persona_trust_gps_profile_block",
+     "field": "value",
+     "value": "0.7254679523539421",
+     "role": "printed_label",
+     "printed": "0.725"
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "B",
+     "claim_id": "C9_TVD_adapter_persona_mean_tvd_country_equal",
+     "field": "value",
+     "value": "0.41950116386997005",
+     "role": "point",
+     "x_cm": 12.951,
+     "y_cm": -2.56
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "label",
+     "claim_id": "C9_TVD_adapter_persona_mean_tvd_country_equal",
+     "field": "value",
+     "value": "0.41950116386997005",
+     "role": "printed_label",
+     "printed": "0.420"
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "A",
+     "claim_id": "PX_persona_trust_rho",
+     "field": "ci_low",
+     "value": "-0.3386574205085119",
+     "role": "interval_low",
+     "x_cm": 4.934,
+     "y_cm": -3.54
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "A",
+     "claim_id": "PX_persona_trust_rho",
+     "field": "value",
+     "value": "0.02779353374929098",
+     "role": "point",
+     "x_cm": 6.0334,
+     "y_cm": -3.54
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "A",
+     "claim_id": "PX_persona_trust_rho",
+     "field": "ci_high",
+     "value": "0.38136686616815824",
+     "role": "interval_high",
+     "x_cm": 7.0941,
+     "y_cm": -3.54
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "label",
+     "claim_id": "PX_persona_trust_rho",
+     "field": "value",
+     "value": "0.02779353374929098",
+     "role": "printed_label",
+     "printed": "0.028"
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "B",
+     "claim_id": "C9_TVD_persona_mean_tvd_country_equal",
+     "field": "value",
+     "value": "0.3649046586151852",
+     "role": "point",
+     "x_cm": 11.9683,
+     "y_cm": -3.54
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "label",
+     "claim_id": "C9_TVD_persona_mean_tvd_country_equal",
+     "field": "value",
+     "value": "0.3649046586151852",
+     "role": "printed_label",
+     "printed": "0.365"
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "A",
+     "claim_id": "PX_signprompt_trust_rho",
+     "field": "ci_low",
+     "value": "0.5836609604950164",
+     "role": "interval_low",
+     "x_cm": 7.701,
+     "y_cm": -4.52
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "A",
+     "claim_id": "PX_signprompt_trust_rho",
+     "field": "value",
+     "value": "0.7730688066951009",
+     "role": "point",
+     "x_cm": 8.2692,
+     "y_cm": -4.52
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "A",
+     "claim_id": "PX_signprompt_trust_rho",
+     "field": "ci_high",
+     "value": "0.8444114505180651",
+     "role": "interval_high",
+     "x_cm": 8.4832,
+     "y_cm": -4.52
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "label",
+     "claim_id": "PX_signprompt_trust_rho",
+     "field": "value",
+     "value": "0.7730688066951009",
+     "role": "printed_label",
+     "printed": "0.773"
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "A",
+     "claim_id": "B2_bank2_trust_rho",
+     "field": "ci_low",
+     "value": "0.6145971882846217",
+     "role": "interval_low",
+     "x_cm": 7.7938,
+     "y_cm": -5.5
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "A",
+     "claim_id": "B2_bank2_trust_rho",
+     "field": "value",
+     "value": "0.8032452595902299",
+     "role": "point",
+     "x_cm": 8.3597,
+     "y_cm": -5.5
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "A",
+     "claim_id": "B2_bank2_trust_rho",
+     "field": "ci_high",
+     "value": "0.8764662126321977",
+     "role": "interval_high",
+     "x_cm": 8.5794,
+     "y_cm": -5.5
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "label",
+     "claim_id": "B2_bank2_trust_rho",
+     "field": "value",
+     "value": "0.8032452595902299",
+     "role": "printed_label",
+     "printed": "0.803"
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "C",
+     "claim_id": "C9_TVD_adapter_minus_base_profile_block",
+     "field": "ci_low",
+     "value": "0.006169716953512208",
+     "role": "interval_low",
+     "x_cm": 9.4358,
+     "y_cm": -8.55
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "C",
+     "claim_id": "C9_TVD_adapter_minus_base_profile_block",
+     "field": "value",
+     "value": "0.04542999115408338",
+     "role": "point",
+     "x_cm": 10.2512,
+     "y_cm": -8.55
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "C",
+     "claim_id": "C9_TVD_adapter_minus_base_profile_block",
+     "field": "ci_high",
+     "value": "0.09272260519372265",
+     "role": "interval_high",
+     "x_cm": 11.2335,
+     "y_cm": -8.55
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "label",
+     "claim_id": "C9_TVD_adapter_minus_base_profile_block",
+     "field": "value",
+     "value": "0.04542999115408338",
+     "role": "printed_label",
+     "printed": "0.045"
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "label",
+     "claim_id": "C9_TVD_adapter_minus_base_profile_block",
+     "field": "ci_low",
+     "value": "0.006169716953512208",
+     "role": "printed_label",
+     "printed": "0.006"
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "label",
+     "claim_id": "C9_TVD_adapter_minus_base_profile_block",
+     "field": "ci_high",
+     "value": "0.09272260519372265",
+     "role": "printed_label",
+     "printed": "0.093"
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "C",
+     "claim_id": "C9_TVD_persona_minus_base_profile_block",
+     "field": "ci_low",
+     "value": "-0.12158126165639337",
+     "role": "interval_low",
+     "x_cm": 6.7825,
+     "y_cm": -9.53
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "C",
+     "claim_id": "C9_TVD_persona_minus_base_profile_block",
+     "field": "value",
+     "value": "-0.10514199200487398",
+     "role": "point",
+     "x_cm": 7.124,
+     "y_cm": -9.53
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "C",
+     "claim_id": "C9_TVD_persona_minus_base_profile_block",
+     "field": "ci_high",
+     "value": "-0.08606035054516069",
+     "role": "interval_high",
+     "x_cm": 7.5203,
+     "y_cm": -9.53
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "label",
+     "claim_id": "C9_TVD_persona_minus_base_profile_block",
+     "field": "value",
+     "value": "-0.10514199200487398",
+     "role": "printed_label",
+     "printed": "$-$0.105"
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "label",
+     "claim_id": "C9_TVD_persona_minus_base_profile_block",
+     "field": "ci_low",
+     "value": "-0.12158126165639337",
+     "role": "printed_label",
+     "printed": "$-$0.122"
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "label",
+     "claim_id": "C9_TVD_persona_minus_base_profile_block",
+     "field": "ci_high",
+     "value": "-0.08606035054516069",
+     "role": "printed_label",
+     "printed": "$-$0.086"
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "C",
+     "claim_id": "C9_TVD_adapter_persona_minus_base_profile_block",
+     "field": "ci_low",
+     "value": "-0.09453081764312539",
+     "role": "interval_low",
+     "x_cm": 7.3444,
+     "y_cm": -10.51
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "C",
+     "claim_id": "C9_TVD_adapter_persona_minus_base_profile_block",
+     "field": "value",
+     "value": "-0.05054548675008909",
+     "role": "point",
+     "x_cm": 8.2579,
+     "y_cm": -10.51
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "C",
+     "claim_id": "C9_TVD_adapter_persona_minus_base_profile_block",
+     "field": "ci_high",
+     "value": "0.00548412981330979",
+     "role": "interval_high",
+     "x_cm": 9.4216,
+     "y_cm": -10.51
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "label",
+     "claim_id": "C9_TVD_adapter_persona_minus_base_profile_block",
+     "field": "value",
+     "value": "-0.05054548675008909",
+     "role": "printed_label",
+     "printed": "$-$0.051"
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "label",
+     "claim_id": "C9_TVD_adapter_persona_minus_base_profile_block",
+     "field": "ci_low",
+     "value": "-0.09453081764312539",
+     "role": "printed_label",
+     "printed": "$-$0.095"
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "label",
+     "claim_id": "C9_TVD_adapter_persona_minus_base_profile_block",
+     "field": "ci_high",
+     "value": "0.00548412981330979",
+     "role": "printed_label",
+     "printed": "0.005"
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "C",
+     "claim_id": "C9_TVD_adapter_persona_minus_adapter_profile_block",
+     "field": "ci_low",
+     "value": "-0.11452277939054879",
+     "role": "interval_low",
+     "x_cm": 6.9291,
+     "y_cm": -11.49
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "C",
+     "claim_id": "C9_TVD_adapter_persona_minus_adapter_profile_block",
+     "field": "value",
+     "value": "-0.09597547790417249",
+     "role": "point",
+     "x_cm": 7.3144,
+     "y_cm": -11.49
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "C",
+     "claim_id": "C9_TVD_adapter_persona_minus_adapter_profile_block",
+     "field": "ci_high",
+     "value": "-0.07763268990263332",
+     "role": "interval_high",
+     "x_cm": 7.6953,
+     "y_cm": -11.49
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "label",
+     "claim_id": "C9_TVD_adapter_persona_minus_adapter_profile_block",
+     "field": "value",
+     "value": "-0.09597547790417249",
+     "role": "printed_label",
+     "printed": "$-$0.096"
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "label",
+     "claim_id": "C9_TVD_adapter_persona_minus_adapter_profile_block",
+     "field": "ci_low",
+     "value": "-0.11452277939054879",
+     "role": "printed_label",
+     "printed": "$-$0.115"
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "label",
+     "claim_id": "C9_TVD_adapter_persona_minus_adapter_profile_block",
+     "field": "ci_high",
+     "value": "-0.07763268990263332",
+     "role": "printed_label",
+     "printed": "$-$0.078"
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "C",
+     "claim_id": "C9_TVD_adapter_persona_minus_persona_profile_block",
+     "field": "ci_low",
+     "value": "0.01587128110326034",
+     "role": "interval_low",
+     "x_cm": 9.6373,
+     "y_cm": -12.47
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "C",
+     "claim_id": "C9_TVD_adapter_persona_minus_persona_profile_block",
+     "field": "value",
+     "value": "0.05459650525478486",
+     "role": "point",
+     "x_cm": 10.4416,
+     "y_cm": -12.47
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "C",
+     "claim_id": "C9_TVD_adapter_persona_minus_persona_profile_block",
+     "field": "ci_high",
+     "value": "0.09662035133703001",
+     "role": "interval_high",
+     "x_cm": 11.3144,
+     "y_cm": -12.47
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "label",
+     "claim_id": "C9_TVD_adapter_persona_minus_persona_profile_block",
+     "field": "value",
+     "value": "0.05459650525478486",
+     "role": "printed_label",
+     "printed": "0.055"
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "label",
+     "claim_id": "C9_TVD_adapter_persona_minus_persona_profile_block",
+     "field": "ci_low",
+     "value": "0.01587128110326034",
+     "role": "printed_label",
+     "printed": "0.016"
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "label",
+     "claim_id": "C9_TVD_adapter_persona_minus_persona_profile_block",
+     "field": "ci_high",
+     "value": "0.09662035133703001",
+     "role": "printed_label",
+     "printed": "0.097"
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "C",
+     "claim_id": "C9_TVD_interaction_profile_block",
+     "field": "ci_low",
+     "value": "-0.0032999105110756164",
+     "role": "interval_low",
+     "x_cm": 9.2392,
+     "y_cm": -13.45
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "C",
+     "claim_id": "C9_TVD_interaction_profile_block",
+     "field": "value",
+     "value": "0.00916651410070148",
+     "role": "point",
+     "x_cm": 9.4981,
+     "y_cm": -13.45
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "C",
+     "claim_id": "C9_TVD_interaction_profile_block",
+     "field": "ci_high",
+     "value": "0.022368632285632302",
+     "role": "interval_high",
+     "x_cm": 9.7723,
+     "y_cm": -13.45
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "label",
+     "claim_id": "C9_TVD_interaction_profile_block",
+     "field": "value",
+     "value": "0.00916651410070148",
+     "role": "printed_label",
+     "printed": "0.009"
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "label",
+     "claim_id": "C9_TVD_interaction_profile_block",
+     "field": "ci_low",
+     "value": "-0.0032999105110756164",
+     "role": "printed_label",
+     "printed": "$-$0.003"
+    },
+    {
+     "figure": "fig_info_vs_route",
+     "panel": "label",
+     "claim_id": "C9_TVD_interaction_profile_block",
+     "field": "ci_high",
+     "value": "0.022368632285632302",
+     "role": "printed_label",
+     "printed": "0.022"
+    }
+   ]
+  },
+  {
+   "name": "fig_screen",
+   "title": "Retrospective item screen (registered A, permutation null, direct contrasts)",
+   "tex": "fig_screen.tex",
+   "pdf": "fig_screen.pdf",
+   "png": "fig_screen.png",
+   "panels": [
+    {
+     "id": "A",
+     "x0_cm": "3.20000000000000017763568394002504646778106689453125",
+     "data_min": "-0.15",
+     "data_max": "0.3",
+     "cm_per_unit": "11.111111",
+     "quantity": "A: mean signed Spearman agreement with WVS-7 human country differences, selected items",
+     "interval": "country bootstrap (42 countries)"
+    },
+    {
+     "id": "B",
+     "x0_cm": "10.5999999999999996447286321199499070644378662109375",
+     "data_min": "-0.15",
+     "data_max": "0.3",
+     "cm_per_unit": "11.111111",
+     "quantity": "A against its permutation null",
+     "interval": "10,000 item-set permutations"
+    },
+    {
+     "id": "C",
+     "x0_cm": "5",
+     "data_min": "-0.3",
+     "data_max": "0.3",
+     "cm_per_unit": "10.333333",
+     "quantity": "difference in A, adapters minus named route",
+     "interval": "paired country bootstrap (2,000 draws)"
+    }
+   ],
+   "data": [
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "SCR_A_primary",
+     "field": "n",
+     "value": "56",
+     "role": "printed_label",
+     "printed": "56"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "SCR_A_primary",
+     "field": "value",
+     "value": "0.06057460871332797",
+     "role": "printed_label",
+     "printed": "0.061"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "SCR_A_primary",
+     "field": "ci_low",
+     "value": "-0.0067258505657922735",
+     "role": "printed_label",
+     "printed": "$-$0.007"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "SCR_A_primary",
+     "field": "ci_high",
+     "value": "0.12648524013553836",
+     "role": "printed_label",
+     "printed": "0.126"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "A",
+     "claim_id": "SCR_A_primary",
+     "field": "ci_low",
+     "value": "-0.0067258505657922735",
+     "role": "interval_low",
+     "x_cm": 4.7919,
+     "y_cm": -0.75
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "A",
+     "claim_id": "SCR_A_primary",
+     "field": "value",
+     "value": "0.06057460871332797",
+     "role": "point",
+     "x_cm": 5.5397,
+     "y_cm": -0.75
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "A",
+     "claim_id": "SCR_A_primary",
+     "field": "ci_high",
+     "value": "0.12648524013553836",
+     "role": "interval_high",
+     "x_cm": 6.2721,
+     "y_cm": -0.75
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "B",
+     "claim_id": "SCR_A_primary",
+     "field": "value",
+     "value": "0.06057460871332797",
+     "role": "point",
+     "x_cm": 12.9397,
+     "y_cm": -0.75
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "B",
+     "claim_id": "SCR_null_q95",
+     "field": "value",
+     "value": "0.04625800521962199",
+     "role": "null_95th_percentile",
+     "x_cm": 12.7806,
+     "y_cm": -0.75
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "B",
+     "claim_id": "SCR_null_mean",
+     "field": "value",
+     "value": "0.011939799842343543",
+     "role": "null_mean",
+     "x_cm": 12.3993,
+     "y_cm": -0.75
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "SCR_p_perm",
+     "field": "value",
+     "value": "0.0097",
+     "role": "printed_label",
+     "printed": "0.0097"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "SP_A_primary",
+     "field": "n",
+     "value": "56",
+     "role": "printed_label",
+     "printed": "56"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "SP_A_primary",
+     "field": "value",
+     "value": "0.027886269552101026",
+     "role": "printed_label",
+     "printed": "0.028"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "SP_A_primary",
+     "field": "ci_low",
+     "value": "-0.10859510229614298",
+     "role": "printed_label",
+     "printed": "$-$0.109"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "SP_A_primary",
+     "field": "ci_high",
+     "value": "0.1584453830215301",
+     "role": "printed_label",
+     "printed": "0.158"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "A",
+     "claim_id": "SP_A_primary",
+     "field": "ci_low",
+     "value": "-0.10859510229614298",
+     "role": "interval_low",
+     "x_cm": 3.6601,
+     "y_cm": -2.2
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "A",
+     "claim_id": "SP_A_primary",
+     "field": "value",
+     "value": "0.027886269552101026",
+     "role": "point",
+     "x_cm": 5.1765,
+     "y_cm": -2.2
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "A",
+     "claim_id": "SP_A_primary",
+     "field": "ci_high",
+     "value": "0.1584453830215301",
+     "role": "interval_high",
+     "x_cm": 6.6272,
+     "y_cm": -2.2
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "B",
+     "claim_id": "SP_A_primary",
+     "field": "value",
+     "value": "0.027886269552101026",
+     "role": "point",
+     "x_cm": 12.5765,
+     "y_cm": -2.2
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "B",
+     "claim_id": "SP_null_q95",
+     "field": "value",
+     "value": "0.0638237748746518",
+     "role": "null_95th_percentile",
+     "x_cm": 12.9758,
+     "y_cm": -2.2
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "SP_p_perm",
+     "field": "value",
+     "value": "0.5085",
+     "role": "printed_label",
+     "printed": "0.5085"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "A",
+     "claim_id": "SCR_one_third_ceiling",
+     "field": "value",
+     "value": "0.24861871005246683",
+     "role": "reference_line",
+     "x_cm": 7.6291,
+     "y_cm": [
+      -2.8,
+      0.0
+     ]
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "SCR_one_third_ceiling",
+     "field": "value",
+     "value": "0.24861871005246683",
+     "role": "printed_label",
+     "printed": "0.249"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "SP_D_own",
+     "field": "n",
+     "value": "56",
+     "role": "printed_label",
+     "printed": "56"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "C",
+     "claim_id": "SP_D_own",
+     "field": "ci_low",
+     "value": "-0.0833125828920078",
+     "role": "interval_low",
+     "x_cm": 7.2391,
+     "y_cm": -6.87
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "C",
+     "claim_id": "SP_D_own",
+     "field": "value",
+     "value": "0.032688339161226945",
+     "role": "point",
+     "x_cm": 8.4378,
+     "y_cm": -6.87
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "C",
+     "claim_id": "SP_D_own",
+     "field": "ci_high",
+     "value": "0.14255259524880806",
+     "role": "interval_high",
+     "x_cm": 9.573,
+     "y_cm": -6.87
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "SP_D_own",
+     "field": "value",
+     "value": "0.032688339161226945",
+     "role": "printed_label",
+     "printed": "0.033"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "SP_D_own",
+     "field": "ci_low",
+     "value": "-0.0833125828920078",
+     "role": "printed_label",
+     "printed": "$-$0.083"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "SP_D_own",
+     "field": "ci_high",
+     "value": "0.14255259524880806",
+     "role": "printed_label",
+     "printed": "0.143"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "SP_D_common",
+     "field": "n",
+     "value": "16",
+     "role": "printed_label",
+     "printed": "16"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "C",
+     "claim_id": "SP_D_common",
+     "field": "ci_low",
+     "value": "-0.06495204948348372",
+     "role": "interval_low",
+     "x_cm": 7.4288,
+     "y_cm": -7.47
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "C",
+     "claim_id": "SP_D_common",
+     "field": "value",
+     "value": "0.0037631428638459155",
+     "role": "point",
+     "x_cm": 8.1389,
+     "y_cm": -7.47
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "C",
+     "claim_id": "SP_D_common",
+     "field": "ci_high",
+     "value": "0.0754296387941381",
+     "role": "interval_high",
+     "x_cm": 8.8794,
+     "y_cm": -7.47
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "SP_D_common",
+     "field": "value",
+     "value": "0.0037631428638459155",
+     "role": "printed_label",
+     "printed": "0.004"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "SP_D_common",
+     "field": "ci_low",
+     "value": "-0.06495204948348372",
+     "role": "printed_label",
+     "printed": "$-$0.065"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "SP_D_common",
+     "field": "ci_high",
+     "value": "0.0754296387941381",
+     "role": "printed_label",
+     "printed": "0.075"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "CMP_face_valid_D_own",
+     "field": "n",
+     "value": "25",
+     "role": "printed_label",
+     "printed": "25"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "C",
+     "claim_id": "CMP_face_valid_D_own",
+     "field": "ci_low",
+     "value": "-0.24211281427302758",
+     "role": "interval_low",
+     "x_cm": 5.5982,
+     "y_cm": -8.59
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "C",
+     "claim_id": "CMP_face_valid_D_own",
+     "field": "value",
+     "value": "-0.03414016762732533",
+     "role": "point",
+     "x_cm": 7.7472,
+     "y_cm": -8.59
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "C",
+     "claim_id": "CMP_face_valid_D_own",
+     "field": "ci_high",
+     "value": "0.16872706166406723",
+     "role": "interval_high",
+     "x_cm": 9.8435,
+     "y_cm": -8.59
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "CMP_face_valid_D_own",
+     "field": "value",
+     "value": "-0.03414016762732533",
+     "role": "printed_label",
+     "printed": "$-$0.034"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "CMP_face_valid_D_own",
+     "field": "ci_low",
+     "value": "-0.24211281427302758",
+     "role": "printed_label",
+     "printed": "$-$0.242"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "CMP_face_valid_D_own",
+     "field": "ci_high",
+     "value": "0.16872706166406723",
+     "role": "printed_label",
+     "printed": "0.169"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "CMP_face_valid_D_common",
+     "field": "n",
+     "value": "5",
+     "role": "printed_label",
+     "printed": "5"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "C",
+     "claim_id": "CMP_face_valid_D_common",
+     "field": "ci_low",
+     "value": "-0.18143849863495343",
+     "role": "interval_low",
+     "x_cm": 6.2251,
+     "y_cm": -9.19
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "C",
+     "claim_id": "CMP_face_valid_D_common",
+     "field": "value",
+     "value": "0.01970706072565942",
+     "role": "point",
+     "x_cm": 8.3036,
+     "y_cm": -9.19
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "C",
+     "claim_id": "CMP_face_valid_D_common",
+     "field": "ci_high",
+     "value": "0.21473070671106956",
+     "role": "interval_high",
+     "x_cm": 10.3189,
+     "y_cm": -9.19
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "CMP_face_valid_D_common",
+     "field": "value",
+     "value": "0.01970706072565942",
+     "role": "printed_label",
+     "printed": "0.020"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "CMP_face_valid_D_common",
+     "field": "ci_low",
+     "value": "-0.18143849863495343",
+     "role": "printed_label",
+     "printed": "$-$0.181"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "CMP_face_valid_D_common",
+     "field": "ci_high",
+     "value": "0.21473070671106956",
+     "role": "printed_label",
+     "printed": "0.215"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "CMP_jev_D_own",
+     "field": "n",
+     "value": "40",
+     "role": "printed_label",
+     "printed": "40"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "C",
+     "claim_id": "CMP_jev_D_own",
+     "field": "ci_low",
+     "value": "-0.23700918899294768",
+     "role": "interval_low",
+     "x_cm": 5.6509,
+     "y_cm": -10.31
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "C",
+     "claim_id": "CMP_jev_D_own",
+     "field": "value",
+     "value": "-0.06698794855356853",
+     "role": "point",
+     "x_cm": 7.4078,
+     "y_cm": -10.31
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "C",
+     "claim_id": "CMP_jev_D_own",
+     "field": "ci_high",
+     "value": "0.10288119597809976",
+     "role": "interval_high",
+     "x_cm": 9.1631,
+     "y_cm": -10.31
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "CMP_jev_D_own",
+     "field": "value",
+     "value": "-0.06698794855356853",
+     "role": "printed_label",
+     "printed": "$-$0.067"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "CMP_jev_D_own",
+     "field": "ci_low",
+     "value": "-0.23700918899294768",
+     "role": "printed_label",
+     "printed": "$-$0.237"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "CMP_jev_D_own",
+     "field": "ci_high",
+     "value": "0.10288119597809976",
+     "role": "printed_label",
+     "printed": "0.103"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "CMP_jev_D_common",
+     "field": "n",
+     "value": "9",
+     "role": "printed_label",
+     "printed": "9"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "C",
+     "claim_id": "CMP_jev_D_common",
+     "field": "ci_low",
+     "value": "-0.06437316693682472",
+     "role": "interval_low",
+     "x_cm": 7.4348,
+     "y_cm": -10.91
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "C",
+     "claim_id": "CMP_jev_D_common",
+     "field": "value",
+     "value": "-0.0024255192718040247",
+     "role": "point",
+     "x_cm": 8.0749,
+     "y_cm": -10.91
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "C",
+     "claim_id": "CMP_jev_D_common",
+     "field": "ci_high",
+     "value": "0.06102420665810506",
+     "role": "interval_high",
+     "x_cm": 8.7306,
+     "y_cm": -10.91
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "CMP_jev_D_common",
+     "field": "value",
+     "value": "-0.0024255192718040247",
+     "role": "printed_label",
+     "printed": "$-$0.002"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "CMP_jev_D_common",
+     "field": "ci_low",
+     "value": "-0.06437316693682472",
+     "role": "printed_label",
+     "printed": "$-$0.064"
+    },
+    {
+     "figure": "fig_screen",
+     "panel": "label",
+     "claim_id": "CMP_jev_D_common",
+     "field": "ci_high",
+     "value": "0.06102420665810506",
+     "role": "printed_label",
+     "printed": "0.061"
+    }
+   ]
+  },
+  {
+   "name": "fig_factorial_own",
+   "title": "Own effects of the six sign bits, trained vs prompted (full 7 x 6 matrix is not banked)",
+   "tex": "fig_factorial_own.tex",
+   "pdf": "fig_factorial_own.pdf",
+   "png": "fig_factorial_own.png",
+   "panels": [
+    {
+     "id": "A1",
+     "x0_cm": "3.600000000000000088817841970012523233890533447265625",
+     "data_min": "-2",
+     "data_max": "2",
+     "cm_per_unit": "1.300000",
+     "quantity": "own main effect on Trust (composite units)",
+     "interval": "none banked"
+    },
+    {
+     "id": "A2",
+     "x0_cm": "3.600000000000000088817841970012523233890533447265625",
+     "data_min": "-1",
+     "data_max": "1",
+     "cm_per_unit": "2.600000",
+     "quantity": "own main effect on Negative reciprocity (composite units)",
+     "interval": "none banked"
+    },
+    {
+     "id": "A3",
+     "x0_cm": "3.600000000000000088817841970012523233890533447265625",
+     "data_min": "-0.5",
+     "data_max": "0.5",
+     "cm_per_unit": "5.200000",
+     "quantity": "own main effect on Altruism (composite units)",
+     "interval": "none banked"
+    },
+    {
+     "id": "A4",
+     "x0_cm": "3.600000000000000088817841970012523233890533447265625",
+     "data_min": "-0.5",
+     "data_max": "0.5",
+     "cm_per_unit": "5.200000",
+     "quantity": "own main effect on Patience (Q50) (composite units)",
+     "interval": "none banked"
+    },
+    {
+     "id": "A5",
+     "x0_cm": "3.600000000000000088817841970012523233890533447265625",
+     "data_min": "-0.5",
+     "data_max": "0.5",
+     "cm_per_unit": "5.200000",
+     "quantity": "own main effect on Risk taking (composite units)",
+     "interval": "none banked"
+    },
+    {
+     "id": "A6",
+     "x0_cm": "3.600000000000000088817841970012523233890533447265625",
+     "data_min": "-0.1",
+     "data_max": "0.1",
+     "cm_per_unit": "26.000000",
+     "quantity": "own main effect on Patience (Q43) (composite units)",
+     "interval": "none banked"
+    },
+    {
+     "id": "A7",
+     "x0_cm": "3.600000000000000088817841970012523233890533447265625",
+     "data_min": "-0.2",
+     "data_max": "0.2",
+     "cm_per_unit": "13.000000",
+     "quantity": "own main effect on Positive reciprocity (composite units)",
+     "interval": "none banked"
+    },
+    {
+     "id": "B1",
+     "x0_cm": "6.29999999999999982236431605997495353221893310546875",
+     "data_min": "0",
+     "data_max": "6",
+     "cm_per_unit": "0.766667",
+     "quantity": "Bits dominant on their own surface (V5, of 6)",
+     "interval": "none banked"
+    },
+    {
+     "id": "B2",
+     "x0_cm": "6.29999999999999982236431605997495353221893310546875",
+     "data_min": "0",
+     "data_max": "7",
+     "cm_per_unit": "0.657143",
+     "quantity": "Own effects against intended direction (of 7)",
+     "interval": "none banked"
+    },
+    {
+     "id": "B3",
+     "x0_cm": "6.29999999999999982236431605997495353221893310546875",
+     "data_min": "0",
+     "data_max": "7",
+     "cm_per_unit": "0.657143",
+     "quantity": "Surfaces whose largest mover is the trust bit (of 7)",
+     "interval": "none banked"
+    },
+    {
+     "id": "B4",
+     "x0_cm": "6.29999999999999982236431605997495353221893310546875",
+     "data_min": "0",
+     "data_max": "1",
+     "cm_per_unit": "4.600000",
+     "quantity": "Variance on first principal component",
+     "interval": "none banked"
+    },
+    {
+     "id": "B5",
+     "x0_cm": "6.29999999999999982236431605997495353221893310546875",
+     "data_min": "0",
+     "data_max": "1",
+     "cm_per_unit": "4.600000",
+     "quantity": "Mean absolute correlation between surfaces",
+     "interval": "none banked"
+    }
+   ],
+   "data": [
+    {
+     "figure": "fig_factorial_own",
+     "panel": "A1",
+     "claim_id": "FX_adapter64_trust_own_beta",
+     "field": "value",
+     "value": "0.36358243388594513",
+     "role": "point",
+     "x_cm": 6.6727,
+     "y_cm": -0.43
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "A1",
+     "claim_id": "FX_signprompt64_trust_own_beta",
+     "field": "value",
+     "value": "1.7796863115995532",
+     "role": "point",
+     "x_cm": 8.5136,
+     "y_cm": -0.6
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "label",
+     "claim_id": "FX_adapter64_trust_own_beta",
+     "field": "value",
+     "value": "0.36358243388594513",
+     "role": "printed_label",
+     "printed": "0.364"
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "label",
+     "claim_id": "FX_signprompt64_trust_own_beta",
+     "field": "value",
+     "value": "1.7796863115995532",
+     "role": "printed_label",
+     "printed": "1.780"
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "A2",
+     "claim_id": "FX_adapter64_negrecip_own_beta",
+     "field": "value",
+     "value": "0.6247672859863043",
+     "role": "point",
+     "x_cm": 7.8244,
+     "y_cm": -1.63
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "A2",
+     "claim_id": "FX_signprompt64_negrecip_own_beta",
+     "field": "value",
+     "value": "-0.023307224836190077",
+     "role": "point",
+     "x_cm": 6.1394,
+     "y_cm": -1.8
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "label",
+     "claim_id": "FX_adapter64_negrecip_own_beta",
+     "field": "value",
+     "value": "0.6247672859863043",
+     "role": "printed_label",
+     "printed": "0.625"
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "label",
+     "claim_id": "FX_signprompt64_negrecip_own_beta",
+     "field": "value",
+     "value": "-0.023307224836190077",
+     "role": "printed_label",
+     "printed": "$-$0.023"
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "A3",
+     "claim_id": "FX_adapter64_altruism_own_beta",
+     "field": "value",
+     "value": "0.24208090186424142",
+     "role": "point",
+     "x_cm": 7.4588,
+     "y_cm": -2.83
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "A3",
+     "claim_id": "FX_signprompt64_altruism_own_beta",
+     "field": "value",
+     "value": "0.3643732082194353",
+     "role": "point",
+     "x_cm": 8.0947,
+     "y_cm": -3.0
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "label",
+     "claim_id": "FX_adapter64_altruism_own_beta",
+     "field": "value",
+     "value": "0.24208090186424142",
+     "role": "printed_label",
+     "printed": "0.242"
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "label",
+     "claim_id": "FX_signprompt64_altruism_own_beta",
+     "field": "value",
+     "value": "0.3643732082194353",
+     "role": "printed_label",
+     "printed": "0.364"
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "A4",
+     "claim_id": "FX_adapter64_patience_Q50_own_beta",
+     "field": "value",
+     "value": "0.13250479634657153",
+     "role": "point",
+     "x_cm": 6.889,
+     "y_cm": -4.03
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "A4",
+     "claim_id": "FX_signprompt64_patience_Q50_own_beta",
+     "field": "value",
+     "value": "0.4210699711397531",
+     "role": "point",
+     "x_cm": 8.3896,
+     "y_cm": -4.2
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "label",
+     "claim_id": "FX_adapter64_patience_Q50_own_beta",
+     "field": "value",
+     "value": "0.13250479634657153",
+     "role": "printed_label",
+     "printed": "0.133"
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "label",
+     "claim_id": "FX_signprompt64_patience_Q50_own_beta",
+     "field": "value",
+     "value": "0.4210699711397531",
+     "role": "printed_label",
+     "printed": "0.421"
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "A5",
+     "claim_id": "FX_adapter64_risktaking_own_beta",
+     "field": "value",
+     "value": "0.14000873839053002",
+     "role": "point",
+     "x_cm": 6.928,
+     "y_cm": -5.23
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "A5",
+     "claim_id": "FX_signprompt64_risktaking_own_beta",
+     "field": "value",
+     "value": "-0.4567087152154239",
+     "role": "point",
+     "x_cm": 3.8251,
+     "y_cm": -5.4
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "label",
+     "claim_id": "FX_adapter64_risktaking_own_beta",
+     "field": "value",
+     "value": "0.14000873839053002",
+     "role": "printed_label",
+     "printed": "0.140"
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "label",
+     "claim_id": "FX_signprompt64_risktaking_own_beta",
+     "field": "value",
+     "value": "-0.4567087152154239",
+     "role": "printed_label",
+     "printed": "$-$0.457"
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "A6",
+     "claim_id": "FX_adapter64_patience_Q43_own_beta",
+     "field": "value",
+     "value": "0.049414495561863836",
+     "role": "point",
+     "x_cm": 7.4848,
+     "y_cm": -6.43
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "A6",
+     "claim_id": "FX_signprompt64_patience_Q43_own_beta",
+     "field": "value",
+     "value": "-0.06918062400906969",
+     "role": "point",
+     "x_cm": 4.4013,
+     "y_cm": -6.6
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "label",
+     "claim_id": "FX_adapter64_patience_Q43_own_beta",
+     "field": "value",
+     "value": "0.049414495561863836",
+     "role": "printed_label",
+     "printed": "0.049"
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "label",
+     "claim_id": "FX_signprompt64_patience_Q43_own_beta",
+     "field": "value",
+     "value": "-0.06918062400906969",
+     "role": "printed_label",
+     "printed": "$-$0.069"
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "A7",
+     "claim_id": "FX_adapter64_posrecip_own_beta",
+     "field": "value",
+     "value": "0.12419389655920332",
+     "role": "point",
+     "x_cm": 7.8145,
+     "y_cm": -7.63
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "A7",
+     "claim_id": "FX_signprompt64_posrecip_own_beta",
+     "field": "value",
+     "value": "0.10313613448686443",
+     "role": "point",
+     "x_cm": 7.5408,
+     "y_cm": -7.8
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "label",
+     "claim_id": "FX_adapter64_posrecip_own_beta",
+     "field": "value",
+     "value": "0.12419389655920332",
+     "role": "printed_label",
+     "printed": "0.124"
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "label",
+     "claim_id": "FX_signprompt64_posrecip_own_beta",
+     "field": "value",
+     "value": "0.10313613448686443",
+     "role": "printed_label",
+     "printed": "0.103"
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "B1",
+     "claim_id": "FX_adapter64_V5_hits",
+     "field": "value",
+     "value": "2",
+     "role": "point",
+     "x_cm": 7.8333,
+     "y_cm": -11.23
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "B1",
+     "claim_id": "FX_signprompt64_V5_hits",
+     "field": "value",
+     "value": "2",
+     "role": "point",
+     "x_cm": 7.8333,
+     "y_cm": -11.4
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "label",
+     "claim_id": "FX_adapter64_V5_hits",
+     "field": "value",
+     "value": "2",
+     "role": "printed_label",
+     "printed": "2"
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "label",
+     "claim_id": "FX_signprompt64_V5_hits",
+     "field": "value",
+     "value": "2",
+     "role": "printed_label",
+     "printed": "2"
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "B2",
+     "claim_id": "FX_adapter64_own_effects_wrong_signed",
+     "field": "value",
+     "value": "0",
+     "role": "point",
+     "x_cm": 6.3,
+     "y_cm": -12.43
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "B2",
+     "claim_id": "FX_signprompt64_own_effects_wrong_signed",
+     "field": "value",
+     "value": "3",
+     "role": "point",
+     "x_cm": 8.2714,
+     "y_cm": -12.6
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "label",
+     "claim_id": "FX_adapter64_own_effects_wrong_signed",
+     "field": "value",
+     "value": "0",
+     "role": "printed_label",
+     "printed": "0"
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "label",
+     "claim_id": "FX_signprompt64_own_effects_wrong_signed",
+     "field": "value",
+     "value": "3",
+     "role": "printed_label",
+     "printed": "3"
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "B3",
+     "claim_id": "FX_adapter64_surfaces_largest_mover_is_trust_bit",
+     "field": "value",
+     "value": "3",
+     "role": "point",
+     "x_cm": 8.2714,
+     "y_cm": -13.63
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "B3",
+     "claim_id": "FX_signprompt64_surfaces_largest_mover_is_trust_bit",
+     "field": "value",
+     "value": "7",
+     "role": "point",
+     "x_cm": 10.9,
+     "y_cm": -13.8
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "label",
+     "claim_id": "FX_adapter64_surfaces_largest_mover_is_trust_bit",
+     "field": "value",
+     "value": "3",
+     "role": "printed_label",
+     "printed": "3"
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "label",
+     "claim_id": "FX_signprompt64_surfaces_largest_mover_is_trust_bit",
+     "field": "value",
+     "value": "7",
+     "role": "printed_label",
+     "printed": "7"
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "B4",
+     "claim_id": "FX_adapter64_pc1_share",
+     "field": "value",
+     "value": "0.5130116356330489",
+     "role": "point",
+     "x_cm": 8.6599,
+     "y_cm": -14.83
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "B4",
+     "claim_id": "FX_signprompt64_pc1_share",
+     "field": "value",
+     "value": "0.8352930408769921",
+     "role": "point",
+     "x_cm": 10.1423,
+     "y_cm": -15.0
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "label",
+     "claim_id": "FX_adapter64_pc1_share",
+     "field": "value",
+     "value": "0.5130116356330489",
+     "role": "printed_label",
+     "printed": "0.513"
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "label",
+     "claim_id": "FX_signprompt64_pc1_share",
+     "field": "value",
+     "value": "0.8352930408769921",
+     "role": "printed_label",
+     "printed": "0.835"
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "B5",
+     "claim_id": "FX_adapter64_mean_abs_inter_surface_r",
+     "field": "value",
+     "value": "0.3951729780611314",
+     "role": "point",
+     "x_cm": 8.1178,
+     "y_cm": -16.03
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "B5",
+     "claim_id": "FX_signprompt64_mean_abs_inter_surface_r",
+     "field": "value",
+     "value": "0.8066794815516464",
+     "role": "point",
+     "x_cm": 10.0107,
+     "y_cm": -16.2
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "label",
+     "claim_id": "FX_adapter64_mean_abs_inter_surface_r",
+     "field": "value",
+     "value": "0.3951729780611314",
+     "role": "printed_label",
+     "printed": "0.395"
+    },
+    {
+     "figure": "fig_factorial_own",
+     "panel": "label",
+     "claim_id": "FX_signprompt64_mean_abs_inter_surface_r",
+     "field": "value",
+     "value": "0.8066794815516464",
+     "role": "printed_label",
+     "printed": "0.807"
+    }
+   ]
+  }
+ ]
+}

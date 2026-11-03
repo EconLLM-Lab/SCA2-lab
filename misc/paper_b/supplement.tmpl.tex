@@ -6,6 +6,8 @@
 §usepackage[utf8]{inputenc}
 §usepackage[margin=1.25in]{geometry}
 §usepackage{lmodern,microtype,amsmath,amssymb,booktabs,tabularx,array,xcolor}
+§usepackage{tikz}
+§usetikzlibrary{positioning,arrows.meta}
 §usepackage{setspace}
 §usepackage{xurl}
 §usepackage[hidelinks]{hyperref}
@@ -14,6 +16,7 @@
 §input{macros}
 §renewcommand{§thesection}{S§arabic{section}}
 §renewcommand{§thetable}{S§arabic{table}}
+§renewcommand{§thefigure}{S§arabic{figure}}
 
 §title{Online Supplement§§[0.6em]§large Synthetic Cultural Agents as Measurement Instruments: A Preregistered Evaluation from Cross-National Anchor to Survey Respondents}
 §author{}
@@ -23,7 +26,29 @@
 §maketitle
 §thispagestyle{empty}
 
-§noindent This supplement reports the two registered descriptives that the article sends here, the full tables behind several sentences of the article, the detail of the descriptive follow-up analyses, the items the probe selected, the provenance of the scoring runs, and the design detail and robustness numbers that the article summarizes. Every statistic is read from the same numbers table as the article and keeps the article's surface labels (S1 and S2 for the first and second cohorts on the strict battery, H for the retrospective held-out screen, R for the unseeded retrain, N for the near-zero refits, and D for the descriptive follow-up analyses, which were not preregistered). Sections and tables numbered with an S belong to this supplement. As in the article, every result on surface H is retrospective, because the WVS Wave~7 file existed before the probe and is the only human source.
+§noindent This supplement reports the two registered descriptives that the article sends here, the contrasts with the questionnaire readers and the prompt route, the factorial own effects with their $t$ statistics, the first-cohort three-link table, the full tables behind several sentences of the article, the detail of the descriptive follow-up analyses, the items the probe selected, the provenance of the scoring runs, and the design detail and robustness numbers that the article summarizes. Every statistic is read from the same numbers table as the article and keeps the article's surface labels (S1 and S2 for the first and second cohorts on the strict battery, H for the retrospective held-out screen, R for the unseeded retrain, N for the near-zero refits, and D for the descriptive follow-up analyses, which were not preregistered). Sections and tables numbered with an S belong to this supplement. As in the article, every result on surface H is retrospective, because the WVS Wave~7 file existed before the probe and is the only human source.
+
+§section{Order of work for the held-out screen}§label{sec:s-timeline}
+
+Figure~§ref{fig:s-timeline} gives the order of work of the held-out screen described in the registration section of the article.
+
+§begin{figure}[htbp]
+§centering
+§begin{tikzpicture}[>=Latex,node distance=3mm,every node/.style={font=§footnotesize,align=center},
+  wstep/.style={draw,rounded corners,text width=0.78§textwidth,minimum height=6mm},
+  human/.style={wstep,fill=black!12,line width=0.9pt}]
+§node[wstep] (pool) {Item pool built from WVS Wave~7 metadata and questionnaire text only};
+§node[wstep,below=of pool] (tag) {Preregistration committed and timestamped by a pushed git tag};
+§node[wstep,below=of tag] (s1) {First scoring pass of the pool, adapters only; probe read};
+§node[wstep,below=of s1] (a1) {Amendment 1: §dc{12}{repaired_items} wording repairs; every route re-scored as one run};
+§node[wstep,below=of a1] (sel) {Probe selection on the amended scores (model side only)};
+§node[wstep,below=of sel] (a2) {Amendment 2 decided: repaired items leave both comparator routes; freeze file written};
+§node[human,below=of a2] (join) {First read of held-out human data (retrospective WVS Wave~7 criterion)};
+§node[wstep,below=of join] (exp) {Registered analyses, then labelled exploratory analyses};
+§foreach §a/§b in {pool/tag,tag/s1,s1/a1,a1/sel,sel/a2,a2/join,join/exp} §draw[->] (§a)--(§b);
+§end{tikzpicture}
+§caption{Order of work for the held-out screen. Every step above the shaded box used model scores, metadata or questionnaire text only. The shaded box is the single read of held-out human data.}§label{fig:s-timeline}
+§end{figure}
 
 §section{Registered descriptives}§label{sec:s-desc}
 
@@ -54,6 +79,32 @@ Altruism & «v|PD_face_valid_altruism_A|3» «ci|PD_face_valid_altruism_A|3» & 
 §par§smallskip
 §begin{minipage}{§textwidth}§footnotesize
 §textit{Note:} The typed decision model's assignment is the majority over §dc{5}{jev_runs} runs. Neither reader assigned an item to positive reciprocity. Intervals are percentile limits from §dc{2,000}{boot_draws} resamples of the §dc{42}{countries} countries (seed §dc{20261015}{seed_screen}), unadjusted for the number of dimensions.
+§end{minipage}
+§end{table}
+
+§section{Contrasts with the questionnaire readers and the prompt route}§label{sec:s-contrasts}
+
+Table~§ref{tab:s-comparators} gives every registered contrast of the held-out screen that the article summarizes in its screen figure: the adapters against the face-valid reader, the typed decision model and the sign-profile prompt, on the items both routes assign and on each route's own items, with the number of shared items and the number on which the two routes agree in dimension and sign. Every interval covers zero. The coverage-matched contrasts rest on few items, and an interval that covers zero on so few items is consistent with a match and does not establish one.
+
+§begin{table}[htbp]
+§centering
+§caption{Retrospective screen: the adapters against two questionnaire readers and against prompting with the same signs.}§label{tab:s-comparators}
+§small
+§renewcommand{§arraystretch}{1.2}
+§begin{tabularx}{§textwidth}{@{}>{§raggedright§arraybackslash}p{0.24§textwidth}>{§raggedright§arraybackslash}X>{§raggedright§arraybackslash}X>{§raggedright§arraybackslash}X@{}}
+§toprule
+ & Face-valid reader & Typed decision model, majority of §dc{5}{jev_runs} runs & Sign-profile prompt §§
+§midrule
+Items assigned by both routes & «n|CMP_face_valid_D_common» & «n|CMP_jev_D_common» & «v|SP_overlap_with_adapter|0» §§
+Same dimension and sign on those items & «v|CMP_face_valid_common_same_dim_sign|0» & «v|CMP_jev_common_same_dim_sign|0» & «v|SP_overlap_same_dim_sign|0» §§
+Adapter minus route, shared items & «v|CMP_face_valid_D_common|3» §newline «ci|CMP_face_valid_D_common|3» & «v|CMP_jev_D_common|3» §newline «ci|CMP_jev_D_common|3» & «v|SP_D_common|3» §newline «ci|SP_D_common|3» §§
+Adapter minus route, own items & «v|CMP_face_valid_D_own|3» §newline «ci|CMP_face_valid_D_own|3» & «v|CMP_jev_D_own|3» §newline «ci|CMP_jev_D_own|3» & «v|SP_D_own|3» §newline «ci|SP_D_own|3» §§
+Route's own $A$ (items) & «v|CMP_face_valid_A_imprint|3» («n|CMP_face_valid_A_imprint») & «v|CMP_jev_A_imprint|3» («n|CMP_jev_A_imprint») & «v|SP_A_primary|3» («n|SP_A_primary») §§
+§bottomrule
+§end{tabularx}
+§par§smallskip
+§begin{minipage}{§textwidth}§footnotesize
+§textit{Note:} Differences are adapter minus the named route, with §dc{95}{ci_level}§% intervals from the paired country bootstrap (§dc{2,000}{boot_draws} resamples). The registered primary contrast with each questionnaire reader is the one on shared items. The questionnaire readers' own items are restricted to the imprint set, with the §dc{12}{repaired_items} items repaired by Amendment~1 removed. The adapter's own $A$ is «v|SCR_A_primary|3» on «n|SCR_A_primary» items. Every interval in the table covers zero.
 §end{minipage}
 §end{table}
 
@@ -169,9 +220,49 @@ Patience (Q50) & «v|PX_D_cohort1_patience:Q50|3» «ci|PX_D_cohort1_patience:Q5
 
 On the §dc{16}{dev_countries} countries of the development stage, rescored on the frozen stack with the first-cohort adapters, the trust correlation is «v|PX_dev16_cohort1_trust_rho|3» «ci|PX_dev16_cohort1_trust_rho|3» for the adapters and «v|PX_dev16_persona_trust_rho|3» «ci|PX_dev16_persona_trust_rho|3» for the persona route, with a country bootstrap. These values are descriptive. The development stage used other adapters on an earlier software stack, and its own scores enter no statistic in the article.
 
+§section{The sign-profile factorial in full}§label{sec:s-factorial}
+
+Table~§ref{tab:s-factorial} gives, for each of the seven strict-battery surfaces, the main effect of the surface's own sign bit and its $t$ statistic on the trained route and on the sign-profile prompt, with the summary statistics of entanglement. The article's factorial figure draws the same own effects without an interval, because the table banks none; the $t$ statistics here carry the uncertainty of each own effect (surface F; model side only). Cross effects between bits and surfaces that the article cites are given in Section~§ref{sec:s-design}.
+
+§begin{table}[htbp]
+§centering
+§caption{Own effects of the six sign bits and summary of entanglement, by route. Strict battery, all §dc{64}{cells} sign profiles.}§label{tab:s-factorial}
+§small
+§renewcommand{§arraystretch}{1.15}
+§begin{tabularx}{§textwidth}{@{}>{§raggedright§arraybackslash}X r r r r@{}}
+§toprule
+ & §multicolumn{2}{c}{Trained adapters} & §multicolumn{2}{c}{Sign-profile prompt} §§
+§cmidrule(lr){2-3}§cmidrule(l){4-5}
+Own effect on surface & Main effect & $t$ & Main effect & $t$ §§
+§midrule
+Trust & «v|FX_adapter64_trust_own_beta|3» & «v|FX_adapter64_trust_own_t|2» & «v|FX_signprompt64_trust_own_beta|3» & «v|FX_signprompt64_trust_own_t|2» §§
+Negative reciprocity & «v|FX_adapter64_negrecip_own_beta|3» & «v|FX_adapter64_negrecip_own_t|2» & «v|FX_signprompt64_negrecip_own_beta|3» & «v|FX_signprompt64_negrecip_own_t|2» §§
+Altruism & «v|FX_adapter64_altruism_own_beta|3» & «v|FX_adapter64_altruism_own_t|2» & «v|FX_signprompt64_altruism_own_beta|3» & «v|FX_signprompt64_altruism_own_t|2» §§
+Patience (Q50) & «v|FX_adapter64_patience_Q50_own_beta|3» & «v|FX_adapter64_patience_Q50_own_t|2» & «v|FX_signprompt64_patience_Q50_own_beta|3» & «v|FX_signprompt64_patience_Q50_own_t|2» §§
+Risk taking & «v|FX_adapter64_risktaking_own_beta|3» & «v|FX_adapter64_risktaking_own_t|2» & «v|FX_signprompt64_risktaking_own_beta|3» & «v|FX_signprompt64_risktaking_own_t|2» §§
+Patience (Q43) & «v|FX_adapter64_patience_Q43_own_beta|3» & «v|FX_adapter64_patience_Q43_own_t|2» & «v|FX_signprompt64_patience_Q43_own_beta|3» & «v|FX_signprompt64_patience_Q43_own_t|2» §§
+Positive reciprocity & «v|FX_adapter64_posrecip_own_beta|3» & «v|FX_adapter64_posrecip_own_t|2» & «v|FX_signprompt64_posrecip_own_beta|3» & «v|FX_signprompt64_posrecip_own_t|2» §§
+§midrule
+Summary of entanglement & §multicolumn{2}{r}{Trained adapters} & §multicolumn{2}{r}{Sign-profile prompt} §§
+§midrule
+Own effects against the intended direction & §multicolumn{2}{r}{«v|FX_adapter64_own_effects_wrong_signed|0» of «n|FX_adapter64_own_effects_wrong_signed»} & §multicolumn{2}{r}{«v|FX_signprompt64_own_effects_wrong_signed|0» of «n|FX_signprompt64_own_effects_wrong_signed»} §§
+Bits dominant on their own surface (V5) & §multicolumn{2}{r}{«v|FX_adapter64_V5_hits|0» of «n|FX_adapter64_V5_hits»} & §multicolumn{2}{r}{«v|FX_signprompt64_V5_hits|0» of «n|FX_signprompt64_V5_hits»} §§
+Same, on standardized effects & §multicolumn{2}{r}{«v|FX_adapter64_rowwise_standardized_hits|0» of «n|FX_adapter64_rowwise_standardized_hits»} & §multicolumn{2}{r}{«v|FX_signprompt64_rowwise_standardized_hits|0» of «n|FX_signprompt64_rowwise_standardized_hits»} §§
+Surfaces whose largest mover is their own bit & §multicolumn{2}{r}{«v|FX_adapter64_columnwise_hits|0» of «n|FX_adapter64_columnwise_hits»} & §multicolumn{2}{r}{«v|FX_signprompt64_columnwise_hits|0» of «n|FX_signprompt64_columnwise_hits»} §§
+Surfaces whose largest mover is the trust bit & §multicolumn{2}{r}{«v|FX_adapter64_surfaces_largest_mover_is_trust_bit|0» of «n|FX_adapter64_surfaces_largest_mover_is_trust_bit»} & §multicolumn{2}{r}{«v|FX_signprompt64_surfaces_largest_mover_is_trust_bit|0» of «n|FX_signprompt64_surfaces_largest_mover_is_trust_bit»} §§
+Variance on the first principal component & §multicolumn{2}{r}{«pct|FX_adapter64_pc1_share|1»§%} & §multicolumn{2}{r}{«pct|FX_signprompt64_pc1_share|1»§%} §§
+Mean absolute correlation between surfaces & §multicolumn{2}{r}{«v|FX_adapter64_mean_abs_inter_surface_r|3»} & §multicolumn{2}{r}{«v|FX_signprompt64_mean_abs_inter_surface_r|3»} §§
+§bottomrule
+§end{tabularx}
+§par§smallskip
+§begin{minipage}{§textwidth}§footnotesize
+§textit{Note:} Main effects are differences in mean surface composite between profiles with the bit set and without it, from an OLS fit with the six bits and their §dc{15}{interactions} two-way interactions (§dc{42}{error_df} error degrees of freedom); composites are expected recoded responses averaged over the surface's items, so the units differ across surfaces. The manipulation is of synthetic training labels or prompted signs; the effects are changes in model response distributions. V5 was a planned acceptance check (at least §dc{4}{v5_required} of §dc{6}{sign_bits} bits); the other summary rows are exploratory.
+§end{minipage}
+§end{table}
+
 §section{Retraining noise by surface}§label{sec:s-noise}
 
-The article bounds the strict-surface shifts of the unseeded retrain by their maximum. Table~§ref{tab:s-retrain} gives the shift on each surface, in standard deviations of that surface over the §dc{64}{cells} profiles. These shifts are the noise floor that the near-zero reading in Section~§ref{sec:s-nz} uses. On the recoded scale of the readout, the Pearson correlation between the retrain and the original over the §dc{23}{strict_items} strict items is «v|RP_strict_pearson_recoded|4».
+The article bounds the strict-surface shifts of the unseeded retrain by their maximum. At the level of scored cells on the strict battery («v|RP_strict_n_cells|0» cells), the largest single-cell difference in code probability is «v|RP_strict_max_abs_prob_diff|3» and the mean absolute difference is «v|RP_strict_mean_abs_prob_diff|4», and the Pearson correlation of expected codes over the «n|RP_strict_pearson_expected_codes» items is «v|RP_strict_pearson_expected_codes|4». On the held-out pool («v|RP_heldout_n_cells|0» cells) the corresponding values are «v|RP_heldout_max_abs_prob_diff|3», «v|RP_heldout_mean_abs_prob_diff|4» and «v|RP_heldout_pearson_expected_codes|4» over «n|RP_heldout_pearson_expected_codes» items. Table~§ref{tab:s-retrain} gives the shift on each surface, in standard deviations of that surface over the §dc{64}{cells} profiles. These shifts are the noise floor that the near-zero reading in Section~§ref{sec:s-nz} uses. On the recoded scale of the readout, the Pearson correlation between the retrain and the original over the §dc{23}{strict_items} strict items is «v|RP_strict_pearson_recoded|4».
 
 §begin{table}[htbp]
 §centering
@@ -257,7 +348,34 @@ Dimension & Items & Sign $+$ & Sign $-$ §§
 
 This section gives the detail behind the four descriptive follow-up analyses of the article (surface D). None of them was preregistered, none enters a registered family, and none earns a claim. All of them use the strict battery and the §dc{42}{countries} countries, and every comparison with respondents is retrospective, because the WVS Wave~7 file is the only human source and existed before the study. Human answer shares and country-level human values are used to compute the statistics and are not reported.
 
-§paragraph{Second-cohort adapters against the GPS and the human composite (D).} Table~§ref{tab:s-human2} repeats the first two columns of the article's three-column table for the second-cohort adapters, with each country assigned its profile's adapter. The human--GPS column does not depend on the adapters and is in the article. Positive reciprocity is the only adapter--human interval that excludes zero, at «v|C9_b_adapter_human_posrecip_spearman_rho|3» «ci|C9_b_adapter_human_posrecip_spearman_rho|3», and its lower limit is close to zero.
+§paragraph{First-cohort adapters against the GPS and the human composite (D).} Table~§ref{tab:s-human1} gives the three Spearman correlations of the article's three-link figure for every surface: first-cohort adapter composite with the GPS, adapter composite with the human composite of the same items, and the human composite with the GPS. All seven adapter--human intervals include zero, which is not evidence that no association exists, and the human--GPS interval excludes zero on four of the seven surfaces.
+
+§begin{table}[htbp]
+§centering
+§caption{Agreement with the GPS and with the WVS Wave~7 composite, first-cohort adapters, strict battery (surface D, descriptive and not preregistered; retrospective). Spearman correlation over countries, by surface.}§label{tab:s-human1}
+§footnotesize
+§setlength{§tabcolsep}{4pt}
+§renewcommand{§arraystretch}{1.15}
+§begin{tabularx}{§textwidth}{@{}>{§raggedright§arraybackslash}X l l l@{}}
+§toprule
+Surface & Adapter--GPS & Adapter--human & Human--GPS §§
+§midrule
+Trust & «v|C9_a_adapter_gps_trust_spearman_rho|3» «ci|C9_a_adapter_gps_trust_spearman_rho|3» & «v|C9_a_adapter_human_trust_spearman_rho|3» «ci|C9_a_adapter_human_trust_spearman_rho|3» & «v|C9_a_human_gps_trust_spearman_rho|3» «ci|C9_a_human_gps_trust_spearman_rho|3» §§
+Risk taking & «v|C9_a_adapter_gps_risktaking_spearman_rho|3» «ci|C9_a_adapter_gps_risktaking_spearman_rho|3» & «v|C9_a_adapter_human_risktaking_spearman_rho|3» «ci|C9_a_adapter_human_risktaking_spearman_rho|3» & «v|C9_a_human_gps_risktaking_spearman_rho|3» «ci|C9_a_human_gps_risktaking_spearman_rho|3» §§
+Positive reciprocity & «v|C9_a_adapter_gps_posrecip_spearman_rho|3» «ci|C9_a_adapter_gps_posrecip_spearman_rho|3» & «v|C9_a_adapter_human_posrecip_spearman_rho|3» «ci|C9_a_adapter_human_posrecip_spearman_rho|3» & «v|C9_a_human_gps_posrecip_spearman_rho|3» «ci|C9_a_human_gps_posrecip_spearman_rho|3» §§
+Altruism & «v|C9_a_adapter_gps_altruism_spearman_rho|3» «ci|C9_a_adapter_gps_altruism_spearman_rho|3» & «v|C9_a_adapter_human_altruism_spearman_rho|3» «ci|C9_a_adapter_human_altruism_spearman_rho|3» & «v|C9_a_human_gps_altruism_spearman_rho|3» «ci|C9_a_human_gps_altruism_spearman_rho|3» §§
+Negative reciprocity & «v|C9_a_adapter_gps_negrecip_spearman_rho|3» «ci|C9_a_adapter_gps_negrecip_spearman_rho|3» & «v|C9_a_adapter_human_negrecip_spearman_rho|3» «ci|C9_a_adapter_human_negrecip_spearman_rho|3» & «v|C9_a_human_gps_negrecip_spearman_rho|3» «ci|C9_a_human_gps_negrecip_spearman_rho|3» §§
+Patience (Q43) & «v|C9_a_adapter_gps_patience_q43_spearman_rho|3» «ci|C9_a_adapter_gps_patience_q43_spearman_rho|3» & «v|C9_a_adapter_human_patience_q43_spearman_rho|3» «ci|C9_a_adapter_human_patience_q43_spearman_rho|3» & «v|C9_a_human_gps_patience_q43_spearman_rho|3» «ci|C9_a_human_gps_patience_q43_spearman_rho|3» §§
+Patience (Q50) & «v|C9_a_adapter_gps_patience_q50_spearman_rho|3» «ci|C9_a_adapter_gps_patience_q50_spearman_rho|3» & «v|C9_a_adapter_human_patience_q50_spearman_rho|3» «ci|C9_a_adapter_human_patience_q50_spearman_rho|3» & «v|C9_a_human_gps_patience_q50_spearman_rho|3» «ci|C9_a_human_gps_patience_q50_spearman_rho|3» §§
+§bottomrule
+§end{tabularx}
+§par§smallskip
+§begin{minipage}{§textwidth}§footnotesize
+§textit{Note:} Each cell is the Spearman correlation with a §dc{95}{ci_level}§% interval. Over §dc{42}{countries} countries, except the two human columns of risk taking, which cover «n|C9_a_adapter_human_risktaking_spearman_rho» countries because one country has no valid answer to the risk item (Q178). Adapter intervals resample the §dc{26}{profiles_realized} sign profiles (§dc{2,000}{boot_draws} draws, seed §dc{20261011}{seed_c3}); the human--GPS interval resamples countries (seed §dc{20260905}{seed_country}). The human composite is the Wave~7 item-mean composite of the same strict-battery items. The adapter--GPS column repeats the S1 values of the article.
+§end{minipage}
+§end{table}
+
+§paragraph{Second-cohort adapters against the GPS and the human composite (D).} Table~§ref{tab:s-human2} repeats the first two columns of Table~§ref{tab:s-human1} for the second-cohort adapters, with each country assigned its profile's adapter. The human--GPS column does not depend on the adapters and is in Table~§ref{tab:s-human1}. Positive reciprocity is the only adapter--human interval that excludes zero, at «v|C9_b_adapter_human_posrecip_spearman_rho|3» «ci|C9_b_adapter_human_posrecip_spearman_rho|3», and its lower limit is close to zero.
 
 §begin{table}[htbp]
 §centering
@@ -474,7 +592,7 @@ Mean margin shift (nats) & «v|C9_label_recovery_mean_margin_shift_profile_block
 
 §paragraph{The cross-talk ratio across surfaces (D).} Across the seven surfaces, the rank correlation between Var(cross)/Var(full) and the adapters' failure to order countries like the GPS is «v|C9_W1_rank_cross_var_share_vs_failure_bank2|3» against second-cohort composites and «v|C9_W1_rank_cross_var_share_vs_failure_cohort1|3» against first-cohort composites. The comparison rests on trust set against six other surfaces and is not a graded relation; we claim no dose--response.
 
-§paragraph{Cross effects between bits and surfaces in the factorial (F).} The article gives two examples of a bit that moves another surface by more than its own. Further cross effects on the trained route: the risk-taking bit moves the negative-reciprocity surface by «v|FX_adapter64_risktaking_bit_on_negrecip|3», and the trust bit moves patience Q50 by «v|FX_adapter64_trust_bit_on_patience_Q50|3» and positive reciprocity by «v|FX_adapter64_trust_bit_on_posrecip|3». Under prompting, the trust bit alone moves risk taking by «v|FX_signprompt64_trust_bit_on_risktaking|3» and patience Q50 by «v|FX_signprompt64_trust_bit_on_patience_Q50|3». The own effects are in the factorial table of the article.
+§paragraph{Cross effects between bits and surfaces in the factorial (F).} The article gives two examples of a bit that moves another surface by more than its own. Further cross effects on the trained route: the risk-taking bit moves the negative-reciprocity surface by «v|FX_adapter64_risktaking_bit_on_negrecip|3», and the trust bit moves patience Q50 by «v|FX_adapter64_trust_bit_on_patience_Q50|3» and positive reciprocity by «v|FX_adapter64_trust_bit_on_posrecip|3». Under prompting, the trust bit alone moves risk taking by «v|FX_signprompt64_trust_bit_on_risktaking|3» and patience Q50 by «v|FX_signprompt64_trust_bit_on_patience_Q50|3». The own effects are in Table~§ref{tab:s-factorial}.
 
 §paragraph{Dropped dimensions in the near-zero refits (N).} On the dimensions with no training pairs, «v|NZ_blockD_against_beyond_floor|0» of «n|NZ_blockD_against_beyond_floor» surfaces moved against their intended direction beyond the declared floor, as expected when a dimension has no training pairs. This is a loss-of-signal check and bears on neither side.
 

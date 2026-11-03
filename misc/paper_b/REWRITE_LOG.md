@@ -284,3 +284,28 @@ no new prose):
 Build after the pass: latexmk exit 0, 47 pages, 0 overfull, 0 undefined, both number audits PASS, anonymity grep
 empty. **N1** (the four "intended use" sentences) and **N3** (main text 11,526 words against the 9,000–10,000
 target) are Augusto's calls and are unchanged.
+
+
+## Reader pass P2-W (2026-10-24, card t_97b9df2c, writer)
+
+Substantive reader-facing revision: question-led abstract (150 words), introduction, results reordered along the chain with four empirical
+figures (fig_factorial_own, fig_screen, fig_three_links, fig_info_vs_route) integrated beside their text, discussion and conclusion
+contribution-led with a paragraph on what a prospective validation would have to establish. Exact tables for the factorial, the
+questionnaire-reader contrasts and the first-cohort three-link correlations, and the screen timeline (Figure S1), moved to
+supplement.tmpl.tex; none dropped. No number, interval, statistical surface or claim status changed. Title unchanged. Details, word counts
+and the remaining owner decisions are in READER_PASS_REPORT.md. Main text 11,549 -> about 10,447 detexed words (target 9,000-10,000 not met).
+
+Gates after the last edit:
+
+wrote misc/paper_b/supplement.tex (76222 chars)
+render exit=0
+latexmk main exit=0
+latexmk supp exit=0
+main: overfull=0 undefined=0 pages=46
+supplement: overfull=0 undefined=0 pages=19
+audit main exit=0 RESULT: PASS
+audit supp exit=0 RESULT: PASS
+
+
+### P2-W finish pass (2026-10-24, resume of t_97b9df2c)
+Trimmed design, introduction, background, instrument, discussion and results sentences without removing methods, evidence or statistics; main text 9,980 words on the reproducible count (`python3 tools/count_words.py --per-file`, new script; the earlier 10,447 used an unrecorded procedure). Fixed four wording overreaches (protocol "fixed before the criterion is read" restricted to the registered screen and freeze sequence; "adapters tie two readers" now unresolved paired contrasts on few shared items; decomposition "explains why" now describes; one unseeded retrain "bounds noise" now a narrow observed comparison, in discussion and results). Fixed `Float too large for page` on Figures 1 and 4 (83.4 pt and 31.9 pt) by shortening captions of text already inside the figures and scaling Figure 1 to 0.91 and Figure 4 to 0.98 of text width (both at least 0.9 of natural width); generator untouched. Gates: latexmk main exit 0, 44 pp, Overfull 0, Float too large 0, undefined 0; supplement exit 0, 19 pp, 0/0/0; audit_numbers main and supplement PASS; pytest 38 passed; build_figures --verify ok; anonymity grep 0; voice_audit exit 0 on all sections (no fail flags). Figures now on main.pdf pages 24, 27, 31, 33. See READER_PASS_REPORT.md.

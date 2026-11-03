@@ -59,8 +59,7 @@ an independent implementation reads about 0.30 where the tracked chain reads 0.2
 
 **Owed by Augusto:** read the four "intended use" sentences (abstract, `introduction.tex`, `discussion.tex`
 §Intended use, `conclusion.tex`) — MV judged them inside the lock because each carries its own bound; and decide
-whether 11,526 main-text words stand against the outline's 9,000–10,000 target. The PM then merges, pushes and
-uploads a new Overleaf project.
+whether 11,526 main-text words stand against the outline's 9,000–10,000 target. **Superseded operational next step:** Augusto has since requested a further reader-facing revision with empirical charts and an in-place update to the canonical Overleaf project; see Manuscript below. No new project is to be created.
 
 ## Checkpoint 2026-10-20 (co-author review)
 
@@ -192,8 +191,7 @@ supplement 15 pages; abstract 150 words. Verified on 2026-10-24 after the PM pas
 rewrite; the claim lock is untouched. What changed and why is in `misc/paper_b/REWRITE_LOG.md`, and the independent
 review in `misc/paper_b/MANUSCRIPT_REVIEW_2026-10-25.md`. The title is now "Synthetic Cultural Agents as Measurement
 Instruments: A Preregistered Evaluation from Cross-National Anchor to Survey Respondents", with the cover letter
-matching it. Overleaf review copy: a new project per version; the next one is built from `e3c2fe9`. The older
-Overleaf projects are untouched. The preprint is disclosed only on the title page and in
+matching it. **Canonical Overleaf project:** https://www.overleaf.com/project/6add7bb3bb4924e2a5e31ad3 . Augusto superseded the one-project-per-version rule on 2026-10-24: update Paper B in place, keep Paper A separate, and use git/Overleaf history for versions. Both older Scoring Instruments projects were moved to recoverable Trash; Paper A was untouched. Augusto subsequently confirmed that the retained project compiles. **Reader-facing revision (2026-10-26): locally accepted, uncommitted, online NOT YET VERIFIED.** Chain: figures `t_689a0e21` (`creative`) → writer `t_97b9df2c` (`writer`) → independent verifier `t_c7132463` → PM acceptance and archive `t_8ef9f8af`, scoped in `planning/checkpoint_2026-10-26/cards/P2_*.md`. Routes from the agent logs: producers `claude-sonnet-5-5 provider=anthropic`; verifier `gpt-5.6-sol provider=openai-codex` (`PASS-WITH-NOTES`, no blocker, `misc/paper_b/READER_PASS_VERIFICATION.md`); PM acceptance `claude-opus-5-5 provider=anthropic`. The revision was the working tree on `f5b39ad`; Augusto approved committing it on 2026-11-02 (the verifier's 12 MB `review_probes/reader_pass/` logs stay local and untracked). Local verified build: main text 44 pages, supplement 19 pages, title page 1 page; four empirical figures (factorial own effects, retrospective screen, three links, order versus distance), every plotted value drawn from the unchanged 562-row table (sha `71ee7c8c…86a4`); main text 9,980 words; abstract 150 words; both number audits PASS (118 and 364 claim ids); 0 errors, overfull boxes, undefined references/citations or `Float too large`; anonymity grep empty; numbers table, claim lock and registration byte-identical to `f5b39ad`; paper-tool tests 38 passed; full `paper_b` suite 613 passed in the main worktree. Standalone Overleaf ZIP (`PaperB_reader_pass.zip`, closure proved by extracting it into an empty directory and building all three targets) is in the PM scratch dir; packaging record in `misc/paper_b/READER_PASS_PACKAGING.md`. **Next (2026-11-02):** a voice pass by the `writer` (Opus, ASU seat) on the locked thesis "Ask a language model only about the group, and it can order countries the way a cross-national survey does while answering unlike the people in them", with the group-level design rationale added; fact sheet and brief in `misc/paper_b/voice_pass/`. The Overleaf upload (card `t_5b4c1784`) is held until that pass is audited, so the project is updated once. Push awaits Augusto. The preprint is disclosed only on the title page and in
 `submission/COVER_LETTER_DRAFT.md`; the manuscript never cites it.
 
 ## Open after the checkpoint
@@ -209,6 +207,8 @@ Targets are proposals for Augusto. "Blocked by" names the decision or card that 
 | IRB, COI, funding, compute and AI-use statements | Augusto | before SMR submission | none |
 | SMR preprint policy (disclosure of arXiv:2610.06562) | Augusto | before SMR submission | none |
 | Overleaf page count (project "… (1)") | Augusto | 2026-10-21 | none |
+| Upload the audited manuscript (after the voice pass) to the canonical Overleaf project and verify a fresh online compile | PM (`t_5b4c1784`) | after the voice-pass audit | voice pass |
+| Paper B voice pass (thesis (a), group-level design rationale): writer run, PM audit, cross-family verifier | `writer`, PM, verifier | 2026-11-04 | none |
 | Invite co-authors to the EconLLM Hugging Face organization and grant access to the transferred private Space | Augusto | 2026-10-20 | none |
 | Confirm the definition of "recursive generalization" | Augusto | 2026-10-21 | none |
 | The C9 results in the abstract, introduction and conclusion: approved 2026-10-24 as part of the option-A rewrite, cards M1 `t_e8eda272` and M2 `t_b9f18724` | writer, verifier | 2026-10-25 | N1 |
