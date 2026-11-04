@@ -272,3 +272,7 @@ analysis/phase2/outputs/readout_option_panel.parquet
 analysis/phase2/outputs/wvs_question_metrics_long.parquet
 analysis/phase2/outputs/development_human_by_country.csv
 planning/pre_arxiv_checks/unit_range/unit_range_comparison.csv
+
+# Paper A human rows: rebuilt locally from WVS by analysis/phase2/22_paper_a_surface.py
+analysis/phase2/outputs/paper_a/country_item_scores_human.csv
+analysis/phase2/outputs/paper_a/human_item_means_42.csv

@@ -47,7 +47,7 @@ INVERT_1_4 = {
     "Q58", "Q60", "Q73", "Q81",
 }
 INVERT_10 = {"Q177", "Q179"}
-BINARY = {"Q57"}
+BINARY = {"Q57", "Q174"}  # 1 = mentioned / trust, 2 = no; Q174 as in 06_construct_bridge and 13_unified_comparison
 MIN_N = 50
 BOOT = 2000
 BOOT_SEED = 20260905
@@ -101,7 +101,8 @@ def load_gps() -> pd.DataFrame:
     return gps[cols]
 
 
-def human_item_means() -> pd.DataFrame:
+def human_item_means(items: list[str] | None = None) -> pd.DataFrame:
+    items = list(items) if items is not None else ALL_MAPPED
     gps = load_gps()
     rows = []
     for f in sorted(WVS_DIR.glob("*_WVS_wave7.parquet")):
@@ -109,12 +110,12 @@ def human_item_means() -> pd.DataFrame:
         if cc not in gps.index:
             continue
         available = set(pq.ParquetFile(f).schema.names)
-        cols = ["W_WEIGHT"] + [q for q in ALL_MAPPED if q in available]
+        cols = ["W_WEIGHT"] + [q for q in items if q in available]
         if "W_WEIGHT" not in available:
             continue
         df = pd.read_parquet(f, columns=cols)
         w = df["W_WEIGHT"].fillna(0).astype(float)
-        for it in ALL_MAPPED:
+        for it in items:
             if it not in df.columns:
                 continue
             v = df[it].astype(float)
@@ -137,17 +138,53 @@ def composite(item_means: pd.DataFrame, items: list[str], complete: bool) -> pd.
     return sub.groupby("country")["mean"].mean()
 
 
+SCORING_BUNDLE = REPO / "data" / "phase2" / "derived" / "rung_mix" / "wvs_scoring_bundle.parquet"
+
+
+def item_bounds(items: list[str]) -> dict[str, tuple[float, float]]:
+    """Min and max of each item's recoded response options, from the tracked WVS scoring bundle."""
+    b = pd.read_parquet(SCORING_BUNDLE, columns=["question_id", "option_value"]).dropna()
+    out = {}
+    for it in items:
+        vals = [recode_value(float(v), it) for v in b.loc[b.question_id == it, "option_value"] if float(v) >= 0]
+        out[it] = (min(vals), max(vals))
+    return out
+
+
+def human_score_rows(model: pd.DataFrame, him: pd.DataFrame) -> pd.DataFrame:
+    """Human arm rows in the score-file schema, rebuilt from raw WVS (human_item_means).
+
+    The committed score file holds model arms only (survey licence, 2026-11-03). For every (country, item) cell
+    scored by the model arms, raw is the weighted recoded WVS mean and normalized rescales it to [0, 1] over the
+    item's recoded response options. tvd is 0 by definition: the human arm is the reference.
+    """
+    cells = model[["country", "item", "dimension"]].drop_duplicates(["country", "item"])
+    bounds = item_bounds(sorted(cells["item"].unique()))
+    out = cells.merge(him.rename(columns={"mean": "raw"})[["country", "item", "raw"]], on=["country", "item"])
+    out["normalized"] = [(r - bounds[i][0]) / (bounds[i][1] - bounds[i][0]) for i, r in zip(out["item"], out["raw"])]
+    out.insert(0, "arm", "human")
+    out["human_available"] = True
+    out["tvd"] = 0.0
+    return out[["arm", "country", "item", "dimension", "raw", "normalized", "human_available", "tvd"]]
+
+
 def freeze_scores() -> pd.DataFrame:
+    """Model-arm scores from git, plus human rows rebuilt locally from WVS when the extracts are present."""
     OUT.mkdir(parents=True, exist_ok=True)
     dest = OUT / "country_item_scores.csv"
-    if dest.exists():
-        return pd.read_csv(dest)
-    if AUDIT_SCORES.exists():
+    if not dest.exists():
+        if not AUDIT_SCORES.exists():
+            raise SystemExit(f"missing frozen Paper A scores: {dest} (and audit source {AUDIT_SCORES})")
         shutil.copy2(AUDIT_SCORES, dest)
-        return pd.read_csv(dest)
-    raise SystemExit(
-        f"missing frozen Paper A scores: {dest} (and audit source {AUDIT_SCORES})"
-    )
+    model = pd.read_csv(dest)
+    model = model[model.arm != "human"]
+    human_file = OUT / "country_item_scores_human.csv"  # gitignored: derived from licensed WVS microdata
+    if not human_file.exists():
+        if not any(WVS_DIR.glob("*_WVS_wave7.parquet")) or not GPS_DTA.exists():
+            return model
+        him = human_item_means(sorted(model["item"].unique()))
+        human_score_rows(model, him).to_csv(human_file, index=False)
+    return pd.concat([model, pd.read_csv(human_file)], ignore_index=True)
 
 
 def arm_composite(items: pd.DataFrame, arm: str, item_list: list[str], countries: list[str]) -> pd.Series:
@@ -163,11 +200,18 @@ def main() -> None:
     z16 = pd.Series({c: float(z[c]["trust"]) for c in PANEL16})
 
     adapter16 = arm_composite(items, "adapter", TRUST9, PANEL16)
-    human16 = arm_composite(items, "human", TRUST9, PANEL16)
     rho_a = spearman(adapter16, z16)
-    rho_h = spearman(human16, z16)
     if abs(rho_a - 0.74) > 5e-3:
         raise SystemExit(f"SURFACE MISMATCH: adapter-GPS trust={rho_a}, expected 0.74")
+    if not (items.arm == "human").any():
+        meta = {"adapter_gps_trust_16x9": rho_a, "human_gps_trust_16x9": None,
+                "scores_sha256": sha256(OUT / "country_item_scores.csv"),
+                "gps_json_sha256": sha256(GPS_JSON) if GPS_JSON.exists() else None}
+        print("WVS/GPS extracts absent; human rows not rebuilt (see DATA.md). Adapter headline checked.")
+        print("LOCK", json.dumps(meta, indent=2))
+        return
+    human16 = arm_composite(items, "human", TRUST9, PANEL16)
+    rho_h = spearman(human16, z16)
     if abs(rho_h - 0.39) > 2e-2:
         raise SystemExit(f"SURFACE MISMATCH: human-GPS trust 16x9={rho_h}, expected ~0.39")
 

@@ -5,8 +5,8 @@
 Two-wave file, 2026-09-25. USA and Mexico come from `ksenias_base8`, not the removed testing evaluation.
 The stitched file that produced 0.80 is `country_item_scores_SUPERSEDED_stitched_20260925.csv` (sha256 5654cab638bea02c7e6e1e8b8f55d2ea9074cb66af9ac809e3011372df018791). Do not quote 0.80.
 
-f81feeb0c1aa1b5201fe75238f840569544d057382a1b2b2909b0d64cf4af5a7  analysis/phase2/outputs/paper_a/country_item_scores.csv
-3965933c165558f95974097e582d2bd706b067008f6706245fd06db417b4582a  analysis/phase2/outputs/paper_a/human_gps_map.csv
+e747e7fc3e0948ae9206a4cf76ce512f911fc14ffffb78113db84880f424ea45  analysis/phase2/outputs/paper_a/country_item_scores.csv
+5216d0bada54d2c65450aa4271507ee68020323951759ba16d04fb397b1e725a  analysis/phase2/outputs/paper_a/human_gps_map.csv
 8fe7b0257edcb9a7fbd2701ef1ea4e661afb274f3c1adc6dfb9b3501a7a55769  sca2_public_eval.zip
 
 Public eval zip posted 2026-09-17. Model outputs only. Not the source of the 0.74 headline:
@@ -25,3 +25,8 @@ e479f31b61f6a04f3b5dce55fac443a52b878f4e2ed1057a6ecd98f13b7fa8b0  analysis/phase
 9c07025f133b3655056077afc948ec1a91ee6c6b61e1cf843cc4b13245d83852  analysis/phase2/tables/table_construct.tex
 3de5af5e41bedf0ff737409a23e102b2bfaa571c2e2c70a916aedcd87f693394  analysis/phase2/tables/table_distributional.tex
 139fb9531251d7a5db9f927032852faec58267ceb35100e6a1bc4b8bbdccb657  analysis/phase2/tables/table_development.tex
+
+**2026-11-03.** `country_item_scores.csv` now holds model arms only (3,424 rows). The 428 human rows are rebuilt
+locally from WVS by `analysis/phase2/22_paper_a_surface.py` (see `DATA.md`); the rebuild matched the earlier committed
+rows exactly (27 of 27 items, max |diff| 4e-16). The earlier `SURFACE_LOCK.json` and the `16x9_frozen_adapter` row of
+`human_gps_map.csv` recorded 0.80 from the superseded stitched file; regenerated, they record 0.744.
