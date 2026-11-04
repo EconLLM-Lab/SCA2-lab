@@ -20,6 +20,7 @@ Run: unset PYTHONPATH && .venv/bin/python analysis/phase2/06_construct_bridge.py
 from __future__ import annotations
 
 import pathlib
+import sys
 
 import matplotlib
 matplotlib.use("Agg")
@@ -29,20 +30,14 @@ import pandas as pd
 from scipy.stats import spearmanr
 
 REPO = pathlib.Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(REPO))
+from sca2.recodes import BINARY as BINARY_TRUST, INVERT_1_4, INVERT_10  # noqa: E402  single source of truth
 OUT = REPO / "analysis" / "phase2" / "outputs"
 FIG = OUT / "figures"
 WVS_DIR = REPO / "data" / "wvs_eval_full"
 GPS_DTA = REPO / "data" / "GPS" / "GPS_dataset_country_level" / "country_gps.dta"
 
-# polarity recodes: raw item value -> construct-aligned score
-# "inv" per CONSTRUCT_MAP: trust 1-4 (higher = less trust) -> 5-raw
-INVERT_1_4 = {"Q57": None, "Q59": True, "Q61": True, "Q62": True, "Q63": True,
-              "Q64": True, "Q69": True, "Q70": True, "Q71": True,
-              "Q58": True, "Q60": True, "Q73": True, "Q81": True}
-# Q57 is binary 1=trust,2=careful -> score = 1 if raw==1
-BINARY_TRUST = {"Q57", "Q12", "Q13", "Q14", "Q174"}  # 1=mentioned/trust, 2=no
-# Q177/Q179 justifiability 1-10, higher = more justifiable -> 11-raw
-INVERT_10 = {"Q177", "Q179"}
+# polarity recodes now live in sca2/recodes.py (one source of truth; tested against every live copy)
 DIM_ITEMS = {  # from CONSTRUCT_MAP section 2
     "trust": ["Q57", "Q59", "Q61", "Q62", "Q63", "Q64", "Q69", "Q70",
               "Q71", "Q58", "Q60", "Q73"],
@@ -61,7 +56,7 @@ BANK_PRECEDENCE = {"ksenias_base8": 0, "co2_8": 1}
 
 def recode(raw: pd.Series, item: str) -> pd.Series:
     s = raw.astype(float)
-    if item in INVERT_1_4 and INVERT_1_4[item]:
+    if item in INVERT_1_4:
         s = 5.0 - s
     elif item in INVERT_10:
         s = 11.0 - s
@@ -114,7 +109,7 @@ def adapter_composites(wvs: pd.DataFrame) -> pd.DataFrame:
         raw = r["model_mean"]
         # option-value scale for model_mean mirrors the raw codes
         s = raw
-        if r["question_id"] in INVERT_1_4 and INVERT_1_4[r["question_id"]]:
+        if r["question_id"] in INVERT_1_4:
             s = 5.0 - raw
         elif r["question_id"] in INVERT_10:
             s = 11.0 - raw

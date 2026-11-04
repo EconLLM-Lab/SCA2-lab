@@ -18,6 +18,7 @@ Run: unset PYTHONPATH && .venv/bin/python analysis/phase2/14_report_figures.py
 from __future__ import annotations
 
 import pathlib
+import sys
 
 import matplotlib
 matplotlib.use("Agg")
@@ -27,6 +28,8 @@ import pandas as pd
 from scipy.stats import spearmanr
 
 REPO = pathlib.Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(REPO))
+from sca2.recodes import recode_value  # noqa: E402  single source of truth
 OUT = REPO / "analysis" / "phase2" / "outputs"
 FIG = OUT / "figures"
 TAB = REPO / "analysis" / "phase2" / "tables"
@@ -202,17 +205,6 @@ def distance(a, b):
             continue
         vals.append(cfst(pa, pb, grid))
     return float(np.mean(vals)) if vals else np.nan
-
-
-def recode_value(v, item):
-    v = float(v)
-    if item in {"Q59","Q61","Q62","Q63","Q64","Q69","Q70","Q71","Q58","Q60","Q73","Q81"}:
-        return 5.0 - v
-    if item in {"Q177", "Q179"}:
-        return 11.0 - v
-    if item in {"Q57","Q12","Q13","Q14","Q174"}:
-        return 1.0 if v == 1.0 else 0.0
-    return v
 
 
 def composite_from_dist(d, dim):

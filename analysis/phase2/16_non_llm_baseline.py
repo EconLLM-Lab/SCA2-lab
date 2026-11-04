@@ -38,11 +38,14 @@ from __future__ import annotations
 
 import json
 import pathlib
+import sys
 
 import numpy as np
 import pandas as pd
 
 REPO = pathlib.Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(REPO))
+from sca2.recodes import BINARY as BINARY_TRUST, INVERT_1_4, INVERT_10, recode_value  # noqa: E402  single source of truth
 OUT = REPO / "analysis" / "phase2" / "outputs"
 CANON = REPO / "DPO_eval_WVS" / "eval_results_wvs_wave7"
 RAW = REPO / "data" / "phase2" / "raw" / "wvs"
@@ -66,24 +69,13 @@ MULTI_SELECT = {"Q12", "Q13", "Q14"}  # excluded from the single-choice universe
 UNIVERSE = [q for q in ALL_ITEMS if q not in MULTI_SELECT]  # 27 mapped single-choice items
 ITEM_DIM = {q: d for d, items in DIM_ITEMS.items() for q in items}
 
-INVERT_1_4 = {"Q59", "Q61", "Q62", "Q63", "Q64", "Q69", "Q70", "Q71", "Q58", "Q60", "Q73", "Q81"}
-INVERT_10 = {"Q177", "Q179"}
-BINARY_TRUST = {"Q57", "Q12", "Q13", "Q14", "Q174"}
 
 BANK_PRECEDENCE = {"ksenias_base8": 0, "co2_8": 1}
 ADAPTERS = ["ARG", "BRA", "CHN", "DEU", "EGY", "GBR", "GRC", "IDN", "IND", "JPN",
             "MEX", "NGA", "NLD", "RUS", "TUR", "USA"]
 
 
-def recode(raw: float, item: str) -> float:
-    s = float(raw)
-    if item in INVERT_1_4:
-        return 5.0 - s
-    if item in INVERT_10:
-        return 11.0 - s
-    if item in BINARY_TRUST:
-        return 1.0 if s == 1.0 else 0.0
-    return s
+recode = recode_value  # sca2/recodes.py
 
 
 def load_z() -> pd.DataFrame:
