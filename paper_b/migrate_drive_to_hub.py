@@ -24,11 +24,11 @@ import sys
 import time
 from pathlib import Path
 
-HOME = Path("/Users/bonorinoa")
+HOME = Path.home()
 STAGE_ROOT = Path(os.environ.get("MIGR_STAGE", HOME / ".hermes/profiles/sca/cache/scratch/migr/stage"))
 DRIVE = STAGE_ROOT / "drive"
 HFROOT = STAGE_ROOT / "hf"
-SG = HOME / "Desktop/Github_Repositories/SCA2_PofW/synthetic_generation/outputs"
+SG = Path(__file__).resolve().parent.parent / "synthetic_generation/outputs"
 BUNDLE = HOME / ".hermes/profiles/sca/cache/scratch/pb_bank2_profiles.tgz"
 INV = HOME / ".hermes/profiles/sca/cache/scratch/migr"
 

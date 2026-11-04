@@ -22,6 +22,7 @@ import argparse
 import json
 import re
 import statistics
+import os
 import sys
 from pathlib import Path
 
@@ -38,7 +39,8 @@ import factorial as F  # noqa: E402
 import factorial_effects as FE  # noqa: E402
 from probe_select import design  # noqa: E402
 
-INPUTS = Path("/Users/bonorinoa/Hermes/Projects/SCA2/paper_b_inputs")
+# Local-only Paper B inputs (not in git). Override with SCA2_PAPER_B_INPUTS.
+INPUTS = Path(os.environ.get("SCA2_PAPER_B_INPUTS", REPO / "paper_b_inputs"))
 OUT = REPO / "planning/sprint_2026-10-11/paper-b-tier1/results/c9"
 BANK1 = REPO / "synthetic_generation/outputs/gps_sign_relabel_all"
 BANK2 = REPO / "synthetic_generation/outputs/gps_sign_relabel_bank2"

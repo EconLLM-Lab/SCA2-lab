@@ -27,6 +27,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import os
 import sys
 from pathlib import Path
 
@@ -42,7 +43,8 @@ import analyze_surface as AS  # noqa: E402
 import factorial as F  # noqa: E402
 
 # ------------------------------------------------------------------ constants
-INPUT_DIR = Path("/Users/bonorinoa/Hermes/Projects/SCA2/paper_b_inputs")
+# Local-only Paper B inputs (not in git). Override with SCA2_PAPER_B_INPUTS.
+INPUT_DIR = Path(os.environ.get("SCA2_PAPER_B_INPUTS", REPO / "paper_b_inputs"))
 COHORT1_STRICT = INPUT_DIR / "cohort1_strict.csv"
 ADAPTER_STRICT_V1 = INPUT_DIR / "adapter_strict_v1.csv"
 OUT_DIR = REPO / "planning/sprint_2026-10-11/paper-b-tier1/results"

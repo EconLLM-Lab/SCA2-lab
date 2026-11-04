@@ -16,6 +16,7 @@ Run: unset PYTHONPATH && .venv/bin/python analysis/phase2/11_twin_gdp.py
 """
 from __future__ import annotations
 
+import os
 import pathlib
 
 import numpy as np
@@ -26,8 +27,10 @@ REPO = pathlib.Path(__file__).resolve().parents[2]
 OUT = REPO / "analysis" / "phase2" / "outputs"
 GPS_DTA = REPO / "data" / "GPS" / "GPS_dataset_country_level" / "country_gps.dta"
 WDI_LOCAL = REPO / "data" / "phase2" / "aux" / "wdi.csv"
-WDI_CACHE = pathlib.Path("/Users/bonorinoa/Hermes/Projects/cvprofiles/data/h5_trust_aux/wdi.csv")
-WDI = WDI_LOCAL if WDI_LOCAL.exists() else WDI_CACHE
+# Optional fallback copy of WDI; set SCA2_WDI_CACHE to a wdi.csv path. Default: data/phase2/aux/wdi.csv only.
+_wdi_env = os.environ.get("SCA2_WDI_CACHE")
+WDI_CACHE = pathlib.Path(_wdi_env) if _wdi_env else None
+WDI = WDI_CACHE if (WDI_CACHE is not None and not WDI_LOCAL.exists()) else WDI_LOCAL
 
 DIMS = ["patience", "risktaking", "posrecip", "negrecip", "altruism", "trust"]
 

@@ -1,0 +1,43 @@
+[project]
+name = "sca2-pofw"
+version = "0.1.0"
+description = "Replication and analysis environment for the SCA2 (Synthetic Cultural Agents) project, EconLLM Lab"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.14"
+# CPU analysis stack: what sca2/, paper_b/, analysis/phase2/, replication/ and
+# misc/paper_b/tools import at module level. Lower bounds are the versions the
+# reference venv was built with; uv.lock holds the exact resolved set.
+dependencies = [
+  "numpy>=2.5",
+  "pandas>=3.0",
+  "pyarrow>=25.0",
+  "scipy>=1.18",
+  "matplotlib>=3.11",
+  "pyreadstat>=1.3",
+  "huggingface-hub>=2.2",
+  "datasets>=4.0",  # imported by synthetic_generation/sca2_datagen/export.py (sca2 tests)
+]
+
+[project.optional-dependencies]
+# GPU / training stack (adapters, DPO training, local evaluation). Not needed for the tests
+# or for replication/reproduce_tables.py. Run on a GPU machine (Colab) only.
+gpu = [
+  "torch",
+  "transformers",
+  "peft",
+  "trl",
+  "bitsandbytes",
+]
+# Paper B Jev-comparator API caller (paper_b/heldout/jev_comparator.py); needs TYPESAFE_API_KEY.
+comparator = ["typesafe-sdk>=0.7.5"]
+
+[dependency-groups]
+dev = ["pytest>=9.0"]
+# Synthetic-pair generation client; sca2_datagen imports litellm at module level, so the sca2 tests need it.
+datagen = ["litellm>=1.81", "python-dotenv>=1.0"]
+
+[tool.uv]
+package = false
+default-groups = ["dev", "datagen"]
+exclude-newer = "7 days"

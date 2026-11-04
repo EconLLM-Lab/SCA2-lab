@@ -33,6 +33,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -60,8 +61,7 @@ DO_NOT_PROMOTE = "do not promote the filter"
 FOOTNOTE = "the margin stays a footnote"
 NOISE_UNKNOWN = "noise floor unknown: no direction claimed"
 
-DEFAULT_BASELINE = Path("/Users/bonorinoa/Hermes/Projects/SCA2/paper_b_inputs/"
-                        "adapter_strict_v1.csv")
+DEFAULT_BASELINE = Path(os.environ.get("SCA2_PAPER_B_INPUTS", HERE.parent / "paper_b_inputs")) / "adapter_strict_v1.csv"
 DEFAULT_NOISE = (HERE.parent / "planning/sprint_2026-10-11/paper-b-tier1/results/replicate/"
                  "replicate_surface_diff.csv")
 

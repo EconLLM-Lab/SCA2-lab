@@ -20,9 +20,9 @@ enter credentials yourself.
 1. Clone the repository: git clone https://github.com/EconLLM-Lab/SCA2_PofW && cd SCA2_PofW
    Read README.md, DATA.md and replication/README.md before doing anything else.
 
-2. Environment: use uv (https://docs.astral.sh/uv/) and no global pip installs. Create the project environment
-   with `uv venv .venv --python 3.12`, then install the table-regeneration requirements with
-   `uv pip install --python .venv/bin/python -r replication/requirements-tables.txt`.
+2. Environment: use uv (https://docs.astral.sh/uv/) and no global pip installs. From the repository root run
+   `uv sync`; it builds `.venv` from `pyproject.toml` and `uv.lock` (Python 3.14). Do not use `--extra gpu`
+   unless you are on a GPU machine.
    Run Python as `env -u PYTHONPATH .venv/bin/python ...`.
 
 3. Data: DATA.md lists every third-party file, its official download page and the exact path where the code

@@ -35,13 +35,12 @@ Adapter weights are at Hugging Face `Bonorinoa/SCA2-phase2-adapters`, commit `03
 ## Environment (table regen only)
 
 ```bash
-uv venv .venv --python 3.12
-uv pip install --python .venv/bin/python -r replication/requirements-tables.txt
+uv sync          # reads pyproject.toml + uv.lock (Python >= 3.14, 7-day cooldown pinned in pyproject)
 ```
 
 The survey data are not shipped. See [`../DATA.md`](../DATA.md), or hand [`../REPLICATE_WITH_AN_AGENT.md`](../REPLICATE_WITH_AN_AGENT.md) to an agent.
 
-This is pandas/scipy/pyarrow. It is not the Colab DPO stack.
+This is the CPU analysis stack (pandas, scipy, pyarrow, matplotlib, pyreadstat, huggingface-hub, pytest). The GPU/DPO stack is the optional extra `gpu` (`uv sync --extra gpu`) and is meant for Colab.
 
 ## What this folder does not contain
 
