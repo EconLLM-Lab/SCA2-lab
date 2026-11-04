@@ -9,6 +9,7 @@ share is the informative one.
 from __future__ import annotations
 
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -107,7 +108,7 @@ def at_bound(value: float, lo: float, hi: float) -> str:
 
 
 def main() -> int:
-    root = Path("/Users/bonorinoa/Hermes/Projects/SCA2/sprint_2026-10-11/paper-b-20261011")
+    root = Path(os.environ.get("SCA2_BANKED_DIR", Path(__file__).resolve().parent.parent / "planning/sprint_2026-10-11/paper-b-20261011"))
     out = root / "analysis_phase"
     out.mkdir(parents=True, exist_ok=True)
     probs = pd.read_csv(root / "model_probs.csv", dtype={"option_code": str, "question_id": str})

@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import shutil
 from pathlib import Path
 
@@ -20,9 +21,8 @@ from scipy.stats import spearmanr
 
 REPO = Path(__file__).resolve().parents[2]
 OUT = REPO / "analysis" / "phase2" / "outputs" / "paper_a"
-AUDIT_SCORES = Path(
-    "/Users/bonorinoa/Hermes/Projects/SCA2_results_audit/external/results/country_item_scores.csv"
-)
+# Optional source for re-freezing the scores: set SCA2_AUDIT_SCORES to country_item_scores.csv.
+AUDIT_SCORES = Path(os.environ["SCA2_AUDIT_SCORES"]) if os.environ.get("SCA2_AUDIT_SCORES") else None
 WVS_DIR = REPO / "data" / "wvs_eval_full"
 GPS_DTA = REPO / "data" / "GPS" / "GPS_dataset_country_level" / "country_gps.dta"
 GPS_JSON = REPO / "synthetic_generation" / "outputs" / "gps_sign_relabel_all" / "gps_z_vectors.json"
@@ -173,7 +173,7 @@ def freeze_scores() -> pd.DataFrame:
     OUT.mkdir(parents=True, exist_ok=True)
     dest = OUT / "country_item_scores.csv"
     if not dest.exists():
-        if not AUDIT_SCORES.exists():
+        if AUDIT_SCORES is None or not AUDIT_SCORES.exists():
             raise SystemExit(f"missing frozen Paper A scores: {dest} (and audit source {AUDIT_SCORES})")
         shutil.copy2(AUDIT_SCORES, dest)
     model = pd.read_csv(dest)

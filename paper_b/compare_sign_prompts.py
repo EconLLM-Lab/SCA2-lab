@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -25,9 +26,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import analyze_surface as A  # noqa: E402
 import analyze_phase as P  # noqa: E402
 
-DEFAULT_BANKED = Path(
-    "/Users/bonorinoa/Hermes/Projects/SCA2/sprint_2026-10-11/paper-b-20261011"
-)
+DEFAULT_BANKED = Path(os.environ.get(
+    "SCA2_BANKED_DIR",
+    Path(__file__).resolve().parent.parent / "planning/sprint_2026-10-11/paper-b-20261011"))
 
 
 def load_sign_items(sign_dir: Path, domains: dict) -> pd.DataFrame:

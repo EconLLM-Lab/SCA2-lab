@@ -7,6 +7,7 @@ from __future__ import annotations
 import hashlib
 import importlib
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -23,7 +24,8 @@ import protocol_bank2 as P2  # noqa: E402
 import score_plan as SPL  # noqa: E402
 
 REAL_PROFILES = ROOT / "synthetic_generation/outputs/gps_sign_relabel_bank2_profiles"
-REAL_NZ = Path("/Users/bonorinoa/Hermes/Projects/SCA2/paper_b_inputs/near_zero")
+REAL_INPUTS = Path(os.environ.get("SCA2_PAPER_B_INPUTS", ROOT / "paper_b_inputs"))
+REAL_NZ = REAL_INPUTS / "near_zero"
 needs_real = pytest.mark.skipif(not (REAL_PROFILES.is_dir() and REAL_NZ.is_dir()),
                                 reason="bank-2 outputs or near_zero banks are not on this machine")
 UNITS = ["GBR", "COL", "GBR_control", "COL_control"]
@@ -310,7 +312,7 @@ def test_prepare_fails_when_a_label_differs_from_the_profile_file(tmp_path):
 def test_real_prepare_counts_are_164_and_260_for_refit_and_control(tmp_path):
     import near_zero_prepare as NP
     import config as C
-    cache_path = Path("/Users/bonorinoa/Hermes/Projects/SCA2/paper_b_inputs/refcache/shared_reference_logps.jsonl")
+    cache_path = REAL_INPUTS / "refcache/shared_reference_logps.jsonl"
     if not cache_path.is_file():
         pytest.skip("the pinned reference cache is not downloaded on this machine")
     cache = lib.load_shared_cache(cache_path)

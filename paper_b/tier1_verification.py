@@ -42,7 +42,7 @@ ADAPTERS_REPO = "Bonorinoa/SCA2-paper-b-adapters"
 BANK_RUN_ID = "gps_sign_relabel_bank2_20261015_062543Z"
 BANK_STATE = f"bank2/{BANK_RUN_ID}/state"
 GEN_MANIFEST = f"banks/bank2_{BANK_RUN_ID}/gen_raw/generation_manifest.json"
-TOKEN_FILE = Path("/Users/bonorinoa/.hermes/profiles/sca/.env")
+TOKEN_FILE = Path(os.environ.get("SCA2_HF_ENV_FILE", Path.home() / ".hermes/profiles/sca/.env"))
 DEFAULT_CACHE = Path(tempfile.gettempdir()) / "sca2_tier1_verification"
 
 # A gap longer than this between two recorded unit clocks starts a new GPU session. 60 minutes is above every

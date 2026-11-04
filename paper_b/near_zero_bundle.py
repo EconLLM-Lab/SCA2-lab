@@ -18,6 +18,7 @@ import argparse
 import hashlib
 import io
 import json
+import os
 import sys
 import tarfile
 from pathlib import Path
@@ -26,7 +27,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import protocol_bank2 as P2  # noqa: E402
 
 ARTIFACTS_REPO = "Bonorinoa/SCA2-paper-b-artifacts"
-ENV_FILE = Path("/Users/bonorinoa/.hermes/profiles/sca/.env")
+ENV_FILE = Path(os.environ.get("SCA2_HF_ENV_FILE", Path.home() / ".hermes/profiles/sca/.env"))
 
 
 def bundle_members(nz_dir: Path) -> list[tuple[str, Path]]:

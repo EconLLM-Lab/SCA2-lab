@@ -89,4 +89,11 @@ The study had no funding. No author has a competing interest.
 
 ## License
 
-See [`LICENSE`](./LICENSE). Survey microdata remain under their distributors' terms.
+- **Code**: MIT. See [`LICENSE`](./LICENSE).
+- **Manuscripts, figures and text**: CC BY 4.0 unless the publisher's terms say otherwise. Paper A's arXiv license
+  governs its arXiv version (see the [arXiv listing](https://arxiv.org/abs/2610.06562); it currently shows arXiv's
+  non-exclusive distribution license).
+- **Third-party survey data** (WVS, GPS, LAPOP and others): under their distributors' terms, not redistributed here.
+  See [`DATA.md`](./DATA.md).
+
+To cite, use [`CITATION.cff`](./CITATION.cff) (Paper A).

@@ -42,7 +42,7 @@ PERSONA_STRICT = BT.INPUT_DIR / "persona_strict.csv"
 PERSONA_RUN = "persona-strict-v1-20261019"
 ADAPTER_PERSONA = BT.INPUT_DIR / "adapter_persona_strict.csv"
 ADAPTER_PERSONA_RUN = "adapter-persona-strict-v1-20261019"
-HF_ENV = Path("/Users/bonorinoa/.hermes/profiles/sca/.env")
+HF_ENV = Path(os.environ.get("SCA2_HF_ENV_FILE", Path.home() / ".hermes/profiles/sca/.env"))
 
 CELLS = ["base", "adapter", "persona", "adapter_persona"]
 COUNTRIES = list(SPL.PERSONA_COUNTRIES)
