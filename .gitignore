@@ -257,3 +257,18 @@ analysis/phase2/outputs/readout_question_metrics.csv
 analysis/phase2/outputs/wvs_question_metrics_long.csv
 analysis/phase2/outputs/paper_a/human_item_means_42.csv
 # --- end human-derived tables ---
+
+# --- Licensed third-party data and respondent-derived values (hygiene pass 2026-11-03) ---
+# Obtain from the source; see DATA.md. Never commit questionnaires, codebooks, microdata or values derived from respondents.
+data/GPS/
+data/WVS/
+data/EVS/
+data/Barometer/
+data/phase2/aux/
+data/validity/scores_*.csv
+!data/validity/scores_adapter.csv
+data/validity/gradients_wvs*
+analysis/phase2/outputs/readout_option_panel.parquet
+analysis/phase2/outputs/wvs_question_metrics_long.parquet
+analysis/phase2/outputs/development_human_by_country.csv
+planning/pre_arxiv_checks/unit_range/unit_range_comparison.csv

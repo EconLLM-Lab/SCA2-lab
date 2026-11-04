@@ -1,84 +1,87 @@
 # SCA2_PofW — Synthetic Cultural Agents from Aggregate Anchors
 
-**EconLLM Lab**
-Lab site: [econllm-lab.com](https://www.econllm-lab.com/)
-Code: [github.com/EconLLM-Lab/SCA2_PofW](https://github.com/EconLLM-Lab/SCA2_PofW)
+**EconLLM Lab** · [econllm-lab.com](https://www.econllm-lab.com/) · [github.com/EconLLM-Lab/SCA2_PofW](https://github.com/EconLLM-Lab/SCA2_PofW)
 
-A construction protocol for *anchored synthetic choice policies*. Pre-specified aggregate preference moments (Global Preferences Survey country profiles) are mapped into synthetic pairwise choices and written into lightweight adapters. Primary evaluation prompts omit country names. Instantiated on sixteen GPS countries and scored on World Values Survey Wave 7 items.
+We build language-model instruments from declared aggregate anchors. Country signs from the Global Preferences
+Survey (GPS) label one shared bank of synthetic preference pairs. Each sign profile is then written into a small DPO
+adapter, which reads World Values Survey (WVS) Wave 7 items with no country named in the prompt.
 
-This repository is the methods archive for a working paper. It is not a packaged product, and it is not a one-click trainer.
-
----
-
-## Working paper
-
-**Paper A is posted to arXiv:** [arXiv:2610.06562](https://arxiv.org/abs/2610.06562)
-(v1, 2026-10-05) — *Synthetic Cultural Agents from Aggregate Anchors*
-(Gonzalez-Bonorino, Biriukova, Capra). Upload-time provenance is sealed in
-[`misc/arxiv-submission-2026-10-05/`](./misc/arxiv-submission-2026-10-05/).
-
-| Paper | File | Status |
-|---|---|---|
-| **Synthetic Cultural Agents from Aggregate Anchors** | [`misc/position_paper/`](./misc/position_paper/) | Live source (TeX + compiled PDF `Synthetic_Cultural_Agents_from_Aggregate_Anchors.pdf`). Post-arXiv edits live in the normal tree. |
-
-A construct-validity instrument paper lives in a separate lane (`cvprofiles`). It is not this repo's contribution.
-
-**Replication entry:** [`replication/README.md`](./replication/README.md).
-
-**Paper B** (the journal version of the preprint, 42 countries) is in progress on branch `feat/paper-b-cohort`.
-Where it stands, what exists and what is open: [`STATUS.md`](./STATUS.md). Decisions:
-[`planning/DECISIONS.md`](./planning/DECISIONS.md).
-
-Headline surface: sixteen countries × twenty-three WVS items, from two saved evaluation jobs. Trust adapter–GPS Spearman is **0.74** [0.44, 0.88]. That is coarse sign transfer, not recovery of within-sign magnitudes. Do not quote 0.80, and do not quote the older 30-item construct table (0.78).
+This repository is the methods archive for that program. It is not a packaged product or a one-click trainer.
 
 ---
 
-## Companion branch: the SCA2 workbench
+## Papers
 
-The viewer and capture toolchain for SCA2 lives on the separate branch `Adapter-Brain-Vizualization` ([workbench/README.md](https://github.com/EconLLM-Lab/SCA2_PofW/blob/Adapter-Brain-Vizualization/workbench/README.md)). It reads Paper B artifacts one way: Paper B claims never depend on workbench results. This branch (`feat/paper-b-cohort`, merged into `paper/paper-b-draft`) holds the Paper B code, results and claim lock. Start at [STATUS.md](STATUS.md).
+| Paper | Question | Read | Source of record |
+|---|---|---|---|
+| **A**: *Synthetic Cultural Agents from Aggregate Anchors* (Gonzalez-Bonorino, Biriukova, Capra) | How to build the instrument (16 countries) | [arXiv:2610.06562](https://arxiv.org/abs/2610.06562) (v1, 2026-10-05) | Sealed upload package [`misc/arxiv-submission-2026-10-05/`](./misc/arxiv-submission-2026-10-05/) and tag `arxiv-2610.06562-v1` |
+| **B**: the journal version of A | A preregistered evaluation of the instrument, from anchor to respondents (42 countries, two scenario banks) | In preparation. The current build is [`misc/paper_b/main.pdf`](./misc/paper_b/main.pdf) with [`supplement.pdf`](./misc/paper_b/supplement.pdf) | [`STATUS.md`](./STATUS.md), [`planning/TWO_PAPER_CLAIM_LOCK.md`](./planning/TWO_PAPER_CLAIM_LOCK.md) |
+| **C** | What training adds once the anchor is stated | Preliminary, not yet registered | Branch `feat/paper-c-magnitude` |
+
+Paper A's headline, on sixteen countries and twenty-three WVS items: the trust adapter–GPS Spearman correlation is
+**0.74** [0.44, 0.88]. That is coarse sign transfer, not recovery of magnitudes within a sign.
+
+Earlier drafts of Paper A (`misc/position_paper/`, `planning/rewrite_pre_*`) were removed in the 2026-11-03 hygiene
+pass. They are identical to, or older than, the sealed package, and git history keeps them.
+
+---
+
+## Start here
+
+| If you need… | Go to |
+|---|---|
+| Where every workstream stands | [`STATUS.md`](./STATUS.md), then [`planning/DECISIONS.md`](./planning/DECISIONS.md) |
+| Reproduce Paper A's committed tables (no GPU) | [`replication/README.md`](./replication/README.md) |
+| Obtain the survey data (not shipped) and our Hugging Face artifacts | [`DATA.md`](./DATA.md) |
+| Set the project up with an AI agent | [`REPLICATE_WITH_AN_AGENT.md`](./REPLICATE_WITH_AN_AGENT.md) |
+| The Paper B cohort runner and readout | [`paper_b/README.md`](./paper_b/README.md) |
+| Protocol and sign-labelling CLI | [`sca2/README.md`](./sca2/README.md), [`protocols/`](./protocols/) |
+| Synthetic pair generation | [`synthetic_generation/README.md`](./synthetic_generation/README.md) |
+| Historical phase-1 notebooks | [`DPO_train_test/`](./DPO_train_test/), [`DPO_eval_WVS/`](./DPO_eval_WVS/). Not the papers' result tables |
+| Manuscripts and talks | [`misc/README.md`](./misc/README.md) |
+
+The `sca2` CLI audits a frozen protocol. `train`, `eval` and `generate --materialize` refuse execution by design.
+
+## Branches
+
+```
+main ─► feat/paper-b-cohort ─► paper/paper-b-draft      Paper B code, then manuscript
+                     └──────► feat/paper-c-magnitude     Paper C (preliminary)
+main ─► Adapter-Brain-Vizualization                      the visualization workbench (independent stream)
+```
+
+The workbench reads Paper B artifacts one way. Paper B claims never depend on workbench results.
+
+---
 
 ## What is public vs local
 
 | Object | Where | Public? |
 |---|---|---|
-| Code, protocol, committed analysis tables/figures | this GitHub repo | Yes (MIT) |
-| Sixteen-country option-probability zip | [Drive download](https://drive.google.com/uc?export=download&id=1lIAx0ueSpgaZPmAzNbFSD31ddGQH7Nqo) | Posted 2026-09-17. Model outputs only. It is not the source of the 0.74 headline. |
-| Adapter weights | Hugging Face [`Bonorinoa/SCA2-phase2-adapters`](https://huggingface.co/Bonorinoa/SCA2-phase2-adapters), commit `03c43dfd27c9535283feb78ffa727da3bfa1b966` | Released. A Hugging Face account and acceptance of the repository gate are required to download them. Reprinting the committed tables does not require them. |
-| GPS country/individual files | briq / Falk et al. (2018) | Obtain from the source. Not redistributed. |
-| WVS Wave 7 microdata | World Values Survey Association | Obtain from the source. Derived respondent extracts are **not** shipped. Rebuild with `data/wvs_eval_full/_build_wvs_eval_full.py`. |
+| Code, protocol, committed analysis tables and figures | this repository | Yes (MIT) |
+| Paper A adapter weights | Hugging Face [`Bonorinoa/SCA2-phase2-adapters`](https://huggingface.co/Bonorinoa/SCA2-phase2-adapters), commit `03c43dfd27c9535283feb78ffa727da3bfa1b966` | Released behind a gate (Hugging Face account and acceptance required) |
+| Paper B adapters and artifacts | Hugging Face, private datasets | Not yet |
+| Sixteen-country option probabilities | [Drive download](https://drive.google.com/uc?export=download&id=1lIAx0ueSpgaZPmAzNbFSD31ddGQH7Nqo) | Model outputs only. Not the source of the 0.74 headline |
+| GPS country and individual files | briq / Falk et al. (2018) | Obtain from the source. Not redistributed |
+| WVS Wave 7 microdata | World Values Survey Association | Obtain from the source. Derived respondent extracts are not shipped; rebuild with `data/wvs_eval_full/_build_wvs_eval_full.py` |
 
-`analysis/phase2/reproduce_tables.py` reprints the headline from the committed file `analysis/phase2/outputs/paper_a/country_item_scores.csv`. The file named `country_item_scores_SUPERSEDED_stitched_20260925.csv` in that folder is the older USA/Mexico testing merge. Do not use it. A USA/Mexico testing evaluation that used to live in `DPO_eval_WVS/eval_results_wvs_wave7/` was removed on 2026-09-25.
-
----
-
-## Start here (by role)
-
-| If you need… | Go to |
-|---|---|
-| **Reproduce committed tables** (no GPU) | [`replication/`](./replication/) |
-| **Protocol / sign-labeling CLI** | [`sca2/README.md`](./sca2/README.md), [`protocols/`](./protocols/) |
-| **Synthetic pair generation** | [`synthetic_generation/`](./synthetic_generation/) |
-| **Historical DPO notebooks** | [`DPO_train_test/`](./DPO_train_test/) — Colab-class T4 jobs, not a free-tier 16-adapter run |
-| **WVS scoring notebooks** | [`DPO_eval_WVS/`](./DPO_eval_WVS/) — scoring code. Not the paper's result tables. |
-| **Working paper** | [`misc/position_paper/`](./misc/position_paper/) |
-
-The `sca2` CLI audits a frozen protocol. `train` / `eval` / `generate --materialize` refuse execution by design.
-
----
+`analysis/phase2/reproduce_tables.py` reprints Paper A's headline from
+`analysis/phase2/outputs/paper_a/country_item_scores.csv`. Do not use the file marked `SUPERSEDED` in that folder.
 
 ## Design in one paragraph
 
-Country-specific information enters as GPS `sign(z)` labels on a **shared** scenario bank. Magnitudes in the anonymized profile do not change those labels. Sixteen geographic units instantiate thirteen distinct sign profiles (Mexico with Russia, India with Greece, Indonesia with Egypt). Evaluation prompts omit country tokens; that closes a prompting channel, not pretrained associations. Pairwise DPO identifies an ordering. It does not identify population marginals. Phi-4 pair scores are an unused diagnostic (contamination is not a training gate).
-
-Egypt was not asked WVS Q69–Q71 (police, courts, government). Great Britain was not asked Q174. The strict 23-item rectangle drops those four items everywhere. Q69 is the strongest human–GPS trust item on the 42-country map; report it on the 15-country subset rather than deleting it from the scientific story.
-
----
+Country information enters only as GPS `sign(z)` labels on a **shared** scenario bank, so magnitudes inside a profile
+do not change the labels. Evaluation prompts omit country names. That closes a prompting channel, not pretrained
+associations. Pairwise DPO identifies an ordering, not population marginals. The instrument reads the group directly
+and never simulates individual respondents, so it carries no spread within a country.
 
 ## Scope
 
-Reliable uses, when the tests support them: scoring new item text against a declared anchor; mapping where two batteries share a construct; fixed-policy proximity to survey distributions.
+Reliable uses, when the tests support them: scoring new item text against a declared anchor, mapping where two
+batteries share a construct, and fixed-policy proximity to survey distributions.
 
-Unreliable uses: speaking for individuals; recovering response-distribution shape; causal or policy counterfactuals; treating adapters as national cultures.
+Unreliable uses: speaking for individuals, recovering the shape of response distributions, causal or policy
+counterfactuals, and treating adapters as national cultures.
 
 ---
 
@@ -86,4 +89,4 @@ The study had no funding. No author has a competing interest.
 
 ## License
 
-See [`LICENSE`](./LICENSE). Survey microdata remain under original distributor terms.
+See [`LICENSE`](./LICENSE). Survey microdata remain under their distributors' terms.

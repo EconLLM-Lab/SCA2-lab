@@ -7,16 +7,15 @@
 
 This folder contains the data generation pipeline for **SCA 2.0** (Synthetic Cultural Agents, second generation). The goal is to create synthetic preference datasets that can be used to fine-tune open-source language models so they behave in ways that reflect the cultural preferences of specific populations — not just WEIRD (Western, Educated, Industrialized, Rich, Democratic) ones.
 
-**The big idea:** The Global Preferences Survey (GPS) by Falk et al. (2018) measured six economic preferences — trust, risk-taking, patience, altruism, positive reciprocity, and negative reciprocity — across 76 countries. We treat these country-level scores as declared *aggregate anchors* and render them into synthetic preference data. A student model is then fine-tuned on this data using Direct Preference Optimization (DPO), a pairwise-preference estimator with reference-policy regularization. The protocol's scientific value is established empirically, not assumed: the working paper ([`../misc/position_paper/position_paper_sca2.pdf`](../misc/position_paper/position_paper_sca2.pdf)) specifies five rejection points — anchor transmission, policy encoding, anchor relevance (permuted-anchor placebo), external transport, and operator robustness. The pipeline deliberately makes no identification claim about individual preferences or full population distributions.
+**The big idea:** The Global Preferences Survey (GPS) by Falk et al. (2018) measured six economic preferences — trust, risk-taking, patience, altruism, positive reciprocity, and negative reciprocity — across 76 countries. We treat these country-level scores as declared *aggregate anchors* and render them into synthetic preference data. A student model is then fine-tuned on this data using Direct Preference Optimization (DPO), a pairwise-preference estimator with reference-policy regularization. The protocol's scientific value is established empirically, not assumed: Paper A ([arXiv:2610.06562](https://arxiv.org/abs/2610.06562)) specifies five rejection points — anchor transmission, policy encoding, anchor relevance (permuted-anchor placebo), external transport, and operator robustness. The pipeline deliberately makes no identification claim about individual preferences or full population distributions.
 
 **Where this fits in the research agenda:**
 
-| Working paper | Focus | Status |
+| Paper | Focus | Status |
 |-------|-------|--------|
-| **position_paper_sca2** | **Aggregate-anchor construction protocol (this pipeline)** | **Working-paper draft** |
-| position_paper_cvprofiles | Construct-validity instrument (validation lane) | Working-paper draft |
-
-Both papers live in [`../misc/position_paper/`](../misc/position_paper/).
+| **Paper A** | **Aggregate-anchor construction protocol (this pipeline)** | [arXiv:2610.06562](https://arxiv.org/abs/2610.06562) |
+| Paper B | Preregistered evaluation, 42 countries | In preparation ([`../misc/README.md`](../misc/README.md)) |
+| cvprofiles | Construct-validity instrument (validation lane) | Separate repository |
 
 If you're new to the lab, start by reading:
 - The [lab mission document](https://www.econllm-lab.com/) for context on what we do and why
@@ -61,7 +60,7 @@ Four-step architecture:
 3. **Fixed triplet generation** (Stage 2): For each scenario, the generator endpoint creates fixed high/low response options once, independent of country.
 3. **Profile-based (sign) selection** (Stage 2b): For each country, the chosen fixed response is assigned by the **sign of the target-dimension z-score** (`chosen = A if z >= 0 else B`) — a deterministic rule, **no model call**. The legacy LLM selector that re-implements this sign rule is retained only as an opt-in ablation (`--labeling llm`), which does require the generator endpoint. This keeps the response options fixed across countries while preserving country-specific preferences.
 
-   > *Audit note:* the LLM selector implements a supplied sign rule stochastically. Appendix B of the working paper ([`../misc/position_paper/position_paper_sca2.pdf`](../misc/position_paper/position_paper_sca2.pdf)) recommends a deterministic A/B sign rule as the primary operator, with the LLM selector retained as a sensitivity arm.
+   > *Audit note:* the LLM selector implements a supplied sign rule stochastically. Appendix B of Paper A ([arXiv:2610.06562](https://arxiv.org/abs/2610.06562)) recommends a deterministic A/B sign rule as the primary operator, with the LLM selector retained as a sensitivity arm.
 
 ### Block D — Scoring and quality control
 Each pair is scored on all 6 GPS dimensions in a single API call. For the target GPS dimension,
@@ -222,7 +221,7 @@ If your laptop is unreliable for multi-hour generations, GitHub Codespaces is a 
 The fine-tuning method we use. It takes pairs of (preferred, dispreferred) responses and adjusts model weights so the preferred response becomes more likely, while a KL penalty keeps the policy close to the reference model. DPO is a pairwise-preference estimator; in this project it fits the *synthetic* preferences generated by the anchor-based protocol. It is not a constrained estimator that mechanically enforces the GPS anchor moments.
 
 ### Falsification design
-After fine-tuning, the protocol is evaluated on predeclared tests rather than assumed valid: (i) *anchor transmission* — do the declared anchors change labels and retained pairs in the expected direction? (ii) *policy encoding* — does DPO retain the synthetic contrast? (iii) *anchor relevance* — do real-anchor adapters beat permuted-anchor placebos? (iv) *external transport* — do induced option probabilities improve alignment with independent human response distributions (e.g., WVS Wave 7)? (v) *operator robustness* — do conclusions survive changes to scenario banks, selection, QC, and training seeds? See the working paper ([`../misc/position_paper/position_paper_sca2.pdf`](../misc/position_paper/position_paper_sca2.pdf), §5).
+After fine-tuning, the protocol is evaluated on predeclared tests rather than assumed valid: (i) *anchor transmission* — do the declared anchors change labels and retained pairs in the expected direction? (ii) *policy encoding* — does DPO retain the synthetic contrast? (iii) *anchor relevance* — do real-anchor adapters beat permuted-anchor placebos? (iv) *external transport* — do induced option probabilities improve alignment with independent human response distributions (e.g., WVS Wave 7)? (v) *operator robustness* — do conclusions survive changes to scenario banks, selection, QC, and training seeds? See Paper A ([arXiv:2610.06562](https://arxiv.org/abs/2610.06562), §5).
 
 ---
 
@@ -299,4 +298,4 @@ These are documented here so new members understand *why* things are the way the
 - Falk, A., Becker, A., Dohmen, T., Enke, B., Huffman, D., & Sunde, U. (2018). [Global Evidence on Economic Preferences](https://doi.org/10.1093/qje/qjy013). *The Quarterly Journal of Economics*, 133(4), 1645–1692.
 - Rafailov, R., Sharma, A., Mitchell, E., Manning, C. D., Ermon, S., & Finn, C. (2023). [Direct Preference Optimization: Your Language Model is Secretly a Reward Model](https://openreview.net/forum?id=HPuSIXJaa9). *Advances in Neural Information Processing Systems 36*.
 - Capra, C. M., Gonzalez-Bonorino, A., & Pantoja, E. (2025). [LLMs Model Non-WEIRD Populations: Experiments with Synthetic Cultural Agents](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5082714). *SSRN Working Paper No. 5082714*.
-- Gonzalez-Bonorino, A., Biriukova, K., & Capra, M. (2026). [Synthetic Cultural Agents from Aggregate Anchors: A Falsifiable Protocol for Constructing Population-Level Choice Policies](../misc/position_paper/position_paper_sca2.pdf). *EconLLM Lab working paper.*
+- Gonzalez-Bonorino, A., Biriukova, K., & Capra, M. (2026). [Synthetic Cultural Agents from Aggregate Anchors](https://arxiv.org/abs/2610.06562). arXiv:2610.06562.
