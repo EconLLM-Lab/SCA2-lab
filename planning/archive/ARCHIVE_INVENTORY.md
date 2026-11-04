@@ -1,6 +1,6 @@
 # Archive inventory — do not delete until Augusto signs this list
 
-> **Record, not status.** Written 2026-09-16. Lines about what is done, blocked or next describe that date, not today. Current status: [STATUS.md](../STATUS.md). Paper A era.
+> **Record, not status.** Written 2026-09-16. Lines about what is done, blocked or next describe that date, not today. Current status: [STATUS.md](../../STATUS.md). Paper A era.
 
 **2026-09-16.** Goal: stop *citing* superseded surfaces. Goal is not `rm`.
 

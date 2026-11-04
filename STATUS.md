@@ -261,8 +261,9 @@ Every Markdown file under `planning/` must appear here, by itself or through its
 
 ### Record (dated; each opens with a "Record, not status" banner)
 
-- [ARCHIVE_INVENTORY.md](planning/ARCHIVE_INVENTORY.md), [PRE_ARXIV_CHECKLIST.md](planning/PRE_ARXIV_CHECKLIST.md), [pre_arxiv_checks/](planning/pre_arxiv_checks/), `planning/rewrite_pre_*` (removed 2026-11-03; in git history): Paper A, before arXiv
-- [PAPER_B_NEXT_STEPS_PLAN.md](planning/PAPER_B_NEXT_STEPS_PLAN.md): 10-Oct plan, superseded (the source of the 19-Oct bot error)
+- [ARCHIVE_INVENTORY.md](planning/archive/ARCHIVE_INVENTORY.md), [PRE_ARXIV_CHECKLIST.md](planning/PRE_ARXIV_CHECKLIST.md), [pre_arxiv_checks/](planning/pre_arxiv_checks/), `planning/rewrite_pre_*` (removed 2026-11-03; in git history): Paper A, before arXiv
+- [archive/README.md](planning/archive/README.md): old->new path map for records moved out of `planning/` on 2026-11-03
+- [PAPER_B_NEXT_STEPS_PLAN.md](planning/archive/PAPER_B_NEXT_STEPS_PLAN.md): 10-Oct plan, superseded (the source of the 19-Oct bot error)
 - [plans/2026-09-08_205322-sca2-final-paper-revision.md](planning/plans/2026-09-08_205322-sca2-final-paper-revision.md): Paper A revision plan
 - [plans/2026-10-11_233701-paper-b-journey.md](planning/plans/2026-10-11_233701-paper-b-journey.md): checkpoints C0–C7 (their definitions still apply)
 - [plans/2026-10-14_204500-paper-b-tier1-factorial-prereg.md](planning/plans/2026-10-14_204500-paper-b-tier1-factorial-prereg.md): Tier-1 plan, implemented
