@@ -24,12 +24,15 @@ Run: unset PYTHONPATH && .venv/bin/python analysis/phase2/13_unified_comparison.
 from __future__ import annotations
 
 import pathlib
+import sys
 
 import numpy as np
 import pandas as pd
 from scipy.stats import spearmanr
 
 REPO = pathlib.Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(REPO))
+from sca2.recodes import BINARY as BINARY_TRUST, INVERT_1_4, INVERT_10, recode_value  # noqa: E402  single source of truth
 OUT = REPO / "analysis" / "phase2" / "outputs"
 RAW = REPO / "data" / "phase2" / "raw" / "wvs"
 CANON = REPO / "DPO_eval_WVS" / "eval_results_wvs_wave7"
@@ -51,25 +54,8 @@ DIM_ITEMS = {
     "altruism": ["Q101", "Q99", "Q103"],
 }
 ALL_ITEMS = [q for vals in DIM_ITEMS.values() for q in vals]
-INVERT_1_4 = {"Q59", "Q61", "Q62", "Q63", "Q64", "Q69", "Q70", "Q71",
-              "Q58", "Q60", "Q73", "Q81"}
-INVERT_10 = {"Q177", "Q179"}
-BINARY_TRUST = {"Q57", "Q12", "Q13", "Q14", "Q174"}
 BANK_PRECEDENCE = {"ksenias_base8": 0, "co2_8": 1}
 MULTI_SELECT = "multiple_response_max_5"
-
-
-def recode_value(raw, item):
-    """Recode a single option code. Never apply this to a mean: binary recodes
-    are nonlinear, so recode(E[V]) != E[recode(V)]. Use the latter."""
-    s = float(raw)
-    if item in INVERT_1_4:
-        return 5.0 - s
-    if item in INVERT_10:
-        return 11.0 - s
-    if item in BINARY_TRUST:
-        return 1.0 if s == 1.0 else 0.0
-    return s
 
 
 # ---------------------------------------------------------------- loaders ----

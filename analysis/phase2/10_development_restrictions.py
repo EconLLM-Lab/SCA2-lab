@@ -22,12 +22,15 @@ Run: unset PYTHONPATH && .venv/bin/python analysis/phase2/10_development_restric
 from __future__ import annotations
 
 import pathlib
+import sys
 
 import numpy as np
 import pandas as pd
 from scipy.stats import spearmanr, pearsonr
 
 REPO = pathlib.Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(REPO))
+from sca2.recodes import BINARY as BINARY_TRUST, INVERT_1_4, INVERT_10  # noqa: E402  single source of truth
 OUT = REPO / "analysis" / "phase2" / "outputs"
 GPS_DTA = REPO / "data" / "GPS" / "GPS_dataset_country_level" / "country_gps.dta"
 WVS_DIR = REPO / "data" / "wvs_eval_full"
@@ -45,11 +48,7 @@ DIM_ITEMS = {
     "negrecip": ["Q176", "Q177", "Q179", "Q195"],
     "altruism": ["Q101", "Q99", "Q103"],
 }
-# polarity recodes identical to 06_construct_bridge.py (verified 2026-08-19)
-INVERT_1_4 = {"Q59", "Q61", "Q62", "Q63", "Q64", "Q69", "Q70", "Q71",
-              "Q58", "Q60", "Q73", "Q81"}
-INVERT_10 = {"Q177", "Q179"}
-BINARY_TRUST = {"Q57", "Q12", "Q13", "Q14", "Q174"}
+# polarity recodes: sca2/recodes.py (identical to 06_construct_bridge.py; test-enforced)
 BANK_PRECEDENCE = {"ksenias_base8": 0, "co2_8": 1}
 
 
