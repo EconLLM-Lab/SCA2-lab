@@ -1,5 +1,7 @@
 # W1: move legacy phase-1 synthetic outputs to a private HF dataset (PLAN, not executed)
 
+> **Record, not status.** Written 2026-11-03. The move was not run: the `hf` CLI was not logged in. Current status: [STATUS.md](../../STATUS.md).
+
 Status: BLOCKED-AUTH. `hf auth whoami` returned "Not logged in"; no upload, no `git rm` done.
 
 ## Inventory (synthetic_generation/outputs, tracked files)
