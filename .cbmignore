@@ -1,0 +1,15 @@
+# Privacy fence for codebase-memory indexing (repeats .gitignore on purpose).
+data/
+.replication_*/
+.worktrees/
+.venv/
+**/*.parquet
+**/*.dta
+**/*.jsonl
+**/*.csv
+**/*.arrow
+**/*.pdf
+**/*.ipynb
+synthetic_generation/outputs/
+planning/sprint_2026-10-11/
+misc/paper_b/review_probes/
